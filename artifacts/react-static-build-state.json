@@ -1,0 +1,54 @@
+{
+  "prefetchRate": 5,
+  "maxThreads": 1,
+  "disableRoutePrefixing": false,
+  "outputFileRate": 100,
+  "extensions": [
+    ".js",
+    ".jsx"
+  ],
+  "minLoadTime": 200,
+  "disablePreload": false,
+  "disableRuntime": false,
+  "preloadPollInterval": 300,
+  "productionSourceMaps": false,
+  "silent": false,
+  "entry": "index.js",
+  "paths": {
+    "ROOT": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core",
+    "SRC": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/src",
+    "DIST": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/dist",
+    "ASSETS": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/dist",
+    "PLUGINS": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/plugins",
+    "TEMP": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/tmp",
+    "ARTIFACTS": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/artifacts",
+    "PUBLIC": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/public",
+    "NODE_MODULES": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/node_modules",
+    "EXCLUDE_MODULES": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/node_modules",
+    "PACKAGE": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/package.json",
+    "HTML_TEMPLATE": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/dist/index.html",
+    "STATIC_DATA": "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core/dist/staticData"
+  },
+  "plugins": [
+    "/Users/alexandermekelburg/Work/dev/traveltripper/traveltripper/pegs-web-core"
+  ],
+  "siteRoot": "/",
+  "basePath": "",
+  "publicPath": "/",
+  "assetsPath": "",
+  "extractCssChunks": false,
+  "inlineCss": false,
+  "babelExcludes": [],
+  "devServer": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "terser": {
+    "terserOptions": {
+      "mangle": {},
+      "parse": {},
+      "compress": {},
+      "output": {}
+    }
+  }
+}
