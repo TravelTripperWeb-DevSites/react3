@@ -16,18 +16,16 @@ import chokidar from 'chokidar'
 //
 let areRoutesBuilt = false;
 chokidar.watch('./_data').on('all', () => areRoutesBuilt  && rebuildRoutes())
+//chokidar.watch('./_pages').on('all', () => areRoutesBuilt  && rebuildRoutes())
 
 
 export default {
   maxThreads: 1, // Remove this when you start doing any static generation
   devServer: {
-    host: process.env.CONTAINER_IP || "http://localhost",
-    port: 3000
+  //   host: process.env.CONTAINER_IP || "http://localhost:3000/",
+  //   port: 3000
   },
   getRoutes: async (opts) => {
-    
-    console.log(opts)
-    const incremental = opts.incremental;
     
     let files = await glob("./_data/**/*.json")
     let models = [] //[mypost]
@@ -45,10 +43,6 @@ export default {
       }
     })
     
-    if (incremental) {
-      // How do we know what current posts are??
-    }
-    
     areRoutesBuilt = true;
     return [
       {
@@ -62,9 +56,14 @@ export default {
         }
         
       },
-      ...modelPages
+      //...modelPages
     ]
     
-  }
+  },
+  plugins: [
+    [
+      "pegs-page-loader"
+    ]
+  ]
   
 }
