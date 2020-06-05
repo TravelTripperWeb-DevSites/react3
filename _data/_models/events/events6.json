@@ -1,0 +1,28 @@
+{
+  "name": "Fifth Annual Key Lime Festival",
+  "category": "event_category1",
+  "url": "fifth-annual-key-lime-festival",
+  "website_url": "http://www.keylimefestival.com/",
+  "schedule": "JULY 1 – 4, 2017",
+  "short_description": "<p style=\"margin-bottom: 0cm;\">A wacky talent show, pie-eating and cooking contests and other tasty temptations await Key West visitors during the fourth annual Key Lime Festival.</p>",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">A wacky talent show, pie-eating and cooking contests and other tasty temptations await Key West visitors during the fourth annual Key Lime Festival. A Key Lime martini Sip and Stroll, Key lime rum sampling and distillery tour as well as a new Key Lime Pie Hop are among events to kickoff the four-day tasty fest.</p>",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-072637/key-lime-fest-2.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-072637/key-lime-fest-1.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-072638/key-lime-fest-3.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-072637/key-lime-fest-1.jpg",
+    "alt": "image"
+  },
+  "expire_date": "Wed Jul 05 2017 00:00:00 GMT-0500 (CDT)",
+  "isPublished": true,
+  "publish_date": "Sat Jul 01 2017 00:00:00 GMT-0500 (CDT)"
+}

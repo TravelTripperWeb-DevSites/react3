@@ -1,0 +1,18 @@
+{
+  "title": {
+    "required": true
+  },
+  "description": {
+    "required": true
+  },
+  "categoryimage": {
+    "type":"image",
+    "required":true
+  },
+  "url_friendly_name": {
+    "required": true
+  },
+  "order":{
+  	 "required": true
+  }
+}

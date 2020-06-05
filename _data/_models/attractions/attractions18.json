@@ -1,0 +1,20 @@
+{
+  "name": "Key West Golf Club",
+  "url": "/location/attractions/key-west-golf-club",
+  "alt_text": "Golf-Club",
+  "description": "<p>At the entrance to the island of Key West, the unique Key West Golf Club's 18 holes encompass over 200 acres of beautiful Florida Keys foliage and wildlife.</p>",
+  "about": "<p>At the entrance to the island of Key West, the unique <a href=\"http://keywestgolf.com/\" target=\"_blank\">Key West Golf Club's</a> 18 holes encompass over 200 acres of beautiful Florida Keys foliage and wildlife.</p>\n<p><a href=\"http://keywestgolf.com/\" target=\"_blank\">Key West Golf Club</a> Golf legend REES JONES masterfully designed the Key West Golf Course, an 18 hole, 6,500 yard course to be a challenge to players of all abilities.</p>\n<p>Come meet all the exciting challenges of the Key West Golf Course, including the infamous \"Mangrove Hole\" (143 yards, par 3 that is played completely over a field of thickly intertwined tropical mangroves).</p>\n<p>Located in the heart of Key West, Florida the <a href=\"http://keywestgolf.com/\" target=\"_blank\">Key West Golf Club</a> is the only Caribbean golf course in the United States. Key West offers enjoyment and activities to all ages including award wining restaurants, nightlife, diving, fishing and many other activities.</p>\n<p>At the \"Gateway to the Caribbean,\" we invite you to come and experience the exhilaration of playing a round at our beautiful tropical course.</p>",
+  "image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1478/media/2017-01-23-083404/key-west-golf.jpg",
+    "alt": "Golf in Key West",
+    "caption": "",
+    "description": ""
+  },
+  "detail_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1478/media/2017-01-23-083404/key-west-golf.jpg",
+    "alt": "Key West Golf Club",
+    "caption": "",
+    "description": ""
+  },
+  "sort_order": 1
+}

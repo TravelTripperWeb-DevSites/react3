@@ -1,0 +1,54 @@
+{
+    "name":
+    {
+      "required": true,
+      "label": "Name"
+    },
+    "description":
+    {
+      "required": true,
+      "type": "richtext",
+      "label": "Description"
+    },
+    "url":
+    {
+      "required": true,
+      "type": "text",
+      "label": "URL"
+    },
+    "image":
+    {
+      "required": true,
+      "type": "image",
+      "label": "Upload Image"
+
+    },
+    "about":
+    {
+      "required": true,
+      "type": "richtext",
+      "label": "About Attraction "
+    },
+    "other_info":
+    {
+
+      "type": "richtext",
+      "label": "Other Info"
+    },
+    "detail_image":
+    {
+      "required": true,
+      "type": "image",
+      "label": "Detail Page Image"
+
+    },
+    "alt_text":
+    {
+      "label": "Image Alt text"
+    },
+    "sort_order":
+    {
+      "type": "integer",
+      "required": true
+    }
+}

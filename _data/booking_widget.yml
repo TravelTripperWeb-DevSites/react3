@@ -1,0 +1,11 @@
+show_rates: false
+show_offer_code: true
+show_specials: true
+
+__EDITABLE_FIELDS__:
+  show_rates:
+    type: boolean
+  show_offer_code:
+    type: boolean
+  show_specials:
+    type: boolean

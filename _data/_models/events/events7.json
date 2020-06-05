@@ -1,0 +1,28 @@
+{
+  "name": "Mel Fisher Days",
+  "category": "event_category1",
+  "url": "mel-fisher-days",
+  "website_url": "http://melfisherdays.melfisher.com/",
+  "schedule": "JULY 13 – 15, 2017",
+  "short_description": "<p style=\"margin-bottom: 0cm;\">Come commemorate the anniversary of Mel Fisher&rsquo;s famous 16-year search for the Spanish galleon Atocha and the discovery of the Atocha Mother Load.</p>",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">Come commemorate the anniversary of Mel Fisher&rsquo;s famous 16-year search for the Spanish galleon Atocha and the discovery of the Atocha Mother Load. Annual Dock Party at Schooner Wharf Bar on Saturday, July 15th, with tours of salvaging vessels, raffle, silent and live auctions and live entertainment. Private tours of the Fisher Family Conservation Laboratory July 13 &amp; 15. Contest: Enter to win an Atocha Coin July 13-15. Laboratory July 13 &amp; 15. Contest: Enter to win an Atocha Coin July 13-15! Proceeds from these events are to benefit Wesley House Family Services, Inc.</p>",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-073413/mel-fisher-3.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-073411/mel-fisher-1.JPG",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-073412/mel-fisher-2.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-073413/mel-fisher-3.jpg",
+    "alt": "image"
+  },
+  "expire_date": "Sun Jul 16 2017 00:00:00 GMT-0400 (Eastern Daylight Time)",
+  "isPublished": true,
+  "publish_date": "Thu Jul 13 2017 00:00:00 GMT-0500 (CDT)"
+}

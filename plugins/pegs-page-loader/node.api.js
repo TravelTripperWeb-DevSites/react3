@@ -57,9 +57,7 @@ export default ({
           ignoreInitial: true,
         })
         .on('all', async (type, file) => {
-          if (!['add', 'unlink'].includes(type)) {
-            return
-          }
+          console.log(type, file)
           const filename = nodePath.basename(file)
           if (filename.startsWith('.')) {
             return

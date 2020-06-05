@@ -1,0 +1,23 @@
+{
+  "review_heading": {
+    "required": true
+  },
+  "review_full_text": {
+    "required": true
+  },
+  "reviewer_name": {
+    "type": "text",
+    "required": true
+  },
+  "reviewer_company": {
+    "type": "text"
+  },
+  "reviewer_address": {
+    "type": "text"
+  },
+  "sort_order": {
+    "type": "integer",
+    "required": true,
+    "hint": "List will be sorted by this number"
+  }
+}

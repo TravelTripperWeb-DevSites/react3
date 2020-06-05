@@ -1,0 +1,28 @@
+{
+  "name": "Hemingway Days",
+  "url": "hemingway-days",
+  "category": "event_category1",
+  "schedule": "JULY 18 – 23, 2017",
+  "short_description": "<p style=\"margin-bottom: 0cm;\">The 37th annual celebration of the legendary author&rsquo;s work and lifestyle features literary readings,</p>",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">The 37th annual celebration of the legendary author&rsquo;s work and lifestyle features literary readings, the Running of the Bulls, a short story competition, fishing tournament, 5k Run and Paddleboard Race, Sloppy Joe&rsquo;s Look-Alike Contest and a birthday &ldquo;party&rdquo; commemorating Ernest&rsquo;s July 21st birthday.</p>",
+  "website_url": "http://www.fla-keys.com/hemingway-days/",
+  "expire_date": "Sun Jul 23 2017 00:00:00 GMT-0500 (CDT)",
+  "isPublished": true,
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-074311/hemingway-2.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-074311/hemingway-day-1.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-074312/hemingway-days-3.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-074311/hemingway-2.jpg",
+    "alt": "image"
+  },
+  "publish_date": "Tue Jul 18 2017 00:00:00 GMT-0500 (CDT)"
+}

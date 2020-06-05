@@ -1,0 +1,28 @@
+{
+  "name": "Key West Holiday Fest",
+  "url": "key-west-holiday-fest",
+  "category": "event_category1",
+  "schedule": "DECEMBER 1 - 31, 2017",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">Each year a wide range of seasonal celebrations takes place throughout Key West during the month of December. Events include the lighting of the Harbor Walk of Lights, tours of historic decorated inns, a holiday parade and much more.</p>",
+  "short_description": "<p>Each year a wide range of seasonal celebrations takes place throughout Key West during the month of December.</p>",
+  "website_url": "http://keywestinns.com/index.php/events/key-west-holiday-fest",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-022953/holidayfest-3.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-022954/holidayfest1.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-022952/holidayfest-2.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-022954/holidayfest1.jpg",
+    "alt": "image"
+  },
+  "expire_date": "Mon Jan 01 2018 00:00:00 GMT-0600 (CST)",
+  "isPublished": true,
+  "publish_date": "Fri Dec 01 2017 00:00:00 GMT-0600 (CST)"
+}

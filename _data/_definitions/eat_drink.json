@@ -1,0 +1,53 @@
+{
+  "name": {
+    "required": true,
+    "label": "Name"
+  },
+  "description": {
+    "required": true,
+    "type": "richtext",
+    "label": "Venue description here"
+  },
+  "menu": {
+    "type": "nested",
+    "multiple": "true",
+    "label": "Menu Details",
+    "fields": {
+      "menu_name": {
+        "label": "Menu Name"
+      },
+      "menu_url": {
+        "label": "Menu URL"
+      }
+    }
+  },
+  "venue_image1": {
+    "required": true,
+    "type": "image",
+    "lable": "Venue Image1",
+    "instructions": "Suggested dimensions in pixel - 1214 X 448. File size should be within 200kb"
+  },
+  "venue_image2": {
+    "required": true,
+    "type": "image",
+    "lable": "Venue Image2",
+    "instructions": "Suggested dimensions in pixel - 404 X 400. File size should be within 100kb"
+  },
+  "venue_image3": {
+    "required": true,
+    "type": "image",
+    "lable": "Venue Image3",
+    "instructions": "Suggested dimensions in pixel - 404 X 400. File size should be within 100kb"
+  },
+  "venue_image4": {
+    "required": true,
+    "type": "image",
+    "lable": "Venue Image4",
+    "instructions": "Suggested dimensions in pixel - 404 X 400. File size should be within 100kb"
+  },
+  "sort_order": {
+    "required": true,
+    "type": "integer",
+    "lable": "Venue Order"
+  }
+}

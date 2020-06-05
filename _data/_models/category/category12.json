@@ -1,0 +1,26 @@
+{
+  "title": "Activities",
+  "description": "Want to get out on the water? Whether that involves a leisurely cruise, snorkeling, or a high-speed jet ski run, our activities guide will point you where to go.",
+  "categoryimage": {
+    "name": "activites",
+    "file_name": "activites.jpg",
+    "url": "//cdn.traveltripper.io/site-assets/359_384_14959/media/2018-04-25-024945/activites.jpg",
+    "tags": "",
+    "description": "",
+    "date_added": "2018-04-25-024945",
+    "file_type": "image/jpeg",
+    "width": 1000,
+    "height": 657,
+    "file_size": 108838,
+    "url_large": "//cdn.traveltripper.io/site-assets/359_384_14959/media/2018-04-25-024945/large_activites.jpg",
+    "url_medium": "//cdn.traveltripper.io/site-assets/359_384_14959/media/2018-04-25-024945/medium_activites.jpg",
+    "url_small": "//cdn.traveltripper.io/site-assets/359_384_14959/media/2018-04-25-024945/small_activites.jpg",
+    "url_xsmall": "//cdn.traveltripper.io/site-assets/359_384_14959/media/2018-04-25-024945/xsmall_activites.jpg",
+    "url_thumb": "//cdn.traveltripper.io/site-assets/359_384_14959/media/2018-04-25-024945/thumb_activites.jpg",
+    "path": "//cdn.traveltripper.io/site-assets/359_384_14959/media/2018-04-25-024945/activites.jpg",
+    "alt": "activities",
+    "caption": ""
+  },
+  "url_friendly_name": "activities/",
+  "order": "6"
+}

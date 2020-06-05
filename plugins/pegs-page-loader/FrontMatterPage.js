@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import frontMatter from 'front-matter'
 import YAML from 'yaml'
 import nodePath from 'path'
-
+import LocalizableData from './LocalizableData';
 
 class FrontMatterPage {
   static async load(path, location) {
@@ -15,29 +15,34 @@ class FrontMatterPage {
     this._location = location;
     this._data = {};
     this._rawContent = '';
-    this._parsed = false;
+    this._parsed = {};
     
     this.initialize = this.initialize.bind(this);
   }
   
+  get locale() {
+    return this._locale || 'en';
+  }
+  set locale(val) {
+    this._locale = val;
+  }
   
   get path() {
     return this._path;
   }
 
   get data() {
-    if (!this._parsed) {
+    if (!this._parsed[this.locale]) {
       this.parse();
     }
     return this._data;
   }
   
   get content() {
-    if (!this._parsed) {
+    if (!this._parsed[this.locale]) {
       this.parse();
     }
-    return this._content;
-    
+    return this._content;    
   }
   
   get permalink() {
@@ -52,11 +57,11 @@ class FrontMatterPage {
   
   parse() {
     const yamlContent = frontMatter(this._rawContent);
-    this._data = {
-      ...yamlContent.attributes
-    }
+    this._data = LocalizableData.localize(yamlContent.attributes, this.locale);
+    console.log(this._data)
     this._content = yamlContent.body
-    this._parsed = true;
+    this._parsed = {};
+    this._parsed[this.locale] = true;
   }
   
   async initialize() {

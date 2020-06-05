@@ -51,7 +51,7 @@ export default {
         getData: () => {
           return {
             title: "Home",
-            content: "Welcome"
+            content: "Welcome!"
           }
         }
         

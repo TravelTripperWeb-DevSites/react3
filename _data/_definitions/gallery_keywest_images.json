@@ -1,0 +1,23 @@
+{   
+   "thumb_image":
+    {
+      "required": true,
+      "type": "image",
+      "label": "Upload Thumb Image"
+    },
+    "slider_image":
+    {
+      "required": true,
+      "type": "image",
+      "label": "Upload Image"
+    },
+   "alt_text":
+    {
+      "label": "Image Alt text"
+    },
+    "sort_order":
+    {
+      "type": "integer",
+      "required": true
+    }
+}

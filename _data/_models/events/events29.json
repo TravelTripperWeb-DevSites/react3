@@ -1,0 +1,33 @@
+{
+  "name": "Key West Songwriters Festival",
+  "category": "event_category2",
+  "schedule": "May 10 – 14, 2018",
+  "short_description": "<p>​The 22nd annual showcase of musical magic features America&rsquo;s foremost performing songwriters, with concerts staged in intimate, audience-friendly island settings.</p>",
+  "long_description": "<p>​The 22nd annual showcase of musical magic features America&rsquo;s foremost performing songwriters, with concerts staged in intimate, audience-friendly island settings.</p>",
+  "url": "key-west-songwriters-festival",
+  "website_url": "http://www.keywestsongwritersfestival.com/",
+  "expire_date": "Tue May 15 2018 00:00:00 GMT-0500 (CDT)",
+  "isPublished": true,
+  "alt_text": "Songwriters-Festival",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070057/songwriters.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070058/songwriters1.jpeg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070059/songwriters2.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070058/songwriters1.jpeg",
+    "alt": "image"
+  },
+  "g_image2": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070059/songwriters2.jpg",
+    "alt": "image"
+  },
+  "publish_date": "Thu May 10 2018 00:00:00 GMT-0500 (CDT)"
+}
