@@ -15,7 +15,7 @@ export default ({
   extensions = [],
 }) => ({
   getRoutes: async (routes, state) => {
-    const { config, stage, debug } = state
+    const { config, stage, debug, siteData } = state
     location = location || nodePath.resolve('./_pages');
 
     // Make a glob extension to get all pages with the set extensions from the pages directory
@@ -41,16 +41,21 @@ export default ({
 
     const handle = (pages) => {
       // Turn each page into a route
-      return Promise.all(
-        pages.map(pagePath => {
-          return handlePage(pagePath, pathPrefix, location, createRoute)
-
-        })
-      )
+      
+      let promises = []
+      const defaultLocale = siteData.defaultLocale || 'en';
+      const locales = siteData.locales || [defaultLocale];
+      for(let locale of locales) {
+        for (let pagePath of pages) {
+          promises.push(handlePage(pagePath, pathPrefix, location, createRoute, locale, defaultLocale))
+        }
+      }
+      
+      return Promise.all(promises)
     }
+    
     // Trigger a getRoutes rebuild when items in
     // the directory change
-    console.log(stage);
     if (stage === 'dev') {
       const watcher = chokidar
         .watch(location, {
@@ -82,8 +87,8 @@ export default ({
   },
 })
 
-const handlePage = async (pagePath, pathPrefix, location, createRoute) => {
-  const page = await FrontMatterPage.load(pagePath, location);
+const handlePage = async (pagePath, pathPrefix, location, createRoute, locale, defaultLocale) => {
+  const page = await FrontMatterPage.load(pagePath, location, locale, defaultLocale);
   const originalPath = pagePath;
   
   // Glob path will always have unix style path, convert to windows if necessary
@@ -104,12 +109,15 @@ const handlePage = async (pagePath, pathPrefix, location, createRoute) => {
   path = pathPrefix ? pathJoin(pathPrefix, path) : path
   // Return the route
   
-  
   return await createRoute({
     path,
     template: 'src/containers/Page',
     originalPath,
-    getData: () => { return {data: page.data, content: page.content} }
+    getData: async () => ({
+      data: page.data, 
+      content: page.content,
+      currentLocale: locale
+    })
   })
 }
 

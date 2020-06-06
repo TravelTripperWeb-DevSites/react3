@@ -25,8 +25,15 @@ export default {
   //   host: process.env.CONTAINER_IP || "http://localhost:3000/",
   //   port: 3000
   },
-  getRoutes: async (opts) => {
-    
+  getSiteData: async (opts) => {
+    const resources = await opts.loadResources();
+    return {
+      locales: ['en', 'es'],
+      defaultLocale: 'en',
+      i18nResources: resources
+    }
+  },  
+  getRoutes: async (opts) => {    
     let files = await glob("./_data/**/*.json")
     let models = [] //[mypost]
     for(let file of files) {
@@ -61,9 +68,8 @@ export default {
     
   },
   plugins: [
-    [
-      "pegs-page-loader"
-    ]
+    ["pegs-locale-loader"],
+    ["pegs-page-loader"]
   ]
   
 }
