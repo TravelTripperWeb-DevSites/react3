@@ -15,6 +15,7 @@ export default ({
     return config
   },
   beforePrepareRoutes: async (state) => {
+    const { stage, config } = state;
     location = location || nodePath.resolve('./_locales');
     const localesGlob = nodePath.join(location, '*.{yml,yaml}')
     const localeFiles = await glob(localesGlob)
@@ -32,6 +33,34 @@ export default ({
     
     state.i18nResources = resources;
     //console.log(state)
+    
+    
+    // Trigger a getRoutes rebuild when items in
+    // the directory change
+    if (stage === 'dev') {
+      const watcher = chokidar
+        .watch(location, {
+          ignoreInitial: true,
+        })
+        .on('all', async (type, file) => {
+          console.log(type, file)
+          const filename = nodePath.basename(file)
+          if (filename.startsWith('.')) {
+            return
+          }
+
+          console.log(
+            `File ${type === 'add' ? 'Added' : 'Removed'}: ${nodePath.relative(
+              config.paths.ROOT,
+              nodePath.resolve(location, filename)
+            )}`
+          )
+          watcher.close()
+          rebuildRoutes()
+        })
+    }
+    
+    
     return state
   }
 })

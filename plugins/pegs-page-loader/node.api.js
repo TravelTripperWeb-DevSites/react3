@@ -15,7 +15,8 @@ export default ({
   extensions = [],
 }) => ({
   getRoutes: async (routes, state) => {
-    const { config, stage, debug, siteData } = state
+    const { config, stage, debug } = state;
+    console.log(state);
     location = location || nodePath.resolve('./_pages');
 
     // Make a glob extension to get all pages with the set extensions from the pages directory
@@ -43,8 +44,8 @@ export default ({
       // Turn each page into a route
       
       let promises = []
-      const defaultLocale = siteData.defaultLocale || 'en';
-      const locales = siteData.locales || [defaultLocale];
+      const defaultLocale = state.defaultLocale || 'en';
+      const locales = state.locales || [defaultLocale];
       for(let locale of locales) {
         for (let pagePath of pages) {
           promises.push(handlePage(pagePath, pathPrefix, location, createRoute, locale, defaultLocale))
@@ -111,11 +112,13 @@ const handlePage = async (pagePath, pathPrefix, location, createRoute, locale, d
   
   return await createRoute({
     path,
-    template: 'src/containers/Page',
+    template: `src/layouts/${page.layout}`,
     originalPath,
     getData: async () => ({
-      data: page.data, 
+      data: page.data,
+      regions: page.regions,
       content: page.content,
+      filePath: page.filePath,
       currentLocale: locale
     })
   })

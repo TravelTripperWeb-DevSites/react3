@@ -20,6 +20,8 @@ chokidar.watch('./_data').on('all', () => areRoutesBuilt  && rebuildRoutes())
 
 
 export default {
+  locales: ['en', 'es'],
+  defaultLocale: 'en',
   maxThreads: 1, // Remove this when you start doing any static generation
   devServer: {
   //   host: process.env.CONTAINER_IP || "http://localhost:3000/",
@@ -27,10 +29,12 @@ export default {
   },
   getSiteData: async (opts) => {
     const resources = await opts.loadResources();
+    //const models = await opts.loadModels();
     return {
       locales: ['en', 'es'],
       defaultLocale: 'en',
-      i18nResources: resources
+      i18nResources: resources,
+      //models
     }
   },  
   getRoutes: async (opts) => {    
@@ -52,17 +56,6 @@ export default {
     
     areRoutesBuilt = true;
     return [
-      {
-        path: '/',
-        template: "src/containers/DataPage.js",
-        getData: () => {
-          return {
-            title: "Home",
-            content: "Welcome!"
-          }
-        }
-        
-      },
       //...modelPages
     ]
     
