@@ -6,6 +6,8 @@ import nodePath from 'path'
 import LocalizableData from './LocalizableData';
 import { pathJoin } from 'react-static'
 
+import {parseHtml} from '../../src/pegs-web/pageParser.js';
+
 class FrontMatterPage {
   static async load(path, location, locale, defaultLocale) {
     let page = new FrontMatterPage(path, location, locale, defaultLocale);
@@ -52,9 +54,9 @@ class FrontMatterPage {
     if (!this._parsed[this.locale]) {
       this.parse();
     }
-    return this._content;    
+    return this._content;
   }
-  
+    
   get permalink() {
     return this.localizePermalink(this.data.permalink || this.filePath)
   }
@@ -117,7 +119,7 @@ class FrontMatterPage {
   
   async initialize() {
     this._rawContent = await fs.readFile(this._path, "utf8");
-    const regionsDir = nodePath.join(this._location, "../_data/_regions")
+    const regionsDir = nodePath.join(this._location, "../public/_data/_regions")
     const regionFolder = nodePath.join(this.locale, this.filePath);
     const regionFiles = await this.glob(nodePath.join(regionsDir, regionFolder,'*.json'))
     await this.loadRegionFiles(regionFiles)

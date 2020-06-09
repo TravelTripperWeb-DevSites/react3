@@ -1,8 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import { useSiteData } from 'react-static'
-import { parseHtml } from 'pegs-web';
+import { parseHtml } from '../pegs-web';
 
-import ModelInstances from '../../plugins/pegs-model-loader/ModelInstances';
 
 
 const SingleSlide = (slilderimages, idx, page) => {
@@ -66,6 +65,7 @@ const HomePageSlider = ({page}) => {
   
   let slides = [];
   let idx = 0;
+  console.log(sliderImages)
   for (let sliderImageId in sliderImages) {
     const sliderImage = sliderImages[sliderImageId]
     slides.push(SingleSlide(sliderImage, idx, page))

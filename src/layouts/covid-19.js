@@ -14,7 +14,7 @@ export default function Covid19Layout() {
   // get the post data
   const page = useRouteData();
   const t = useSiteTranslator(page.currentLocale);
-  
+  console.log(parsePage)
   return (
     <div>
       <Head>

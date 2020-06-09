@@ -15,7 +15,7 @@ import { rebuildRoutes } from 'react-static/node';
 import chokidar from 'chokidar'
 //
 let areRoutesBuilt = false;
-chokidar.watch('./_data').on('all', () => areRoutesBuilt  && rebuildRoutes())
+//chokidar.watch('./public/_data').on('all', () => areRoutesBuilt  && rebuildRoutes())
 //chokidar.watch('./_pages').on('all', () => areRoutesBuilt  && rebuildRoutes())
 
 
@@ -38,7 +38,7 @@ export default {
     }
   },  
   getRoutes: async (opts) => {    
-    let files = await glob("./_data/**/*.json")
+    let files = await glob("./public/_data/**/*.json")
     let models = [] //[mypost]
     for(let file of files) {
       let data = JSON.parse(await fs.readFile(file))
@@ -62,6 +62,7 @@ export default {
   },
   plugins: [
     ["pegs-locale-loader"],
+    ["pegs-model-loader"],
     ["pegs-page-loader"]
   ]
   

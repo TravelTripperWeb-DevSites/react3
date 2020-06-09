@@ -8,6 +8,11 @@ const plugins = [{
         hooks: {}
       },
 {
+        location: "__react_static_root__/plugins/pegs-model-loader",
+        plugins: [],
+        hooks: {}
+      },
+{
         location: "__react_static_root__/plugins/pegs-page-loader",
         plugins: [],
         hooks: {}

@@ -6,15 +6,97 @@ import { rebuildRoutes } from 'react-static/node'
 import fs from 'fs-extra';
 import YAML from 'yaml'
 
+import ModelInstance from './ModelInstance'
+
+
 
 export default ({
-  location
+  location,
+  createRoute = d => d,
 }) => ({
-  afterGetConfig: (config) => {
-    config.loadModels = loadModels
-    return config
+  beforePrepareRoutes: async (state) => {
+    const { stage, config } = state;
+    location = location || nodePath.resolve('./_data/_models/');
+    const modelsGlob = nodePath.join(location, '**', `*.json`)
+    const models = await glob(modelsGlob)
+    
+    const handle = (models) => {
+      // Turn each page into a route
+      
+      let promises = []
+      for (let modelPath of models) {
+        promises.push(generateModel(modelPath, location))
+      }
+      return Promise.all(promises)
+    }
+    
+    await handle(models)
+    
+    return state;
+  },
+  getRoutes: async (routes, state) => {
+    return routes
+    const { config, stage, debug } = state;
+    console.log(state);
+    location = location || nodePath.resolve('./_data/_models/');
+
+    // Make a glob extension to get all pages with the set extensions from the pages directory
+    // It should be a directory, not index.js inside that directory. This will
+    // happen when using .resolve in some instances
+    if (/index\.js$/.test(location)) {
+      location = nodePath.dirname(location)
+    }
+
+    // Make a glob extension to get all pages with the set extensions from the
+    // pages directory
+    const modelsGlob = nodePath.join(location, '**', `*.json`)
+
+    const handle = (models) => {
+      // Turn each page into a route
+      
+      let promises = []
+      for (let modelPath of models) {
+        promises.push(handleModel(modelPath, location, createRoute))
+      }
+      return Promise.all(promises)
+    }
+    
+    const models = await glob(modelsGlob)
+    const modelJsonRoutes = await handle(models)
+    console.log(modelJsonRoutes)
+    return [...routes, ...modelJsonRoutes]
   },
 })
+
+const handleModel = async (modelPath, location, createRoute) => {
+  const model = await ModelInstance.load(modelPath, location);
+  const originalPath = modelPath;
+  
+  // Glob path will always have unix style path, convert to windows if necessary
+  let path = model.permalink;
+  
+  return await createRoute({
+    path,
+    template: './plugins/pegs-model-loader/ModelPage',
+    originalPath,
+    getData: async () => ({
+      data: model.data
+    })
+  })
+}
+
+
+const generateModel = async(modelFile) => {
+  const dir = nodePath.resolve('./public/_models/')
+  const pathParts = modelFile.split('/');
+  const modelName = pathParts[pathParts.length-2]
+  
+  const modelInstanceName = nodePath.basename(modelFile, nodePath.extname(modelFile))
+  
+  await fs.mkdir(nodePath.join(dir, modelName), {recursive: true})
+  
+  await fs.copyFile(modelFile, nodePath.join(dir, modelName, `${modelInstanceName}.json`))
+}
 
 const loadModels = async () => {
   const location = nodePath.resolve('./_data/_models');

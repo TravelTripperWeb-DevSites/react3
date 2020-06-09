@@ -6,9 +6,10 @@ import RegionBlock from './components/RegionBlock';
 
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
-import { useSiteTranslator } from 'pegs-web';
+import { useSiteTranslator } from './siteTranslator';
 
-import * as customComponents from '../components';
+import * as customComponents from '../components/';
+
 
 const customComponentNames = Object.keys(customComponents).reduce((map, key) => {
   map[key.toString().toLowerCase()] = customComponents[key]
