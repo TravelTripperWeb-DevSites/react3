@@ -1,7 +1,6 @@
-import React, {useEffect, useState } from 'react';
+import React from 'react';
 import { useSiteData } from 'react-static'
-import { parseHtml } from '../pegs-web';
-
+import { parseHtml, useModel } from '../pegs-web';
 
 
 const SingleSlide = (slilderimages, idx, page) => {
@@ -54,20 +53,11 @@ const SingleSlide = (slilderimages, idx, page) => {
 
 
 const HomePageSlider = ({page}) => {
-  const models = page.models['homepage_slider']
-  
-  const [sliderImages, setSliderImages] = useState(models)
-  //const sliderImages = siteData.models['homepage_slider'] || {}
-  //{% assign slilder_images = site.data._models.homepage_slider  | sort : "sort_order" %}
-  
-  useEffect(() => {
-    console.log('use effect!')
-    //dynamic load if not present in page.models
-  }, [])
+  const [sliderImages, setSliderImages] = useModel(page, 'homepage_slider')
   
   let slides = [];
   let idx = 0;
-  console.log(sliderImages)
+
   for (let sliderImageId in sliderImages) {
     const sliderImage = sliderImages[sliderImageId]
     slides.push(SingleSlide(sliderImage, idx, page))

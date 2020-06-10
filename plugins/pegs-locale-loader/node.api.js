@@ -12,6 +12,7 @@ export default ({
 }) => ({
   afterGetConfig: (config) => {
     config.loadResources = loadResources
+    config.loadSiteData = loadSiteData
     return config
   },
   beforePrepareRoutes: async (state) => {
@@ -65,6 +66,59 @@ export default ({
   }
 })
 
+const loadSiteData = async () => {
+  return {
+    settings: await loadSettings(),
+    modelDefinitions: await loadDefinitions(),
+    //regionConfig: await loadRegionConfig()
+  }
+}
+
+const loadDefinitions = async () => {
+  const location = nodePath.resolve('./_data/_definitions');
+  const defFileGlob = nodePath.join(location, '*.json')
+  const defFiles = await glob(defFileGlob)
+  
+  let promises = []
+  //state.locales = []
+  let definitions = {}
+  for(let defFile of defFiles) {
+    const modelName = nodePath.basename(defFile, nodePath.extname(defFile))
+    promises.push(loadModelDefinition(defFile, modelName, definitions))
+  }
+  
+  await Promise.all(promises);
+  return definitions;
+}
+
+const loadModelDefinition = async(defFile, modelName, definitions) => {
+  const data = await fs.readJson(defFile)
+  definitions[modelName] = data
+}
+
+const loadSettings = async () => {
+  const location = nodePath.resolve('./_data');
+  const settingsFileGlob = nodePath.join(location, '*.{yml,yaml}')
+  const settingsFiles = await glob(settingsFileGlob)
+  
+  let promises = []
+  //state.locales = []
+  let settings = {}
+  for(let settingsFile of settingsFiles) {
+    const settingsKey = nodePath.basename(settingsFile, nodePath.extname(settingsFile))
+    promises.push(loadLocale(settingsFile, settingsKey, settings))
+  }
+  
+  await Promise.all(promises);
+  return settings;
+}
+
+const loadSetting = async(settingsFile, settingsKey, settings) => {
+  const contents = await fs.readFile(settingsFile, "utf8")
+  const settingsData = YAML.parse(contents);
+  settings[settingsKey] = settingsData
+}
+
 const loadResources = async () => {
   const location = nodePath.resolve('./_locales');
   const localesGlob = nodePath.join(location, '*.{yml,yaml}')
@@ -82,6 +136,8 @@ const loadResources = async () => {
   await Promise.all(promises);
   return resources;
 }
+
+
 
 const loadLocale = async (localeFile, locale, resources) => {
   const contents = await fs.readFile(localeFile, "utf8")

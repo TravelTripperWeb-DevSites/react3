@@ -29,11 +29,15 @@ export default {
   },
   getSiteData: async (opts) => {
     const resources = await opts.loadResources();
+    const {settings, modelDefinitions} = await opts.loadSiteData();
     //const models = await opts.loadModels();
     return {
       locales: ['en', 'es'],
       defaultLocale: 'en',
       i18nResources: resources,
+      settings,
+      //regionConfig
+      //modelDefinitions // Only include this if really needed to live-parse definisions
       //models
     }
   },  

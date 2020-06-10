@@ -5,7 +5,7 @@ import { useSiteTranslator, parsePage } from 'pegs-web';
 
 import i18next from 'i18next'
 
-
+import DefaultLayout from './default';
 
 
 
@@ -15,12 +15,13 @@ export default function Covid19Layout() {
   const page = useRouteData();
   const t = useSiteTranslator(page.currentLocale);
   console.log(parsePage)
+
   return (
-    <div>
+    <DefaultLayout>
       <Head>
-        <title>{page.data.title}</title>
+        <title>Override: {page.data.title}</title>
       </Head>
       {parsePage(page)}
-    </div>
+    </DefaultLayout>
   )
 }
