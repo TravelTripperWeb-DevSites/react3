@@ -8,7 +8,7 @@ import YAML from 'yaml'
 
 import ModelInstance from './ModelInstance'
 
-
+const PUBLIC_API_MODELS_DIR = nodePath.resolve('./public/api/models/')
 
 export default ({
   location,
@@ -32,7 +32,20 @@ export default ({
       return Promise.all(promises)
     }
     
+    //Remove public/api dir
+    await fs.remove(PUBLIC_API_MODELS_DIR)
     await handle(models)
+    
+    //Look through modelList types and generate index pages
+    let idxPromises = [];
+    for (let modelName in modelList) {
+      const allInstanceData = modelList[modelName]
+      const modelIdxPath = nodePath.join(PUBLIC_API_MODELS_DIR, `${modelName}.json`)
+      idxPromises.push(fs.writeJson(modelIdxPath, allInstanceData))
+    }
+    
+    await Promise.all(idxPromises);
+    
     state.models = modelList;
     return state;
   }
@@ -57,15 +70,15 @@ const handleModel = async (modelPath, location, createRoute) => {
 
 
 const generateModel = async(modelFile, modelList) => {
-  const dir = nodePath.resolve('./public/api/models/')
+  
   const pathParts = modelFile.split('/');
   const modelName = pathParts[pathParts.length-2]
   
   const modelInstanceName = nodePath.basename(modelFile, nodePath.extname(modelFile))
   
-  await fs.mkdir(nodePath.join(dir, modelName), {recursive: true})
+  await fs.mkdirp(nodePath.join(PUBLIC_API_MODELS_DIR, modelName))
   
-  await fs.copyFile(modelFile, nodePath.join(dir, modelName, `${modelInstanceName}.json`))
+  await fs.copyFile(modelFile, nodePath.join(PUBLIC_API_MODELS_DIR, modelName, `${modelInstanceName}.json`))
   
   const model = await ModelInstance.load(modelFile);
   modelList[model.modelName]=modelList[model.modelName] || {}
