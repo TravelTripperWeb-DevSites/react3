@@ -15,7 +15,7 @@ export default ({
   extensions = [],
 }) => ({
   getRoutes: async (routes, state) => {
-    const { config, stage, debug } = state;
+    const { config, stage, debug, models } = state;
     console.log(state);
     location = location || nodePath.resolve('./_pages');
 
@@ -48,7 +48,7 @@ export default ({
       const locales = state.locales || [defaultLocale];
       for(let locale of locales) {
         for (let pagePath of pages) {
-          promises.push(handlePage(pagePath, pathPrefix, location, createRoute, locale, defaultLocale))
+          promises.push(handlePage(pagePath, pathPrefix, location, createRoute, locale, defaultLocale, models))
         }
       }
       
@@ -88,7 +88,7 @@ export default ({
   },
 })
 
-const handlePage = async (pagePath, pathPrefix, location, createRoute, locale, defaultLocale) => {
+const handlePage = async (pagePath, pathPrefix, location, createRoute, locale, defaultLocale, models) => {
   const page = await FrontMatterPage.load(pagePath, location, locale, defaultLocale);
   const originalPath = pagePath;
   
@@ -114,15 +114,22 @@ const handlePage = async (pagePath, pathPrefix, location, createRoute, locale, d
     path,
     template: `src/layouts/${page.layout}`,
     originalPath,
-    getData: async () => ({
-      data: page.data,
-      regions: page.regions,
-      content: page.content,
-      filePath: page.filePath,
-      currentLocale: locale
-    })
+    getData: async () => {      
+      return {
+        data: page.data,
+        models: page.modelsNeeded.reduce((list,k) => {
+          list[k]=models[k]; 
+          return list;
+        }, {}),
+        regions: page.regions,
+        content: page.content,
+        filePath: page.filePath,
+        currentLocale: locale
+      }
+    }
   })
 }
+
 
 
 function glob(path, options = {}) {

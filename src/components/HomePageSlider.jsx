@@ -54,13 +54,15 @@ const SingleSlide = (slilderimages, idx, page) => {
 
 
 const HomePageSlider = ({page}) => {
-  const [sliderImages, setSliderImages] = useState({})
+  const models = page.models['homepage_slider']
+  
+  const [sliderImages, setSliderImages] = useState(models)
   //const sliderImages = siteData.models['homepage_slider'] || {}
   //{% assign slilder_images = site.data._models.homepage_slider  | sort : "sort_order" %}
   
   useEffect(() => {
     console.log('use effect!')
-    
+    //dynamic load if not present in page.models
   }, [])
   
   let slides = [];

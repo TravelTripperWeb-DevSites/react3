@@ -50,6 +50,10 @@ class FrontMatterPage {
     return this._data;
   }
   
+  get modelsNeeded() {
+    return (this.data.preLoadModels || [])
+  }
+  
   get content() {
     if (!this._parsed[this.locale]) {
       this.parse();

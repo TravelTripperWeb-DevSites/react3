@@ -20,52 +20,22 @@ export default ({
     const modelsGlob = nodePath.join(location, '**', `*.json`)
     const models = await glob(modelsGlob)
     
+    let modelList = {}
+    
     const handle = (models) => {
       // Turn each page into a route
       
       let promises = []
       for (let modelPath of models) {
-        promises.push(generateModel(modelPath, location))
+        promises.push(generateModel(modelPath, modelList))
       }
       return Promise.all(promises)
     }
     
     await handle(models)
-    
+    state.models = modelList;
     return state;
-  },
-  getRoutes: async (routes, state) => {
-    return routes
-    const { config, stage, debug } = state;
-    console.log(state);
-    location = location || nodePath.resolve('./_data/_models/');
-
-    // Make a glob extension to get all pages with the set extensions from the pages directory
-    // It should be a directory, not index.js inside that directory. This will
-    // happen when using .resolve in some instances
-    if (/index\.js$/.test(location)) {
-      location = nodePath.dirname(location)
-    }
-
-    // Make a glob extension to get all pages with the set extensions from the
-    // pages directory
-    const modelsGlob = nodePath.join(location, '**', `*.json`)
-
-    const handle = (models) => {
-      // Turn each page into a route
-      
-      let promises = []
-      for (let modelPath of models) {
-        promises.push(handleModel(modelPath, location, createRoute))
-      }
-      return Promise.all(promises)
-    }
-    
-    const models = await glob(modelsGlob)
-    const modelJsonRoutes = await handle(models)
-    console.log(modelJsonRoutes)
-    return [...routes, ...modelJsonRoutes]
-  },
+  }
 })
 
 const handleModel = async (modelPath, location, createRoute) => {
@@ -86,8 +56,8 @@ const handleModel = async (modelPath, location, createRoute) => {
 }
 
 
-const generateModel = async(modelFile) => {
-  const dir = nodePath.resolve('./public/_models/')
+const generateModel = async(modelFile, modelList) => {
+  const dir = nodePath.resolve('./public/api/models/')
   const pathParts = modelFile.split('/');
   const modelName = pathParts[pathParts.length-2]
   
@@ -96,6 +66,10 @@ const generateModel = async(modelFile) => {
   await fs.mkdir(nodePath.join(dir, modelName), {recursive: true})
   
   await fs.copyFile(modelFile, nodePath.join(dir, modelName, `${modelInstanceName}.json`))
+  
+  const model = await ModelInstance.load(modelFile);
+  modelList[model.modelName]=modelList[model.modelName] || {}
+  modelList[model.modelName][model.modelId] = model.data
 }
 
 const loadModels = async () => {
