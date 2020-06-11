@@ -131,17 +131,34 @@ const loadMenus = async (settings, state) => {
   return menus;
 }
 
+const hasUrl = (item) => {
+  return !!(item.url || item.url_localized)
+}
+
+const hasLabel = (item) =>  {
+  return !!(item.label || item.label_localized)
+}
+
 const processMenuPages = async (itemList, state) => {
   let location = location || nodePath.resolve('./');
   if (!itemList) { return };
   for(let item of itemList) {
-    if(item.page_id && !item.url) {
+    if(item.page_id && (!hasUrl(item) || !hasLabel(item))) {
       let pageGroup = state.pages[item.page_id] || state.pages[nodePath.relative(PAGES_LOCATION, item.page_id)]
       if (pageGroup) {
-        item.url_localized = {}
-        for(let locale in pageGroup) {
-          item.url_localized[locale] = pageGroup[locale].permalink
+        if (!hasUrl(item)) {
+          item.url_localized = {}
+          for(let locale in pageGroup) {
+            item.url_localized[locale] = pageGroup[locale].permalink
+          }          
         }
+        
+        if (!hasLabel(item)) {
+          item.label_localized = {}
+          for(let locale in pageGroup) {
+            item.label_localized[locale] = pageGroup[locale].navLabel
+          }          
+        }        
       }
     }
   }

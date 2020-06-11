@@ -14,9 +14,10 @@ main:
       es: Groupo
     items:
     - url: https://www.google.com
-      label: Google
+      label_localized:
+        en: Google
+        es: ES Google
       target: "_blank"
-
 
 footer:
   depth: 1

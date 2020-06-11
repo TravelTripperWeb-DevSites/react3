@@ -22,7 +22,6 @@ const RegionBlock = ({
   const regionPath = nodePath.join(page.currentLocale, page.filePath, fileName);
   
   const regionItems = page.regions[regionName]
-  console.log(page)
   let childContent = null;
   if (regionItems) {
     childContent = [];

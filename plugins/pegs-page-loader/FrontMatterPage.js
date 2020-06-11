@@ -49,6 +49,18 @@ class FrontMatterPage {
     return this._data;
   }
   
+  get title() {
+    return this.data.title;
+  }
+  
+  get name() {
+    return this.data.name || this.data.title
+  }
+  
+  get navLabel() {
+    return this.data.nav_label || this.name;
+  }
+  
   get modelsNeeded() {
     return (this.data.preLoadModels || [])
   }

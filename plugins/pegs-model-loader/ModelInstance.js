@@ -45,7 +45,11 @@ class ModelInstance {
   }
   
   get data() {
-    return this._data;
+    return {
+      ...this._data,
+      id: this.modelId,
+      modelDefinitionName: this.modelName
+    };
   }
   
   async initialize() {

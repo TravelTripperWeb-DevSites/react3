@@ -1,27 +1,19 @@
 import React from 'react'
-import { useRouteData, Head, useSiteData } from 'react-static'
-
-import { useSiteTranslator, parsePage } from 'pegs-web';
-
-import i18next from 'i18next'
-
-
-
-
+import { Head } from 'react-static'
+import { MenuNav, getLayoutContents } from 'pegs-web';
 
 // very similar to Post.js component
 export default function DefaultLayout({children}) {
   // get the post data
-  const page = useRouteData();
-  const contents = children || parsePage(page)
-  const t = useSiteTranslator(page.currentLocale);
+  
+  const {page, contents, t} = getLayoutContents(children);
   
   return (
     <div>
       <Head>
         <title>{page.data.title}</title>
       </Head>
-      <nav>a | b | c</nav>
+      <MenuNav page={page} menu="main" />
       {contents}
     </div>
   )

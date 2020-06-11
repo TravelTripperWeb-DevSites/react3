@@ -82,7 +82,7 @@ const generateModel = async(modelFile, modelList) => {
   
   const model = await ModelInstance.load(modelFile);
   modelList[model.modelName]=modelList[model.modelName] || {}
-  modelList[model.modelName][model.modelId] = model.data
+  modelList[model.modelName][model.modelId] = model
 }
 
 const loadModels = async () => {
@@ -109,6 +109,7 @@ const loadModel = async (modelFile, models) => {
   const modelInstanceName = nodePath.basename(modelFile, nodePath.extname(modelFile))
   const contents = await fs.readFile(modelFile, "utf8")
   const modelData = JSON.parse(contents);
+  modelData.id = modelInstanceName;
   models[modelName][modelInstanceName] = modelData;
 }
 

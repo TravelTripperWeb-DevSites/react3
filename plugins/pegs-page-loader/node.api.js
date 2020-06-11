@@ -90,20 +90,20 @@ const handlePage = async (page, createRoute, models, locale) => {
   
   let path = page.permalink;
   
-  // Cutoff the extension
-  path = nodePath.join(
-    nodePath.dirname(path),
-    nodePath.basename(path, nodePath.extname(path))
-  )
-  
-  // Ensure paths are unix
-  path = path.split(nodePath.sep).join(nodePath.posix.sep)
-
-  // Make sure it starts with a slash
-  path = path[0] === '/' ? path : `/${path}`
-
-  // Turn `/index` paths into roots`
-  path = path.replace(/\/index$/, '/')
+  // // Cutoff the extension
+  // path = nodePath.join(
+  //   nodePath.dirname(path),
+  //   nodePath.basename(path, nodePath.extname(path))
+  // )
+  //
+  // // Ensure paths are unix
+  // path = path.split(nodePath.sep).join(nodePath.posix.sep)
+  //
+  // // Make sure it starts with a slash
+  // path = path[0] === '/' ? path : `/${path}`
+  //
+  // // Turn `/index` paths into roots`
+  // path = path.replace(/\/index$/, '/')
 
   // Return the route
   return await createRoute({
@@ -112,9 +112,10 @@ const handlePage = async (page, createRoute, models, locale) => {
     originalPath,
     getData: async () => {      
       return {
+        permalink: path,
         data: page.data,
         models: page.modelsNeeded.reduce((list,k) => {
-          list[k]=models[k]; 
+          list[k]=models[k].data; 
           return list;
         }, {}),
         regions: page.regions,
