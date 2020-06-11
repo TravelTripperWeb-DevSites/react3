@@ -1,0 +1,41 @@
+---
+main:
+  depth: 2
+  name: Top Menu
+  items:
+  - page_id: _pages/index.html
+  - page_id: _pages/covid-19/index.html
+    label_localized:
+      en: About
+    items:
+  - folder: true
+    label_localized:
+      en: Group
+      es: Groupo
+    items:
+    - url: https://www.google.com
+      label: Google
+      target: "_blank"
+
+
+footer:
+  depth: 1
+  name: Footer Menu
+  items:
+  - page_id: _pages/global-privacy.html
+    label_localized:
+      en: Global Privacy
+    items:
+  - page_id: _pages/privacy.html
+    label_localized:
+      en: Policy
+    items:
+  - page_id: _pages/terms.html
+    label_localized:
+      en: Terms of Use
+    items:
+  - folder: false
+    target: ''
+    page_id: _pages/accessibility.html
+    label_localized:
+      en: Accessibility

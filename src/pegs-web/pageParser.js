@@ -43,6 +43,7 @@ export function transformNode(page, node, index) {
       const getDefaultChildren = () => node.children.map((n, index)=>transformNode(page, n, index))
       
       return <RegionBlock 
+        key={regionName}
         page={page}
         getDefaultChildren={getDefaultChildren} 
         regionName={regionName} 

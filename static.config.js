@@ -27,15 +27,15 @@ export default {
   //   host: process.env.CONTAINER_IP || "http://localhost:3000/",
   //   port: 3000
   },
-  getSiteData: async (opts) => {
-    const resources = await opts.loadResources();
-    const {settings, modelDefinitions} = await opts.loadSiteData();
+  getSiteData: async (state) => {
+    const {resources, pages, settings, modelDefinitions, menus} = await state.prepareData();
     //const models = await opts.loadModels();
     return {
       locales: ['en', 'es'],
       defaultLocale: 'en',
       i18nResources: resources,
       settings,
+      menus
       //regionConfig
       //modelDefinitions // Only include this if really needed to live-parse definisions
       //models

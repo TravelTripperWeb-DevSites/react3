@@ -16,7 +16,7 @@ export default ({
 }) => ({
   getRoutes: async (routes, state) => {
     const { config, stage, debug, models } = state;
-    console.log(state);
+    //console.log(state);
     location = location || nodePath.resolve('./_pages');
 
     // Make a glob extension to get all pages with the set extensions from the pages directory
@@ -40,15 +40,14 @@ export default ({
       console.log('Importing routes from directory...')
     }
 
-    const handle = (pages) => {
+    const handle = (pageMap) => {
       // Turn each page into a route
       
       let promises = []
-      const defaultLocale = state.defaultLocale || 'en';
-      const locales = state.locales || [defaultLocale];
-      for(let locale of locales) {
-        for (let pagePath of pages) {
-          promises.push(handlePage(pagePath, pathPrefix, location, createRoute, locale, defaultLocale, models))
+      for (let pageId in pageMap) {
+        for (let locale in pageMap[pageId]) {
+          const page = pageMap[pageId][locale]
+          promises.push(handlePage(page, createRoute, models, locale))
         }
       }
       
@@ -80,19 +79,15 @@ export default ({
         })
     }
 
-    
-    const pages = await glob(pagesGlob)
-    const directoryRoutes = await handle(pages)
-    console.log(directoryRoutes)
+    const directoryRoutes = await handle(state.pages)
+    //console.log(directoryRoutes)
     return [...routes, ...directoryRoutes]
   },
 })
 
-const handlePage = async (pagePath, pathPrefix, location, createRoute, locale, defaultLocale, models) => {
-  const page = await FrontMatterPage.load(pagePath, location, locale, defaultLocale);
-  const originalPath = pagePath;
+const handlePage = async (page, createRoute, models, locale) => {
+  const originalPath = page.filePath;
   
-  // Glob path will always have unix style path, convert to windows if necessary
   let path = page.permalink;
   
   // Cutoff the extension
@@ -100,16 +95,17 @@ const handlePage = async (pagePath, pathPrefix, location, createRoute, locale, d
     nodePath.dirname(path),
     nodePath.basename(path, nodePath.extname(path))
   )
+  
   // Ensure paths are unix
   path = path.split(nodePath.sep).join(nodePath.posix.sep)
+
   // Make sure it starts with a slash
   path = path[0] === '/' ? path : `/${path}`
+
   // Turn `/index` paths into roots`
   path = path.replace(/\/index$/, '/')
-  // Add the path prefix
-  path = pathPrefix ? pathJoin(pathPrefix, path) : path
+
   // Return the route
-  
   return await createRoute({
     path,
     template: `src/layouts/${page.layout}`,

@@ -4,7 +4,7 @@ import nodePath from 'path'
 import { parseHtml } from '../pageParser';
 
 const renderRegionItem = (page, regionType, regionName, regionItem) => {
-  if (regionType == 'text' || regionType == 'html') {
+  if (regionType == 'text' || regionType == 'html' || regionType == 'header') {
     return parseHtml(regionItem.content, page)
   }
 }
@@ -22,6 +22,7 @@ const RegionBlock = ({
   const regionPath = nodePath.join(page.currentLocale, page.filePath, fileName);
   
   const regionItems = page.regions[regionName]
+  console.log(page)
   let childContent = null;
   if (regionItems) {
     childContent = [];

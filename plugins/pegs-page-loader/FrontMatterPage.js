@@ -4,7 +4,6 @@ import nodeGlob from 'glob'
 import YAML from 'yaml'
 import nodePath from 'path'
 import LocalizableData from './LocalizableData';
-import { pathJoin } from 'react-static'
 
 import {parseHtml} from '../../src/pegs-web/pageParser.js';
 
@@ -82,7 +81,7 @@ class FrontMatterPage {
     if (this.locale == this.defaultLocale) {
       return path;
     } else {
-      return pathJoin(this.locale, path);
+      return nodePath.join('/', this.locale, path);
     }
   }
   
@@ -111,22 +110,50 @@ class FrontMatterPage {
     this._regionFiles[regionName]= JSON.parse(regionFileData).map(regionItem => LocalizableData.localize(regionItem, this.locale, this.defaultLocale));
     return;
   }
+
+  async loadDefaultRegionFile(regionFilePath) {
+    const regionName = nodePath.basename(regionFilePath, nodePath.extname(regionFilePath))
+    // Only load if not already present
+    if (!this._regionFiles[regionName]) {
+      const regionFileData = await fs.readFile(regionFilePath, "utf8");
+      this._regionFiles[regionName] = JSON.parse(regionFileData).map(regionItem => LocalizableData.localize(regionItem, this.locale, this.defaultLocale));
+    }
+    return;      
+    
+  }
+
   
-  loadRegionFiles(regionFiles) {
+  loadRegionFiles(regionFiles, defaultRegionFiles) {
     let promises = []
     this._regionFiles = {}
     for (let regionFilePath of regionFiles) {
       promises.push(this.loadRegionFile(regionFilePath))
-    }    
-    return Promise.all(promises)
+    }
+
+    return Promise.all(promises).then(()=> {
+      let defaultPromises = [];
+
+      if (defaultRegionFiles) {
+        for (let regionFilePath of defaultRegionFiles) {
+          defaultPromises.push(this.loadDefaultRegionFile(regionFilePath))
+        }              
+      }
+      return Promise.all(defaultPromises)
+    })
   }
   
   async initialize() {
     this._rawContent = await fs.readFile(this._path, "utf8");
-    const regionsDir = nodePath.join(this._location, "../public/_data/_regions")
+    const regionsDir = nodePath.join(this._location, "../_data/_regions")
     const regionFolder = nodePath.join(this.locale, this.filePath);
     const regionFiles = await this.glob(nodePath.join(regionsDir, regionFolder,'*.json'))
-    await this.loadRegionFiles(regionFiles)
+
+    let defaultRegionFolder, defaultRegionFiles = null;
+    if (this.locale != this.defaultLocale) {
+      defaultRegionFolder = nodePath.join(this.defaultLocale, this.filePath);      
+      defaultRegionFiles = await this.glob(nodePath.join(regionsDir, defaultRegionFolder,'*.json'))
+    }
+    await this.loadRegionFiles(regionFiles, defaultRegionFiles)
     
     return this;
   }
