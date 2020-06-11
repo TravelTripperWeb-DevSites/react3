@@ -1,16 +1,23 @@
 import React from 'react'
-import { Head } from 'react-static'
-import { parseHtml, getLayoutContents, RegionBlock, Link } from 'pegs-web';
+import { Head, useSiteData } from 'react-static'
+import { parseHtml, getLayoutContents, useModelInstance, RegionBlock, Link } from 'pegs-web';
 
 
 import {BlogExcerpt, BlogAside, SocialShare, FacebookComments} from 'components';
 import DefaultLayout from './default';
 
 
+
+
 // very similar to Post.js component
 export default function BlogSingleLayout({children}) {
   const {page, contents, t, T} = getLayoutContents(children);
+  const siteData = useSiteData();
+  console.log(siteData);
   const blog = page.data;
+  
+  const [category, setCategory] = useModelInstance(page, 'category', blog.category)
+  
   console.log(page)
  
   //TODO: process content to include navive ad component 
@@ -56,7 +63,7 @@ export default function BlogSingleLayout({children}) {
   <div className="container no-padding">
     <div className="page-banner blog-banner" style={{backgroundImage: `url('${ blog.blogimage.url }')`}}>
       <div className="graphic"><img src="/images/floating/stamp-1.png" alt="24 north stamp" /></div>
-      <h1 className="h2 page-title" tabindex="0">{ blog.title }}</h1>     
+      <h1 className="h2 page-title" tabIndex="0">{ blog.title }}</h1>     
     </div>
   </div>
 </section>
@@ -75,9 +82,9 @@ export default function BlogSingleLayout({children}) {
             <div className="blog-item">
               <div className="post-details">
                 <span className="date"> Posted on: {blog.date}</span> |
-                  { blog.category.title ?
+                  { category ?
                     <span className="category">
-                      <a href={`/blog/category/${ blog.category.url_friendly_name }`} title={blog.category.title}>{ blog.category.title }</a>
+                      <Link to={`/blog/category/${ category.url_friendly_name }`} title={category.title}>{ category.title }</Link>
                     </span>
                     :
                     ''
@@ -86,15 +93,30 @@ export default function BlogSingleLayout({children}) {
               <div className="post-image-holder"><img src={ blog.blogimage.url } alt={ blog.title } title={ blog.title } className="hero-img" />
               { blog.Image_caption }
               </div>
-              <div className="blog-description" tabindex="0">
+              <div className="blog-description" tabIndex="0">
                 {parseHtml(blog.more_content)}
               </div>
 
               <hr />
               <SocialShare />
               <hr />
-              (prev/next post nav)
-
+              <div className="pagination blog-detail-pagination">
+                { blog.previousBlog ?
+                  <a className="button-common btn-blue" href={blog.previousBlog.permalink} title="Prev Blog">
+                    <i className="fa fa-caret-left" aria-hidden="true"></i>
+                    Previous: {blog.previousBlog.title} </a>
+                  :
+                  ''
+                }
+                { blog.nextBlog ?
+                  <a className="button-common btn-blue" href={blog.nextBlog.permalink} title="Next Blog">Next: {blog.nextBlog.title}
+                    <i className="fa fa-caret-right" aria-hidden="true"></i>
+                  </a>
+                  :
+                  ''
+                }
+              </div>
+              <hr/>
               <div><Link to="/blogs/" className="button-common btn-blue" title="See all Blog Posts">See all Blog Posts<i className="fa fa-play"></i></Link></div>
             </div>
             <hr />

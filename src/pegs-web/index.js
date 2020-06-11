@@ -1,6 +1,6 @@
 import { useSiteTranslator } from './siteTranslator';
 import { parseHtml, parsePage, transformNode } from './pageParser';
-import { useModel } from './modelFunctions';
+import { useModel, useModelInstance } from './modelFunctions';
 import { getLayoutContents } from './layoutFunctions';
 import RegionBlock from './components/RegionBlock';
 import TBDComponent from './components/TBDComponent';
@@ -12,6 +12,7 @@ export {
   parsePage, 
   parseHtml,
   useModel,
+  useModelInstance,
   getLayoutContents,
   transformNode,
   RegionBlock,

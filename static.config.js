@@ -22,6 +22,9 @@ const makeModelRoutes = (state, modelName, items, pageGenerationOpts = null , pa
   let routes = []
   let locale = 'en'
   
+  state.siteData.modelLinks = state.siteData.modelLinks || {}
+  state.siteData.modelLinks[modelName] =   state.siteData.modelLinks[modelName] || {}
+  
   if (pageGenerationOpts) {
     const {
       rootPath,
@@ -31,8 +34,10 @@ const makeModelRoutes = (state, modelName, items, pageGenerationOpts = null , pa
     let modelUrlMethod = pageGenerationOpts.slugField || "url_friendly_name"
     
     routes = [...routes, ...items.map((item) => {
+
       const itemPath = path.join('/', rootPath, item[modelUrlMethod])
       item.permalink = itemPath
+      state.siteData.modelLinks[modelName][item.id] = itemPath;
       // Convert this "post" into a full page.
       const page = {
         currentLocale: locale,
@@ -151,7 +156,19 @@ export default {
       if (aDate > bDate) return -1;
       if (bDate > aDate) return 1;
       return 0;
-    }) 
+    })
+    filteredBlogs.forEach((blogData, index) => {
+      if (index > 0) {
+        blogData.nextBlog = {
+          title: filteredBlogs[index - 1].id
+        }
+      }
+      if (index < (filteredBlogs.length - 1)) {
+        blogData.previousBlog = {
+          title: filteredBlogs[index + 1].id      
+        }
+      }
+    })
     
     areRoutesBuilt = true;
     return [
