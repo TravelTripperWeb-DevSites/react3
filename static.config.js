@@ -84,6 +84,7 @@ const makeModelRoutes = (state, modelName, items, pageGenerationOpts = null , pa
           //filePath: page.filePath,
           currentLocale: locale,
           pagination: {
+            paginationOpts,
             currentPage: pageIndex,
             totalPages: totalPages
           }
@@ -146,7 +147,7 @@ export default {
       const now = new Date();
       const filterDate = new Date();
       filterDate.setFullYear(filterDate.getFullYear() - 1)
-      if (date < now && date >= filterDate) {
+      if (date < now) {
         filteredBlogs.push(blog);
       }
     }
@@ -176,7 +177,7 @@ export default {
         rootPath: '/blogs',     
         itemTemplate: 'src/layouts/blog-single'
       }, {
-        perPage: 5,
+        perPage: 4,
         rootPath: '/blogs',
         pagePrefix: 'page',
         pageTemplate: 'src/layouts/blog-list'

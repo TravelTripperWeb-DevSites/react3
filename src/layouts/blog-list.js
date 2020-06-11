@@ -23,7 +23,16 @@ export default function BlogListLayout({children}) {
     regions: []
   }
   
-  console.log(page, contents)
+  const {
+    paginationOpts,
+    currentPage,
+    totalPages
+  } = page.pagination;
+  
+  
+  let nextUrl = `${paginationOpts.rootPath}/${paginationOpts.pagePrefix}/${currentPage + 1}`
+  let prevUrl = `${paginationOpts.rootPath}/${paginationOpts.pagePrefix}/${currentPage - 1}`
+  
   
   return (<DefaultLayout>
 <section  data-spy="scroll" data-target=".scrollspy">
@@ -31,10 +40,10 @@ export default function BlogListLayout({children}) {
     <div className="page-banner blog-banner">
       <div>
         <RegionBlock regionName="blog_header" type="header" page={pageContext}>
-          <h1 className="page-title" tabindex="0">Blog</h1>
+          <h1 className="page-title" tabIndex="0">Blog</h1>
         </RegionBlock>
 
-        <div tabindex="0">
+        <div tabIndex="0">
           <RegionBlock regionName="blog_intro" type="text" page={pageContext}>
           <p>The island of Key West packs a lot of punch in its relatively small surface area. To keep tabs on Duval Street nightlife, seasonal seafood, event guides, watersport adventures and more, bookmark the 24 North Hotel Blog.</p>
           </RegionBlock>
@@ -61,17 +70,17 @@ export default function BlogListLayout({children}) {
           </div>
           <div className="pagination-wrapper">
             <div className="pagination">
-              <p><span className="page_number ">Page: { page.pageIndex } of { page.totalPages }</span></p>
+              <p><span className="page_number ">Page: { page.pagination.currentPage  } of { page.pagination.totalPages }</span></p>
               <ul className="pagination">
 
-                { (page.pageIndex > 0) ?
-                  <li><a href="#" className="button-common btn-blue"><i className="fa fa-caret-left" aria-hidden="true"></i> Previous</a></li> 
+                { (page.pagination.currentPage > 1) ?
+                  <li><a href={prevUrl} className="button-common btn-blue"><i className="fa fa-caret-left" aria-hidden="true"></i> Previous</a></li> 
                   : 
                   ''
                 }
                 
-                { (page.pageIndex < page.totalPages) ?
-                    <li><a href="#" className="button-common btn-blue">Next <i className="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                { (page.pagination.currentPage < page.pagination.totalPages) ?
+                    <li><a href={nextUrl} className="button-common btn-blue">Next <i className="fa fa-caret-right" aria-hidden="true"></i></a></li>
                   :
                   ''
                 }
