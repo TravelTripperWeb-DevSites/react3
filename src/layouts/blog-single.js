@@ -1,4 +1,5 @@
 import React from 'react'
+import nodePath from 'path'
 import { Head, useSiteData } from 'react-static'
 import { parseHtml, getLayoutContents, useModelInstance, RegionBlock, Link } from 'pegs-web';
 
@@ -19,6 +20,9 @@ export default function BlogSingleLayout({children}) {
   const [category, setCategory] = useModelInstance(page, 'category', blog.category)
   
   console.log(page)
+  
+  const urlPrefix = page.currentLocale == siteData.defaultLocale ? '/' : `/${page.currentLocale}`
+  const blogsUrl = nodePath.join(urlPrefix, 'blog')
  
   //TODO: process content to include navive ad component 
   // <!-- Append Native Ads into Blog content -->
@@ -117,7 +121,7 @@ export default function BlogSingleLayout({children}) {
                 }
               </div>
               <hr/>
-              <div><Link to="/blogs/" className="button-common btn-blue" title="See all Blog Posts">See all Blog Posts<i className="fa fa-play"></i></Link></div>
+              <div><Link to={blogsUrl} className="button-common btn-blue" title="See all Blog Posts">See all Blog Posts<i className="fa fa-play"></i></Link></div>
             </div>
             <hr />
             <h2>Share your opinion on this article</h2>

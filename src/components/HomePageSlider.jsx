@@ -11,7 +11,7 @@ const SingleSlide = (slilderimages, idx, page) => {
   }
   
   const rootStyle = {
-    backgroundImage: `url(${ slilderimages.slider_image.url })`,
+    backgroundImage: `url(${ slilderimages.slider_image ? slilderimages.slider_image.url : '' })`,
     backgroundSize: 'cover',
     backgroundPosition: "center" 
   }
@@ -54,6 +54,8 @@ const SingleSlide = (slilderimages, idx, page) => {
 
 const HomePageSlider = ({page}) => {
   const [sliderImages, setSliderImages] = useModel(page, 'homepage_slider')
+  
+  console.log(sliderImages);
   
   let slides = [];
   let idx = 0;

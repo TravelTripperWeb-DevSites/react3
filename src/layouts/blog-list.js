@@ -40,7 +40,7 @@ export default function BlogListLayout({children}) {
     <div className="page-banner blog-banner">
       <div>
         <RegionBlock regionName="blog_header" type="header" page={pageContext}>
-          <h1 className="page-title" tabIndex="0">Blog</h1>
+          <h1 className="page-title" tabIndex="0"><T>Hello World</T></h1>
         </RegionBlock>
 
         <div tabIndex="0">

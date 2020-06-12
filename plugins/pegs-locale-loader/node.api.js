@@ -1,8 +1,8 @@
 import nodePath from 'path'
 import glob from './glob'
+import { rebuildRoutes, rebuildSiteData } from 'react-static/node';
 import chokidar from 'chokidar'
 import { pathJoin } from 'react-static'
-import { rebuildRoutes } from 'react-static/node'
 import fs from 'fs-extra';
 import YAML from 'yaml'
 import FrontMatterPage from '../pegs-page-loader/FrontMatterPage';
@@ -25,72 +25,109 @@ export default ({
   createRoute = d => d,
 }) => ({
   afterGetConfig: (state) => {
-    state.prepareData = async () => {
+    state.prepareData = async (state) => {
+      console.log("Preparing CMS Data")
       const resources = await loadResources(state)
-      const models = await loadModels(state)
-      const pages = await loadPages(state)
+
+      await loadModels(state);
+      await loadPages(state);
+      
+      // Locale content, settings files, menus and (potentially) definitions
+      // are used in useSiteData hooks
+      
       const siteData = await loadSiteData(state)
       return {
         resources,
-        pages,
-        models,
         ...siteData
       }
     }
-    // state.loadResources = loadResources
-    // state.loadSiteData = async () => await loadSiteData(state)
-    // state.loadPages = async () => await loadPages(state)
     return state
+  },
+  beforePrepareRoutes: async (state) => {
+    // Page and model content get transformed to page-specific data durring routes creation
+    console.log("At before prep: " + state.models["blog"]["blog-2020-02-29-185239-38-special-to-play-key-west-31932-494"].data.title)
+    //await loadModels(state);
+    //await loadPages(state);
   },
   getRoutes: async (routes, state) => {
     let singleModelRoutes = [];
     let paginationRoutes = [];
+    console.log("Pegs Locale Loader getRoutes")
     for(let key in state.modelsToGenerate) {
       const {config, items} = state.modelsToGenerate[key];
       const paginate = config.paginate
       let itemGroup = [];
       let currentPage = 1;
       let totalPages = paginate ? Math.ceil(items.length / paginate.perPage) : null
-      for (let localizedItems of items) {
+      const lastIndex = items.length-1
+      items.forEach((localizedItems, index) => {
         let generatePage = false;
         if (paginate) {
           itemGroup.push(localizedItems)
-          if (itemGroup.length == paginate.perPage) {
+          if (itemGroup.length == paginate.perPage || index == lastIndex) {
             generatePage = true
           }
         }        
         
         for (let currentLocale in localizedItems) {
           const item = localizedItems[currentLocale]
+          
           const data = (config.getData ? config.getData({state, item, currentLocale, items}) : item)
           singleModelRoutes.push(createRoute({
-            path: item.permalink,
+            path: nodePath.join('/', item.permalink),
             template: config.template,
             getData: () => data,
           }))
           if (generatePage) {
             const paginationItems = itemGroup.map((localizedItem)=>localizedItem[currentLocale])
-            const permalink = paginate.pageUrl({state, currentPage, currentLocale, totalPages, paginate})
+            const permalink = nodePath.join('/', paginate.pageUrl({state, currentPage, currentLocale, totalPages, paginate}))
             const data = paginate.getData({state, items: paginationItems, currentLocale, currentPage, totalPages, paginate, permalink}) 
             paginationRoutes.push(createRoute({              
               path: permalink,
               template: paginate.template,
               getData: () => data             
             }))
-            generatePage = false;
-            currentPage += 1;
-            itemGroup = []
           }
         }
-        
-      }
+        if (generatePage) {
+          generatePage = false;
+          currentPage += 1;
+          itemGroup = []          
+        }        
+      })
       // Generate the last pagination page
       if (itemGroup.length > 0) {
         
       }
       
     }
-    console.log(paginationRoutes)
+    
+    if (state.stage == "dev") {
+      //
+      let areRoutesBuilt = false;
+      const watcher = chokidar.watch(['./_data', './_locales'], {
+        ignoreInitial: true
+      }).on('all', async (type, file) => {
+        const filename = nodePath.basename(file)
+        if (filename.startsWith('.')) {
+          return
+        }
+        
+        console.log(
+          `File ${type}: ${nodePath.relative(
+            state.config.paths.ROOT,
+            nodePath.resolve(filename)
+          )}`
+        )
+
+        // Stop watching while we process?
+        watcher.close()
+        
+        let latestState = await rebuildSiteData();
+        rebuildRoutes(latestState);
+      })
+    }
+    
     return [...routes, ...paginationRoutes, ...singleModelRoutes]
   }
   // beforePrepareRoutes: async (state) => {

@@ -110,12 +110,16 @@ const handlePage = async (page, createRoute, models, locale) => {
     path,
     template: `src/layouts/${page.layout}`,
     originalPath,
-    getData: async () => {      
+    getData: async () => {    
       return {
         permalink: path,
         data: page.data,
         models: page.modelsNeeded.reduce((list,k) => {
-          list[k]=models[k].data; 
+          const instances = models[k];
+          list[k] = {}
+          for(let id in instances) {
+            list[k][id] = instances[id].data;
+          }
           return list;
         }, {}),
         regions: page.regions,

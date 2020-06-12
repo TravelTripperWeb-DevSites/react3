@@ -25,8 +25,8 @@ import LocalizableData from '../pegs-page-loader/LocalizableData'
 export const PUBLIC_API_MODELS_DIR = nodePath.resolve('./public/api/models/')
 
 const generateModelPages = (state) => {
-  state.modelLinks = state.modelLinks || {}
-  state.modelsToGenerate = state.modelsToGenerate || {}
+  state.modelLinks = {}
+  state.modelsToGenerate = {}
 
   for(let key in state.config.modelGeneratorConfig) {
     console.log(`Setting up model generator for ${key}`)
@@ -56,14 +56,14 @@ const generateModelPages = (state) => {
       skip = true      
     }
     
-    state.modelLinks[key]       = state.modelLinks[key] || {};
-    state.modelsToGenerate[key] = state.modelsToGenerate[key] || {
-      items: [], 
-      config
-    }
-    
-    
     if (!skip) {
+      state.modelLinks[key]       = {};
+      state.modelsToGenerate[key] = {
+        items: [], 
+        config
+      }
+      
+      
       if (typeof config.select === 'function') {
         items = config.select({state, items});
       } 
@@ -78,8 +78,9 @@ const generateModelPages = (state) => {
         let itemLocales = {}
         for (let currentLocale of state.locales) {
           const itemData = LocalizableData.localize(item, currentLocale, state.defaultLocale)
-          const path = config.url({state, key, item, currentLocale});
+          const path = nodePath.join('/', config.url({state, key, item: itemData, currentLocale}));
           itemData.permalink = path;
+          
           state.modelLinks[key][item.id][currentLocale] = path;          
           itemLocales[currentLocale] = itemData;
         }     
@@ -102,11 +103,13 @@ const generateModel = async (modelFile, modelList) => {
   await fs.copyFile(modelFile, nodePath.join(PUBLIC_API_MODELS_DIR, modelName, `${modelInstanceName}.json`))
   
   const model = await ModelInstance.load(modelFile);
+
   modelList[model.modelName]=modelList[model.modelName] || {}
   modelList[model.modelName][model.id] = model
 }
 
 export default async function loadModels(state) {
+  console.log("loading models")
   const location = nodePath.resolve('./_data/_models/');
   const modelsGlob = nodePath.join(location, '**', `*.json`)
   const models = await glob(modelsGlob)
@@ -124,8 +127,14 @@ export default async function loadModels(state) {
   }
 
   //Remove public/api dir
+  
   await fs.remove(PUBLIC_API_MODELS_DIR)
   await handle(models)
+  
+  
+  
+  console.log("republished models API")
+
 
   //Look through modelList types and generate index pages
   let idxPromises = [];
@@ -136,10 +145,11 @@ export default async function loadModels(state) {
   }
 
   await Promise.all(idxPromises);
+  console.log("published models index API")
 
   state.models = modelList;
   generateModelPages(state);
-  
+  console.log("generated model pages")
   
   return modelList;
 }
