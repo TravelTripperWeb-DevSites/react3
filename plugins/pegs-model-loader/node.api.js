@@ -8,7 +8,7 @@ import YAML from 'yaml'
 
 import ModelInstance from './ModelInstance'
 
-const PUBLIC_API_MODELS_DIR = nodePath.resolve('./public/api/models/')
+
 
 export default ({
   location,
@@ -82,7 +82,7 @@ const generateModel = async(modelFile, modelList) => {
   
   const model = await ModelInstance.load(modelFile);
   modelList[model.modelName]=modelList[model.modelName] || {}
-  modelList[model.modelName][model.modelId] = model
+  modelList[model.modelName][model.id] = model
 }
 
 const loadModels = async () => {

@@ -36,18 +36,18 @@ class ModelInstance {
     let pathParts = this._path.split('/')
     return pathParts[pathParts.length - 2]
   }
-  get modelId() {
+  get id() {
     return nodePath.basename(this._path, nodePath.extname(this._path))
   }
   
   get permalink() {
-    return `/_data/_models/${this.modelName}/${this.modelId}`
+    return `/_data/_models/${this.modelName}/${this.id}`
   }
   
   get data() {
     return {
       ...this._data,
-      id: this.modelId,
+      id: this.id,
       modelDefinitionName: this.modelName
     };
   }

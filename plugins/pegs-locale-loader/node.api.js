@@ -1,11 +1,13 @@
 import nodePath from 'path'
+import glob from './glob'
 import chokidar from 'chokidar'
-import nodeGlob from 'glob'
 import { pathJoin } from 'react-static'
 import { rebuildRoutes } from 'react-static/node'
 import fs from 'fs-extra';
 import YAML from 'yaml'
 import FrontMatterPage from '../pegs-page-loader/FrontMatterPage';
+
+import loadModels from './loadModels';
 
 //Items to load (in order)
 // * locales
@@ -19,16 +21,19 @@ import FrontMatterPage from '../pegs-page-loader/FrontMatterPage';
 const PAGES_LOCATION = "_pages";
 
 export default ({
-  location
+  location,
+  createRoute = d => d,
 }) => ({
   afterGetConfig: (state) => {
     state.prepareData = async () => {
       const resources = await loadResources(state)
+      const models = await loadModels(state)
       const pages = await loadPages(state)
       const siteData = await loadSiteData(state)
       return {
         resources,
         pages,
+        models,
         ...siteData
       }
     }
@@ -37,6 +42,57 @@ export default ({
     // state.loadPages = async () => await loadPages(state)
     return state
   },
+  getRoutes: async (routes, state) => {
+    let singleModelRoutes = [];
+    let paginationRoutes = [];
+    for(let key in state.modelsToGenerate) {
+      const {config, items} = state.modelsToGenerate[key];
+      const paginate = config.paginate
+      let itemGroup = [];
+      let currentPage = 1;
+      let totalPages = paginate ? Math.ceil(items.length / paginate.perPage) : null
+      for (let localizedItems of items) {
+        let generatePage = false;
+        if (paginate) {
+          itemGroup.push(localizedItems)
+          if (itemGroup.length == paginate.perPage) {
+            generatePage = true
+          }
+        }        
+        
+        for (let currentLocale in localizedItems) {
+          const item = localizedItems[currentLocale]
+          const data = (config.getData ? config.getData({state, item, currentLocale, items}) : item)
+          singleModelRoutes.push(createRoute({
+            path: item.permalink,
+            template: config.template,
+            getData: () => data,
+          }))
+          if (generatePage) {
+            const paginationItems = itemGroup.map((localizedItem)=>localizedItem[currentLocale])
+            const permalink = paginate.pageUrl({state, currentPage, currentLocale, totalPages, paginate})
+            const data = paginate.getData({state, items: paginationItems, currentLocale, currentPage, totalPages, paginate, permalink}) 
+            paginationRoutes.push(createRoute({              
+              path: permalink,
+              template: paginate.template,
+              getData: () => data             
+            }))
+            generatePage = false;
+            currentPage += 1;
+            itemGroup = []
+          }
+        }
+        
+      }
+      // Generate the last pagination page
+      if (itemGroup.length > 0) {
+        
+      }
+      
+    }
+    console.log(paginationRoutes)
+    return [...routes, ...paginationRoutes, ...singleModelRoutes]
+  }
   // beforePrepareRoutes: async (state) => {
   //   const { stage, config } = state;
   //   location = location || nodePath.resolve('./_locales');
@@ -127,7 +183,6 @@ const loadMenus = async (settings, state) => {
       await processMenuPages(menus[menuId].items, state)
     }
   }
-  console.log(menus.main.items)
   return menus;
 }
 
@@ -230,13 +285,3 @@ const loadLocale = async (localeFile, locale, resources) => {
   resources[locale] = {'translation': localeData}
 }
 
-function glob(path, options = {}) {
-  return new Promise((resolve, reject) =>
-    nodeGlob(path, options, (err, files) => {
-      if (err) {
-        return reject(err)
-      }
-      resolve(files)
-    })
-  )
-}

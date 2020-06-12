@@ -1,6 +1,6 @@
 import React from 'react'
 import { Head } from 'react-static'
-import { getLayoutContents, RegionBlock } from 'pegs-web';
+import { getLayoutContents, RegionBlock, Link } from 'pegs-web';
 
 import {BlogExcerpt, BlogAside} from 'components';
 import DefaultLayout from './default';
@@ -30,8 +30,8 @@ export default function BlogListLayout({children}) {
   } = page.pagination;
   
   
-  let nextUrl = `${paginationOpts.rootPath}/${paginationOpts.pagePrefix}/${currentPage + 1}`
-  let prevUrl = `${paginationOpts.rootPath}/${paginationOpts.pagePrefix}/${currentPage - 1}`
+  let nextUrl = page.nextUrl
+  let prevUrl = page.previousUrl
   
   
   return (<DefaultLayout>
@@ -74,13 +74,13 @@ export default function BlogListLayout({children}) {
               <ul className="pagination">
 
                 { (page.pagination.currentPage > 1) ?
-                  <li><a href={prevUrl} className="button-common btn-blue"><i className="fa fa-caret-left" aria-hidden="true"></i> Previous</a></li> 
+                  <li><Link to={prevUrl} className="button-common btn-blue"><i className="fa fa-caret-left" aria-hidden="true"></i> Previous</Link></li> 
                   : 
                   ''
                 }
                 
                 { (page.pagination.currentPage < page.pagination.totalPages) ?
-                    <li><a href={nextUrl} className="button-common btn-blue">Next <i className="fa fa-caret-right" aria-hidden="true"></i></a></li>
+                    <li><Link to={nextUrl} className="button-common btn-blue">Next <i className="fa fa-caret-right" aria-hidden="true"></i></Link></li>
                   :
                   ''
                 }
