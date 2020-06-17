@@ -1,0 +1,70 @@
+.conversion-plus-banner {
+  .fallback-content {
+    display: none;
+  }
+}
+
+.ttweb-conversion-plus-banner {
+  font-family: $main-font-regular !important;
+  color: $white !important;
+  background-color: $bg-blue-3 !important;
+
+  .fallback-content {
+    display: block;
+    p {
+    	font-family: inherit;
+    	font-size: inherit;
+    	margin: 0;
+    	padding: 0;
+    }
+  }
+
+  .ttweb-booking-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-family: 'brandon_grotesquemedium';
+    font-size: 14px;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: transparent;
+    border: 2px solid $white;
+    transition: all .3s;
+
+    &:hover {
+      background-color: $bg-blue-2;
+      border-color: $bg-blue-2;
+    }
+  }
+
+  .ttweb-banner {
+    &__column {
+      margin: 0;
+    }
+
+    &__body {
+      padding: 15px;
+    }
+    &__ad-text {
+      font-size: 1.5em;
+    }
+    &__sample-rate {
+      .ttweb-cross-out-rate {
+        &__actual {
+          font-size: 1.4em;
+        }
+      }
+    }
+    &__sample-rate-details {
+      font-size: .8em;
+      margin-top: .2em;
+    }
+  }
+
+  .ttweb-cross-out-rate {
+    &__actual {
+      line-height: 1em;
+      color: $white !important;
+    }
+  }
+}

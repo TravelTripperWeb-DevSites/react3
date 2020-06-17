@@ -1,0 +1,49 @@
+
+.ttweb-booking-widget {
+  .ttweb-search-date-display {
+    &__date-display {
+      font-size: 16px;
+    }
+  }
+  &__footer__rate__cost {
+    font-size: 25px;
+    line-height:1em;
+    .ttweb-cross-out-rate {
+      &__crossout {
+        font-size: 15px;
+        margin-left:0;
+      }
+      &__actual {
+        font-size: 1em;
+      }
+    }
+  }
+  &__footer__rate__label {
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: 25px;
+    height:25px;
+    padding: 5px 10px 0;
+  }
+
+}
+
+
+.ttweb-calendar-month .ttweb-calendar-month__grid .ttweb-day--in-selection {
+  background-color: $tc-dark-blue;
+}
+
+.ttweb-booking-widget {
+  a {
+    &.ttweb-booking-widget__submit {
+      background-color: $tc-dark-blue;
+    }
+  }
+}
+
+
+
+
+.ttweb-slide-out-widget__header {
+  background-color: $tc-dark-blue;
+}

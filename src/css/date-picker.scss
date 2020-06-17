@@ -1,0 +1,58 @@
+
+/* ======================================================= DROP DOWN CALENDAR =====================================================  */
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  color: #333;
+}
+
+#ui-datepicker-div.ui-datepicker-multi {
+  border-radius: 0 0 0 0;
+    padding: 10px;
+    z-index: 2147483647 !important;
+
+}
+
+#ui-datepicker-div {
+    background: none repeat scroll 0 0 #FEFEFE;
+    border: 1px solid #EEEEEE;
+    border-radius: 0;
+    min-width: 300px;
+	  margin-left: -46px;
+    margin-top: 2px;
+    padding: 10px;
+    z-index: 2147483647 !important;
+}
+
+#ui-datepicker-div.ui-datepicker .ui-datepicker-next {
+    /*right: 0;*/
+}
+
+#ui-datepicker-div.ui-datepicker .ui-widget-header .ui-state-hover,
+#ui-datepicker-div.ui-datepicker .ui-state-focus,
+#ui-datepicker-div.ui-datepicker .ui-widget-header .ui-state-focus {
+    background-color: #fff;
+    cursor: pointer;
+    opacity: .8;
+}
+
+#ui-datepicker-div .ui-timepicker-div .ui-state-hover,
+#ui-datepicker-div .ui-timepicker-div .ui-widget-content .ui-state-hover,
+#ui-datepicker-div .ui-timepicker-div .ui-widget-header .ui-state-hover,
+#ui-datepicker-div .ui-timepicker-div .ui-state-focus,
+#ui-datepicker-div .ui-timepicker-div .ui-widget-content .ui-state-focus,
+#ui-datepicker-div .ui-timepicker-div .ui-widget-header .ui-state-focus {
+    border: none;
+    background: none repeat-x #ccc;
+    font-weight: bold;
+    color: #111111;
+}
+
+#ui-datepicker-div .ui-timepicker-div .ui-state-active,
+#ui-datepicker-div .ui-timepicker-div .ui-widget-content .ui-state-active,
+#ui-datepicker-div .ui-timepicker-div .ui-widget-header .ui-state-active {
+    border: none;
+    background: none repeat-x #ccc;
+    font-weight: bold;
+    color: #cc0000;
+}

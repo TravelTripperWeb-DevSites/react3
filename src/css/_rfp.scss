@@ -1,0 +1,263 @@
+
+/* Scss Document */
+
+.rfp {
+	&.meet{
+		.page-banner { padding:5% 0;
+	 &.rooms-banner {
+		background: url(//cdn.traveltripper.io/site-assets/359_384_15889/media/2018-05-16-061151/stamp-1.jpg) no-repeat center center;
+		background-size: cover;
+		}
+	}
+}
+ .page-banner { padding:5% 0;
+	 &.rooms-banner {
+		background: url(/images/rfp-banner.jpg) no-repeat center center;
+		background-size: cover;
+	}
+margin-bottom:0px;
+ .page-title {
+font-size:48px;
+padding:40px 0;
+position: relative;
+}
+}
+.desp {
+	font-family: "brandon_grotesquebold";
+	letter-spacing: 6px;
+	font-size: 14px;
+	text-transform: uppercase;
+	padding: 50px 0 30px;
+	text-align: center;
+}
+h2, .h2 {
+	padding-bottom: 40px;
+	padding-top: 50px;
+	margin: 0 !important;
+	text-align: center;
+	font-family: "brandon_grotesquelight";
+	font-size: 32px;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+ @media(min-width:$screen-xs-min) and (max-width:$screen-sm-max) {
+ padding-bottom:10px;
+ font-size:20px;
+ padding-top:35px;
+}
+ @media(min-width:$screen-xs-min) and (max-width:$screen-xs-max) {
+ padding-top:35px;
+}
+}
+.rfp-wrapper {
+	max-width: 570px;
+	margin: 0 auto 50px auto;
+ @media(max-width: 767px) {
+ margin: 0 auto 30px auto;
+ padding: 0 15px;
+}
+.contact-form {
+ .form-control {
+ border-color: #ececec;
+ border-radius: 0px;
+ border-width:2px;
+ height: 58px;
+ box-shadow: none;
+ color:#1f4552;
+ font-weight: 400;
+ letter-spacing: 1px;
+ font-size: 16px;
+ @media(max-width: 767px) {
+ height: 48px;
+ font-size: 14px;
+ font-weight: 400;
+}
+ &:focus {
+ box-shadow: none;
+ border-color: #1f4552;
+ &::-webkit-input-placeholder {
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+ &:-moz-placeholder { /* Firefox 18- */
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+ &::-moz-placeholder {  /* Firefox 19+ */
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+ &:-ms-input-placeholder {
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+}
+ &::-webkit-input-placeholder {
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+ &:-moz-placeholder { /* Firefox 18- */
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+ &::-moz-placeholder {  /* Firefox 19+ */
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+ &:-ms-input-placeholder {
+ text-transform: uppercase;
+ font-size:12px;
+font-style: normal;
+color: #d9d9d9;
+}
+}
+.btn {
+	font-family: '"brandon_grotesquemedium"';
+	border: 0px;
+	border-radius: 0px;
+	height: 50px;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	width: 170px;
+	-webkit-transition: all ease 0.5s;
+	-moz-transition: all ease 0.5s;
+	transition: all ease 0.5s;
+ @media(max-width: 767px) {
+ height: 48px;
+ width: 150px;
+ transition: all 0.3s;
+}
+ &.btn-default {
+ background-color: #1f4552;
+ color: #fff;
+}
+ &:hover {
+ background-color: #231f20;
+ color: #fff;
+ -webkit-transition: all ease 0.5s;
+ -moz-transition: all ease 0.5s;
+ transition: all ease 0.5s;
+}
+}
+textarea.form-control {
+	resize: none;
+	height: 200px;
+ @media(max-width: 767px) {
+ height: 100px;
+}
+ &.m-textarea {
+ height: 130px;
+ @media(max-width: 767px) {
+ height: 100px;
+}
+}
+}
+.checkbox {
+	padding: 0 0 25px 0;
+ @media(max-width: 767px) {
+ padding: 0 0 10px 0;
+}
+label {
+	font-family: 'brandon_grotesquelight';
+	font-size: 12px;
+	line-height: 22px;
+	letter-spacing: 1px;
+}
+}
+}
+.right-space {
+	padding-right: 8px;
+ @media(max-width: 767px) {
+ padding-right: 0px;
+}
+}
+.left-space {
+	padding-left: 8px;
+ @media(max-width: 767px) {
+ padding-left: 0px;
+}
+}
+.form-title {
+	text-align: center;
+}
+.two-fields-holder {
+	overflow: hidden;
+}
+.checkbox-inline {
+	font-family: '"brandon_grotesquelight"';
+	font-size: 12px;
+	line-height: 20px;
+	letter-spacing: 1px;
+}
+.checkbox-holder {
+	padding: 15px 0;
+	overflow: hidden;
+ .option-label { font-size:16px; padding-bottom:15px;
+ @media(max-width: 767px) {
+ padding-bottom: 15px;
+}
+}
+}
+}
+	.btn-lt-blue{
+		background-color: $tc-dark-blue;
+		display: inline-block;
+		font-size: 14px;
+		letter-spacing: 4px;
+		color: #ffffff;
+		padding: 15px 30px;
+		font-family: "brandon_grotesquebold";
+		text-transform: uppercase; border:0PX;
+		text-align: center;
+		-webkit-transition: all 0.2s;
+		transition: all 0.2s;
+		&:hover{background-color: #05506d;}
+	}
+}
+
+.ev-lawn-btn{
+	margin:30px auto 50px;
+	text-align:center;
+	p{
+		margin:40px 0 30px 0;
+		font-size:18px;
+	}
+}
+
+/*Meet In Key West*/
+.meetinkw{
+	.container{
+		max-width: 70%;
+
+		.meet-img{
+			    padding: 50px 0 30px;
+			img{
+				width:100%;
+			}
+		}
+	}
+}
+
+.contest{
+	text-align: center;
+	h4, .h4 {
+		margin: 15px 0;
+	}
+	h5, .h5 {
+		margin: 10px 0;
+	}
+}

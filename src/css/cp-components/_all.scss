@@ -1,0 +1,17 @@
+$cp-brand-font: "Brandon Grotesque";
+$cp-brand-color: #13556f;
+$cp-brand-inverse: white;
+
+$temp-banner-background: $cp-brand-color;
+$temp-banner-text: $cp-brand-inverse;
+
+$temp-banner-button-background: $cp-brand-inverse;
+$temp-banner-buttoner-text: $cp-brand-color;
+
+$message-background: $cp-brand-color;
+$message-button-text: $cp-brand-inverse;
+
+@import './banner';
+@import './booking-widget';
+@import './messages';
+@import './temp-banner';

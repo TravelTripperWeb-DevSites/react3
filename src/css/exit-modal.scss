@@ -1,0 +1,61 @@
+.exit-modal{
+	max-width: 320px;
+	.modal-dialog{
+		width: 100%;
+		.modal-header{
+			background-color: #eeeeee;
+		}
+		.modal-content{
+              border-radius: 0px;
+              .modal-body{
+              	padding: 0px;
+
+              	p, h1, h2, h3, h4, .h1, .h2, .h3, .h4{
+                  padding: 15px;
+                  text-align: center;
+              	}
+              }
+              .image-holder{
+              	min-height: 200px;
+              	width: 100%;
+              	background-color: #000;
+              	background-repeat: no-repeat;
+              	background-position: center center;
+              	background-size: cover;
+              	position: relative;
+              	.overlay-bg{
+              		position: absolute;
+              		top: 0px;
+              		left:0px;
+              		bottom: 0px;
+              		right: 0px;
+              		width: 100%;
+              		background-color: rgba(0,0,0,0.4);
+              	}
+              	.exit-detail{
+                      position: absolute;
+                      top: 50%;
+                      -webkit-transform: translateY(-50%);
+                      -ms-transform: translateY(-50%);
+                      transform: translateY(-50%);
+              	}
+              }
+		}
+	}
+	h2, .h2{
+		margin-right: 30px;
+		font-size: 2rem;
+	}
+
+	.btn-primary{
+		margin-top: 20px;
+		padding: 10px 8px;
+		margin-top: 0px;
+		color: #fff;
+		background-color: #004f67;
+		cursor: pointer;
+		border-radius: 0px;
+		border: 0px;
+		outline: 0;
+	}
+}

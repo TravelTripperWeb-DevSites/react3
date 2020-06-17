@@ -160,7 +160,8 @@ export default {
   },
   plugins: [
     ["pegs-locale-loader"],
-    ["pegs-page-loader"]
+    ["pegs-page-loader"],
+    ["react-static-plugin-sass"]
   ]
   
 }

@@ -67,7 +67,7 @@ export default function BlogSingleLayout({children}) {
   <div className="container no-padding">
     <div className="page-banner blog-banner" style={{backgroundImage: `url('${ blog.blogimage.url }')`}}>
       <div className="graphic"><img src="/images/floating/stamp-1.png" alt="24 north stamp" /></div>
-      <h1 className="h2 page-title" tabIndex="0">{ blog.title }}</h1>     
+      <h1 className="h2 page-title" tabIndex="0">{ blog.title }</h1>     
     </div>
   </div>
 </section>

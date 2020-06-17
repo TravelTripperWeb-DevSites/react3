@@ -1,0 +1,326 @@
+.room-details{
+	.more-spls{
+    position:relative;
+		.graphics{
+			position: absolute;
+			max-width: 1200px;
+			margin: 0 auto;
+			height: 18px;
+			top: -9px;
+			right: 0;
+			left: 0;
+			background-image: url(../images/floating/line-diagonal.png);
+			background-repeat: repeat-x;
+			background-position: center center;
+		}
+	}
+	.bt{ margin:60px 0;
+		@media (max-width: 767px){
+				 margin:20px 0;
+		}
+	 }
+	.align-center{ text-align:center;}
+	.p-b-25{ padding-bottom:25px;}
+	.p-b-80{ padding-bottom:80px;}
+	.p-t-35{ padding-top:35px;}
+	.p-l-0{ padding-left:0px !important;}
+	.rooms-banner{background: url(/images/rooms/room-details/room-details-banner.jpg) no-repeat center center;background-size: cover;}
+	.home-rooms-holder{ width:420px;position: absolute;z-index: 19;bottom: 70px;left: 70px;
+		@media (min-width: 768px) and (max-width:1024px){
+				bottom:20px; left:40px; width:320px;
+		}
+		@media (max-width: 767px){
+				 padding-bottom:30px;
+				 width:100%;
+         padding: 0 0 20px 0;
+				 position:relative; bottom:inherit; left:inherit;z-index: 0;
+		}
+		h3, .h3 { padding-top:35px; color:#333333;}
+		p{ color:#076286; font-size:32px; padding-bottom:15px;}
+		.btn-holder{ padding:0px;}
+	}
+  .room-img {
+    min-height: 400px;
+    background-size: cover;
+    @media (max-width: 767px){
+        min-height: 220px;
+    }
+    .badger{ position:absolute; bottom:-20px; right:10px;}
+  }
+	.details-intro{ padding:45px; background:#1f4552; color:#fff;
+		h2, .h2 {
+			font-size: 14px;
+			text-transform: uppercase;
+			font-family: "brandon_grotesquebold";
+			letter-spacing: 5px;
+			vertical-align:middle; padding-top:70px;padding-bottom: 30px;
+			@media (max-width: 767px){
+				 padding-top: 20px;
+         padding-bottom:20px;
+			}
+		}
+    ul {
+			&.include-list {
+				li {
+					max-width: 550px;
+					margin: 0 auto;
+					display: block;
+				}
+			}
+      padding-bottom: 30px;
+  		li {
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        padding: 5px 30px;
+        font-family: 'brandon_grotesquelight';
+        font-size: 18px;
+        line-height: 24px;
+        list-style: none;
+        @media (max-width: 480px) {
+          width: 100%;
+        }
+        &:before {
+          position: absolute;
+          top: .1em;
+          left: 0;
+          width: 10px;
+          height: 10px;
+          padding-right: 30px;
+          text-align: right;
+          content: '\2022';
+        }
+  		}
+    }
+}
+	.information{ padding:33px;
+		img{
+				@media (max-width: 767px){
+					 width:90%; height:90%;
+				}
+		}
+		p{font-family: 'brandon_grotesquelight'; font-size: 18px; line-height: 24px;
+			&.highlight{font-family: "brandon_grotesqueregular"; padding-bottom:25px;}
+			span{ padding:0 15px;}
+		}
+		.lst{
+			li{ list-style:none; font-family: 'brandon_grotesquelight'; font-size: 18px; line-height: 24px;position: relative;padding-left: 32px;
+				&:before{content: '\2022'; padding-right:30px; text-align:right;width:10px;width: 10px;position: absolute;left: 0;top: -0.2em;}
+			}
+		}
+	}
+	.home-specials-item2{
+		background-color: #ffffff;
+		color: #333333;
+		text-align: center;
+		margin: 0 15px;
+		position: relative;
+		img{ width:100%;}
+	}
+	.cta-theme{
+		background-image: url(/images/rooms/room-details/banner-2.jpg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover; padding: 180px 0;
+	}
+	.stamp{ width:150px; height:150px; position:absolute;bottom: 88px;left: -8px;
+			img{ width:100%;}
+			@media (max-width: 767px){
+					 width:80px; height:80px; left:0px; bottom:53px;
+			}
+	}
+	.stamp-blue{ width:200px; position:absolute;bottom: 58px;left: -55px;
+			img{ width:100%;}
+			@media (max-width: 767px){
+					 width:120px; left:-30px; bottom:15px;
+			}
+	}
+	.room-details-carousel {
+    position:relative;
+    margin-bottom:45px;
+		@media (max-width: 767px){
+			margin-bottom:20px;
+		}
+    .carousel-indicators {
+      li {
+        width: 7px;
+        height: 7px;
+        background-color: #fff;
+        border: 0;
+        border-radius: 7px;
+        &.active {
+          width: 10px;
+          height: 10px;
+          margin-top: 12px;
+          background-color: transparent;
+          border: 2px solid #fff;
+          border-radius: 10px;
+        }
+      }
+    }
+	}
+	.details-intro{
+				&.style2{
+					text-align:center; padding:30px 8%; position:relative;
+					.holds{max-width:80%; margin:0 auto;
+						@media (max-width: 767px){
+							 max-width:90%;
+						}
+						.badger{ position:absolute; bottom:20px; right:0px;}
+						h2, .h2{ text-align:center; padding-top:36px; padding-right:20px;
+							@media (max-width: 992px){
+							 padding-top:20px;
+							}
+						}
+						p{ font-family: 'brandon_grotesquelight';font-size: 16px;line-height: 24px; text-align:left;  margin:0 auto 20px;}
+
+						ul{ text-align:left; margin:0px 0 10px;
+							li{ text-align:left; list-style:none; position:relative; padding-left:30px;font-family: 'brandon_grotesquelight';
+
+								&:before{
+									content: '\2022';
+									padding-right: 30px;
+									text-align: right;
+									width: 10px;
+									width: 10px;
+									position: absolute;
+									left: 0;
+									top: 0.1em;
+								}
+							  }
+						}
+            &.special-include {
+              @media (max-width: 767px) {
+                margin: 0 0 120px;
+              }
+            }
+					}
+				}
+		}
+	&.special-details{
+
+		.home-rooms-holder{ position:relative; bottom:inherit; left:inherit;}
+		.specials-banner{background: url(/images/specials/special-details/special-details-banner.jpg) no-repeat center -20px;background-size: cover;}
+		.tripadvisor-banner{background: url(/images/partners/partners-banner.jpg) no-repeat;background-size: cover;background-position: bottom center;}
+		.locals-banner{background: url(https://cdn.traveltripper.io/site-assets/359_384_5149/media/2017-08-29-022239/Sunset-Green-Rendering.jpg) no-repeat center -20px;background-size: cover;}
+		.spcl-lstng{ text-align:center;
+			    &.lp-list{
+						p{
+							padding-top: 0;
+						}
+					}
+				h2, .h2 {
+					font-size: 14px;
+					text-transform: uppercase;
+					letter-spacing: 5px;
+					padding-top:25px;
+				}
+				h3, .h3 {
+					padding: 35px 0 56px;
+					color: #333333;
+					font-size: 32px;
+					text-transform: uppercase;
+					letter-spacing: 6px;
+					line-height: 40px;
+					@media (max-width: 767px){
+							padding: 25px 0;
+					}
+          @media (max-width: 1280px){
+							font-size: 22px;
+              line-height: 34px;
+					}
+				}
+				p{
+					color: #333333;
+					font-size: 18px;
+					line-height: 24px;
+					padding-top:47px;
+					@media (max-width: 767px){
+							padding-bottom:20px; padding-top:20px;
+					}
+				}
+				.booknow{ margin-bottom:23px;
+					a{
+						background-color: #076286;
+						display: inline-block;
+						font-size: 14px;
+						letter-spacing: 2px;
+						color: #ffffff;
+						padding: 12px 26px;
+						text-align: center;
+						text-transform:uppercase;
+						-webkit-transition: all 0.2s;
+						transition: all 0.2s;
+						text-shadow: none;
+						&:hover{background-color: #05506d;}
+					}
+				}
+			}
+
+		.lifestyle{ padding-bottom:50px;
+			background: #fbf8ef;
+			h3, .h3{
+			    font-size: 14px;
+				text-transform: uppercase;
+				font-family: "brandon_grotesquebold";
+				letter-spacing: 5px;
+				padding: 66px 0 35px;
+				text-align:center;
+
+			}
+			p{  color: #333333;
+				font-family: 'brandon_grotesquelight';
+				font-size: 18px;
+				line-height: 24px;
+				padding:0 16% 10px;
+				text-align:left;
+				margin-bottom: 15px;
+				@media (max-width: 768px){
+					 padding:0 20px 10px;
+				}
+			}
+
+			.container {
+				&.about {
+					max-width: 800px;
+				}
+			}
+		}
+	}
+	&.event-details{
+
+		.hidden-sm-down{
+			@media (max-width: 767px){
+					 display:none;
+				}
+		}
+		.room-details-carousel{ margin-bottom: 0px;}
+		.information{ padding:50px 0; max-width:1000px; margin:0 auto;}
+		.m-b-20{ margin-bottom:20px;}
+		.m-t-30{ margin-top:30px;}
+		.p-t-20{ padding-top:20px;}
+		.event-heading{
+			background: #1f4552;	 color:#fff;
+			.spcl-lstng{
+				margin-top: calc(50% - 30px);
+				@media (max-width: 948px){
+					 margin-top:30px;
+				}
+				h3, .h3{ color:#fff; padding-top:0px;}
+				h2, .h2{ padding-top:50px; padding-bottom:30px;
+					@media (max-width: 948px){
+					 padding-top:30px;
+					}
+				}
+				.btn-blue{ color:#fff; border-color:#fff;}
+				p{ color:#fff;}
+			}
+		}
+		#details{
+			.information{
+				img{ width:100%;}
+			}
+		}
+
+	}
+}

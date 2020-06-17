@@ -1,0 +1,194 @@
+body{
+	background-color: #fff;
+}
+
+$primary_color: #004f67;
+$secondary_color: #009ddd;
+$overlay_text_color: #ffffff;
+$white: #eeeeee;
+$black: #000000;
+$font-fam: "Lato-Light",Helvetica,Arial,sans-serif;
+$font-reg: "Lato-Regular";
+
+.rt-guest-widget{
+	&.pop_offer{
+		position: fixed;
+		left: 20px;
+		right: auto;
+		top: auto;
+		bottom: 30px;
+		max-width: 300px;
+		width: 100%;
+		background-color: $tc-dark-blue;
+		border-radius: 5px 5px 0px 0px;
+		color: $tc-white;
+		-webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 9px rgba(0,0,0,0.2);
+	  border: 1px solid rgba(0,0,0,0.2);
+	  background-clip: padding-box;
+    font-family: $main-font-light;
+    outline: 0;
+    z-index: 999;
+		.rt-widget-header{
+			position: relative;
+			h3, .h3{
+				padding: 12px 30px 12px 20px;
+				margin: 0px;
+				text-transform: uppercase;
+        font-size: 15px;
+        font-family: $main-font-light;
+        letter-spacing: 0.7px;
+				text-align: center;
+			}
+		}
+		.popup-detail-offer{
+			padding: 20px;
+			background-color: #ffffff;
+		}
+		.body_content{
+			background-color: $black;
+			width: 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			position: relative;
+			min-height: 190px;
+
+			.rt-overlay_widget{
+               position: absolute;
+               top: 0;
+               bottom: 0;
+               left: 0;
+               right: 0;
+               width: 100%;
+               height: 100%;
+               background-color: rgba($black, 0.5);
+               color: $overlay_text_color;
+                .popup_detail{
+                   	position: absolute;
+                   	width: 100%;
+               	    top: 50%;
+               	    -webkit-transform: translateY(-50%);
+               	    -ms-transform: translateY(-50%);
+               	    transform: translateY(-50%);
+               	    text-align: center;
+               	    padding: 20px;
+               	    font-size: 1.9rem;
+               	    a{
+               	    	text-decoration: none;
+               	    	color: $white;
+                      font-family: $font-fam;
+               	    }
+                }
+			}
+
+		}
+		.widget-booknow-link{
+			background-color: $primary_color;
+			color: $overlay_text_color;
+			text-transform: uppercase;
+			padding: 12px 20px;
+			text-align: center;
+      letter-spacing: 4px;
+			display: block;
+			text-decoration: none;
+			transition: all 0.3s ease;
+      font-family: $main-font-light;
+      font-size: 13px;
+			&:hover{
+               background-color: $secondary_color;
+			}
+		}
+		.widget_popup_close{
+            position:  absolute;
+            right: -5px;
+            top: 10px;
+            width: 30px;
+            height: 30px;
+            color: $tc-white;
+            cursor: pointer;
+            font-size: 20px;
+		}
+	}
+    &.open-offer-popup{
+    	width: 50px;
+    	height: 40px;
+    	background-color: $primary_color;
+    	color: $white;
+    	position: fixed;
+    	left: -60px;
+    	bottom: 40px;
+    	transition: all 0.5s ease;
+    	cursor: pointer;
+    	border-radius: 0px 5px 5px 0px;
+      z-index: 998;
+    	span{
+    		height: 40px;
+    		line-height: 40px;
+    		float: right;
+    		padding-right: 10px;
+    		font-size: 1.5rem;
+    		font-weight: bold;
+    	}
+    	&.active-open{
+    		left: -10px;
+    	}
+    }
+    //wwidget notification bars
+    &.rt-notificatins-widget{
+         position: absolute;
+         right: 20px;
+         bottom: 20px;
+         width:220px;
+         z-index: 999;
+         .notify{
+            background-color: $primary_color;
+            color: $white;
+            padding: 5px;
+            position: relative;
+            .notify-icon{
+              width: 30px;
+              display: inline-block;
+              line-height: 30px;
+              text-align: center;
+              vertical-align: top;
+            }
+            .notify-text{
+             width: 140px;
+             display: inline-block;
+             padding:0px 20px 0px 0px;
+            }
+            .notify-close{
+              position: absolute;
+              top: 6px;
+              right:10px;
+            }
+
+            &.animate{
+                  transition: all .5s ease;
+                  opacity: 0;
+            }
+            &.animateready{
+                        -webkit-animation: move .5s ease-in;
+                        animation: move .5s ease-in;
+            }
+
+            &._left{
+                      padding: 5px;
+                      margin-top:10px;
+                      height: 40px;
+                      display: block;
+                      position: relative;
+
+            }
+         }
+
+
+    }
+}
+
+
+@-webkit-keyframes move {
+   0% {margin-bottom: 35px}
+   100% {margin-bottom: 10px}
+}

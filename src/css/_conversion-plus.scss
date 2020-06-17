@@ -1,0 +1,31 @@
+.ttweb-ota-rate-table {
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3px 0 !important;
+    text-align: center;
+  }
+  &__label {
+    flex: none !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+  }
+}
+
+@import './cp-components/all';
+
+// Booking widget css
+
+
+@media (min-width: 1200px) {
+  @media all and (-ms-high-contrast:none) {
+     *::-ms-backdrop, :last-child.ttweb-ota-rate-table__row {
+       padding-right: 20px;
+      } /* IE11 */
+   }
+}
+
+
+

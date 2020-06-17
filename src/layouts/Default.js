@@ -1,5 +1,6 @@
 import React from 'react'
 import { Head } from 'react-static'
+import { Header, TopBanner } from 'components'
 import { MenuNav, getLayoutContents } from 'pegs-web';
 
 // very similar to Post.js component
@@ -13,8 +14,14 @@ export default function DefaultLayout({children}) {
       <Head>
         <title>{page.data.title}</title>
       </Head>
+      <div id="fb-root"></div>
+      <Header />
+      <TopBanner />
       <MenuNav page={page} menu="main" />
-      {contents}
+      <div id="main">
+        {contents}
+      </div>
+      <Footer />      
     </div>
   )
 }
