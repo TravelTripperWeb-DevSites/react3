@@ -78,7 +78,7 @@ const generateModelPages = (state) => {
         let itemLocales = {}
         for (let currentLocale of state.locales) {
           const itemData = LocalizableData.localize(item, currentLocale, state.defaultLocale)
-          const path = nodePath.join('/', config.url({state, key, item: itemData, currentLocale}));
+          const path = nodePath.join('/', config.url({state, key, item: itemData, currentLocale, defaultLocale: state.config.defaultLocale}));
           itemData.permalink = path;
           
           state.modelLinks[key][item.id][currentLocale] = path;          

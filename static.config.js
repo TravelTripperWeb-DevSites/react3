@@ -11,6 +11,8 @@ import axios from 'axios';
 import glob from 'glob-promise';
 import fs from 'fs-extra';
 
+import Category from './src/modelClasses/category'
+import LocalizableData from './plugins/pegs-page-loader/LocalizableData'
 
 export default {
   locales: ['en', 'es'],
@@ -19,12 +21,13 @@ export default {
   modelGeneratorConfig: {
     blog: {
       model: "blog",
-      url: ({state, key, item, currentLocale}) => {
+      url: ({state, key, item, currentLocale, siteData}) => {
         const locale = currentLocale == state.config.defaultLocale ? '/' : currentLocale
-        return nodePath.join(locale, '/blog', item.url_friendly_name)
+        return nodePath.join('/', locale, '/blog', item.url_friendly_name)
       },
       template: 'src/layouts/blog-single',
       getData: ({state, item, currentLocale, allItems}) => {
+        // Include category ref
         const page = {
           currentLocale: currentLocale,
           data: item
@@ -40,7 +43,7 @@ export default {
           const now = new Date();
           const filterDate = new Date();
           filterDate.setFullYear(filterDate.getFullYear() - 1)
-          if (date < now && date >= filterDate) {
+          if (date < now) { //} && date >= filterDate) {
             filteredBlogs.push(blog);
           }
         }
@@ -72,12 +75,20 @@ export default {
         pageUrl: ({state, currentPage, currentLocale, totalPages, paginate}) => {
           let locale = currentLocale == state.config.defaultLocale ? '/' : currentLocale
           if (currentPage == 1) {
-            return nodePath.join(locale, '/blog')                         
+            return nodePath.join('/', locale, '/blog')                         
           } else {
-            return nodePath.join(locale, '/blog', `page${currentPage}`)             
+            return nodePath.join('/', locale, '/blog', `page${currentPage}`)             
           }
         },
         getData: ({state, items, currentLocale, currentPage, totalPages, permalink, paginate}) =>  {
+          for(let item of items) {
+            try {
+              item.category = LocalizableData.localize(state.models['category'][item.category].data    , currentLocale, state.defaultLocale)    
+            } catch(err) {
+              console.error(err)
+              console.log(`Could not find category ${item.category} for blog ${item.id}`)
+            }
+          }
           let previousUrl, nextUrl = null;
           if (currentPage > 1)
             previousUrl = paginate.pageUrl({state, currentPage: currentPage - 1, currentLocale})
@@ -131,7 +142,7 @@ export default {
     return {
       locales: state.locales,
       defaultLocale: state.config.defaultLocale,
-      //? modelLinks: state.modelLinks,
+      modelLinks: state.modelLinks,
       i18nResources: resources,
       settings,
       menus,

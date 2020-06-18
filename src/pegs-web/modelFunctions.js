@@ -38,9 +38,9 @@ export const useModel = (page, modelName) => {
   return [modelInstances, setModelInstances]  
 }
 
-export const useModelInstance = (page, modelName, modelInstanceId) => {
+export const useModelInstance = (page, modelName, modelInstanceId, defaultModelInstnace) => {
   const models = page.models ? page.models[modelName] : null
-  let model = models ? models[modelInstanceId] : null
+  let model = defaultModelInstnace || (models ? models[modelInstanceId] : null)
   const [modelInstance, setModelInstance] = useState(model);
   
   useEffect(() => {

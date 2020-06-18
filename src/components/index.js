@@ -1,20 +1,20 @@
 import React from 'react';
-import TBDComponent from '../pegs-web/components/TBDComponent';
+import { makeTBDComponent } from '../pegs-web/components/TBDComponent';
 import HomePageSlider from './HomePageSlider';
 import BlogExcerpt from './BlogExcerpt';
 
-const Header = TBDComponent;
-const TopBanner = TBDComponent;
+const Header = makeTBDComponent("Header");
+const TopBanner = makeTBDComponent("TopBanner");
 
 
-const SpecialOffers = TBDComponent;
-const Grid = TBDComponent;
-const Location = TBDComponent;
-const BlogAside = TBDComponent;
-const SocialShare = TBDComponent;
-const Footer = TBDComponent;
+const SpecialOffers = makeTBDComponent("SpecialOffers");
+const Grid = makeTBDComponent("Grid");
+const Location = makeTBDComponent("Location");
+const BlogAside = makeTBDComponent("BlogAside");
+const SocialShare = makeTBDComponent("SocialShare");
+const Footer = makeTBDComponent("Footer");
 
-const FacebookComments = TBDComponent
+const FacebookComments = makeTBDComponent("FacebookComments")
 // <div className="fb-comments" expr:href='data:post.url' data-numposts="5"></div>
 
 export {

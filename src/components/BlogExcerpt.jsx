@@ -1,12 +1,20 @@
 import React from 'react'
-import { parseHtml, Link } from '../pegs-web';
+import { useSiteData } from 'react-static'
+import { parseHtml, Link, useModelInstance } from '../pegs-web';
 
+import Category from '../modelClasses/category'
 
 const BlogExcerpt = (props) => {
   const post = props.blog;
   console.log(post)
-  
+  const siteData = useSiteData();
   const url = post.permalink
+  const [category, setCategory] = useModelInstance(props.page, 'category', post.category.id, post.category)
+  console.log(category)
+  const categoryUrl = new Category(category).url
+  console.log(categoryUrl)
+  
+  
   const d = post.date; //{% assign d = post.date | date: "%-d" %} {{ post.date | date: "%B" }}
   //{% case d %}{% when "1" or "21" or "31" %}{{ d }}st{% when "2" or "22" %}{{ d }}nd{% when "3" or "23" %}{{ d }}rd{% else %}{{ d }}th{% endcase %}
   //  , {{ post.date | date: "%Y" }}
@@ -22,7 +30,7 @@ const BlogExcerpt = (props) => {
 
             <div className="post-details">
               <span className="date" tabIndex="0"> Posted on: {d}
-               </span> | <span className="category" aria-label={`${post.category.title} Category`}><a href={`/blog/category/${post.category.url_friendly_name}`}>{post.category.title}</a></span>
+               </span> | <span className="category" aria-label={`${post.category.title} Category`}><a href={categoryUrl}>{category.title}</a></span>
             </div>
             { post.short_description ?
               <div tabIndex="0">

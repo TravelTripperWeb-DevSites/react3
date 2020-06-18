@@ -14,7 +14,7 @@ export default function BlogListLayout({children}) {
   
   let posts = []
   page.data.forEach((blog, index) => {
-    posts.push(<BlogExcerpt key={`blog-post-${index}`} blog={blog} />)
+    posts.push(<BlogExcerpt key={`blog-post-${index}`} blog={blog} page={page}/>)
   })
   
   const pageContext = {

@@ -19,7 +19,6 @@ export default function BlogSingleLayout({children}) {
   
   const [category, setCategory] = useModelInstance(page, 'category', blog.category)
   
-  console.log(page)
   
   const urlPrefix = page.currentLocale == siteData.defaultLocale ? '/' : `/${page.currentLocale}`
   const blogsUrl = nodePath.join(urlPrefix, 'blog')

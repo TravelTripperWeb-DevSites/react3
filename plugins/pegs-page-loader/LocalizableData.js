@@ -21,6 +21,8 @@ class LocalizableData {
         objectCopy[key] = LocalizableData.localize(objectCopy[key], locale, defaultLocale)
       }
     }
+    objectCopy._currentLocale = locale;
+    objectCopy._defaultLocale = defaultLocale;
     return objectCopy;
   }
 }
