@@ -45,9 +45,7 @@ export default ({
   },
   beforePrepareRoutes: async (state) => {
     // Page and model content get transformed to page-specific data durring routes creation
-    console.log("At before prep: " + state.models["blog"]["blog-2020-02-29-185239-38-special-to-play-key-west-31932-494"].data.title)
-    //await loadModels(state);
-    //await loadPages(state);
+    console.log("At before prep: ")
   },
   getRoutes: async (routes, state) => {
     let singleModelRoutes = [];

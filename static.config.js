@@ -4,7 +4,8 @@
 // - ...tons of other things!
 
 // Get started at https://react-static.js.org
-
+import * as React from "react";
+import Helmet from 'react-helmet'
 import nodePath from 'path';
 import axios from 'axios';
 import glob from 'glob-promise';
@@ -103,6 +104,16 @@ export default {
     }
   },
   
+  // Document: (props) => {
+  //   const { Html, Head, Body, children } = props;
+  //   return <Html lang="en-US">
+  //     <Head>
+  //       <meta charSet="UTF-8" />
+  //       <meta name="viewport" content="width=device-width, initial-scale=1" />
+  //     </Head>
+  //     <Body id="top" >{children}</Body>
+  //   </Html>
+  // },
   
   maxThreads: 1, // Remove this when you start doing any static generation
   devServer: {

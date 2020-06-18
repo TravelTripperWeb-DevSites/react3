@@ -12,6 +12,7 @@ const Grid = TBDComponent;
 const Location = TBDComponent;
 const BlogAside = TBDComponent;
 const SocialShare = TBDComponent;
+const Footer = TBDComponent;
 
 const FacebookComments = TBDComponent
 // <div className="fb-comments" expr:href='data:post.url' data-numposts="5"></div>
@@ -21,6 +22,7 @@ export {
   TopBanner,
   HomePageSlider,
   SpecialOffers,
+  Footer,
   Location,
   BlogExcerpt,
   BlogAside,
