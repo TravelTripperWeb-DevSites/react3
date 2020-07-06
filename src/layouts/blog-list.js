@@ -1,6 +1,6 @@
 import React from 'react'
 import { Head } from 'react-static'
-import { getLayoutContents, RegionBlock, Link } from '../../plugins/pegsrs';
+import { getLayoutContents, RegionBlock, Link } from 'pegsrs/node';
 
 import {BlogExcerpt, BlogAside} from 'components';
 import DefaultLayout from './default';

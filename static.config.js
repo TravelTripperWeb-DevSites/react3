@@ -12,7 +12,7 @@ import glob from 'glob-promise';
 import fs from 'fs-extra';
 
 import Category from './src/modelClasses/category'
-import LocalizableData from './plugins/pegsrs/LocalizableData'
+import { LocalizableData } from 'pegsrs/node';
 
 export default {
   locales: ['en', 'es'],
@@ -85,7 +85,7 @@ export default {
             try {
               item.category = LocalizableData.localize(state.models['category'][item.category].data, currentLocale, state.defaultLocale)    
             } catch(err) {
-              //console.error(err)
+              console.error(err)
               console.debug(`Could not find category ${item.category} for blog ${item.id}`)
             }
           }
