@@ -10,7 +10,6 @@
     "export": "react-static export --incremental"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.5",
     "axios": "^0.19.0",
     "front-matter": "^4.0.2",
     "fs": "^0.0.1-security",
@@ -21,8 +20,7 @@
     "react-dom": "^16.9.0",
     "react-html-parser": "^2.0.2",
     "react-i18next": "^11.5.0",
-    "react-static": "file:../../traveltripperweb/react-static/packages/react-static",
-    "react-static-plugin-mdx": "^7.2.2",
+    "react-static": "git+https://github.com/TravelTripperWeb/react-static-pegs.git",
     "react-static-plugin-reach-router": "^7.2.0",
     "react-static-plugin-sass": "^7.3.0",
     "react-static-plugin-sitemap": "^7.2.0",

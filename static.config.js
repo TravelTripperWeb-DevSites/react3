@@ -12,7 +12,7 @@ import glob from 'glob-promise';
 import fs from 'fs-extra';
 
 import Category from './src/modelClasses/category'
-import LocalizableData from './plugins/pegs-page-loader/LocalizableData'
+import LocalizableData from './plugins/pegsrs/LocalizableData'
 
 export default {
   locales: ['en', 'es'],
@@ -83,10 +83,10 @@ export default {
         getData: ({state, items, currentLocale, currentPage, totalPages, permalink, paginate}) =>  {
           for(let item of items) {
             try {
-              item.category = LocalizableData.localize(state.models['category'][item.category].data    , currentLocale, state.defaultLocale)    
+              item.category = LocalizableData.localize(state.models['category'][item.category].data, currentLocale, state.defaultLocale)    
             } catch(err) {
-              console.error(err)
-              console.log(`Could not find category ${item.category} for blog ${item.id}`)
+              //console.error(err)
+              console.debug(`Could not find category ${item.category} for blog ${item.id}`)
             }
           }
           let previousUrl, nextUrl = null;
@@ -181,8 +181,7 @@ export default {
     
   },
   plugins: [
-    ["pegs-locale-loader"],
-    ["pegs-page-loader"],
+    ["pegsrs"],
     ["react-static-plugin-sass"]
   ]
   

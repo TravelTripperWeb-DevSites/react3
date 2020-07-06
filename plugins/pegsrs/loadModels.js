@@ -3,7 +3,7 @@ import nodePath from 'path';
 import glob from './glob';
 import fs from 'fs-extra';
 
-import LocalizableData from '../pegs-page-loader/LocalizableData'
+import LocalizableData from '../pegsrs/LocalizableData'
 
 // state.config.modelGeneratorConfig = {
 //  "key": {

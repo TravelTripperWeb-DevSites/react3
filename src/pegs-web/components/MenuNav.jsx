@@ -2,7 +2,7 @@ import React from 'react';
 import { useSiteData } from 'react-static';
 import Link from './Link';
 
-import LocalizableData from '../../../plugins/pegs-page-loader/LocalizableData';
+import LocalizableData from '../../../plugins/pegsrs/LocalizableData';
 
 
 // Transform labels and urls to current page locale

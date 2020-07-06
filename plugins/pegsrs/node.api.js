@@ -5,7 +5,7 @@ import chokidar from 'chokidar'
 import { pathJoin } from 'react-static'
 import fs from 'fs-extra';
 import YAML from 'yaml'
-import FrontMatterPage from '../pegs-page-loader/FrontMatterPage';
+import FrontMatterPage from './FrontMatterPage';
 
 import loadModels from './loadModels';
 
@@ -50,10 +50,10 @@ export default ({
   getRoutes: async (routes, state) => {
     let singleModelRoutes = [];
     let paginationRoutes = [];
-    console.log("Pegs Locale Loader getRoutes")
+    console.log("PegsRS getRoutes")
     for(let key in state.modelsToGenerate) {
-      const {config, items} = state.modelsToGenerate[key];
-      const paginate = config.paginate
+      const {modelsConfig, items} = state.modelsToGenerate[key];
+      const paginate = modelsConfig.paginate
       let itemGroup = [];
       let currentPage = 1;
       let totalPages = paginate ? Math.ceil(items.length / paginate.perPage) : null
@@ -70,10 +70,10 @@ export default ({
         for (let currentLocale in localizedItems) {
           const item = localizedItems[currentLocale]
           
-          const data = (config.getData ? config.getData({state, item, currentLocale, items}) : item)
+          const data = (modelsConfig.getData ? modelsConfig.getData({state, item, currentLocale, items}) : item)
           singleModelRoutes.push(createRoute({
             path: nodePath.join('/', item.permalink),
-            template: config.template,
+            template: modelsConfig.template,
             getData: () => data,
           }))
           if (generatePage) {
@@ -100,10 +100,13 @@ export default ({
       
     }
     
+    
+    const pageRoutes = generatePageRoutes(state)
+    
     if (state.stage == "dev") {
       //
       let areRoutesBuilt = false;
-      const watcher = chokidar.watch(['./_data', './_locales'], {
+      const watcher = chokidar.watch(['./_data', './_locales', './_pages'], {
         ignoreInitial: true
       }).on('all', async (type, file) => {
         const filename = nodePath.basename(file)
@@ -113,7 +116,7 @@ export default ({
         
         console.log(
           `File ${type}: ${nodePath.relative(
-            state.config.paths.ROOT,
+            config.paths.ROOT,
             nodePath.resolve(filename)
           )}`
         )
@@ -126,7 +129,9 @@ export default ({
       })
     }
     
-    return [...routes, ...paginationRoutes, ...singleModelRoutes]
+    
+    
+    return [...routes, ...paginationRoutes, ...singleModelRoutes, ...pageRoutes]
   }
   // beforePrepareRoutes: async (state) => {
   //   const { stage, config } = state;
@@ -318,5 +323,58 @@ const loadLocale = async (localeFile, locale, resources) => {
   const contents = await fs.readFile(localeFile, "utf8")
   const localeData = YAML.parse(contents);
   resources[locale] = {'translation': localeData}
+}
+
+const generatePageRoutes = async(state) => {
+  const { config, stage, debug, models } = state;
+  const location = nodePath.resolve('./_pages');
+  const pagesGlob = nodePath.join(location, '*.html')
+  
+  const handle = (pageMap) => {
+    // Turn each page into a route
+    
+    let promises = []
+    for (let pageId in pageMap) {
+      for (let locale in pageMap[pageId]) {
+        const page = pageMap[pageId][locale]
+        promises.push(handlePage(page, createRoute, models, locale))
+      }
+    }
+    
+    return Promise.all(promises)
+  }
+  
+  return await handle(state.pages)  
+}
+
+const handlePage = async (page, createRoute, models, locale) => {
+  const originalPath = page.filePath;
+  
+  let path = page.permalink;
+  
+  // Return the route
+  return await createRoute({
+    path,
+    template: `src/layouts/${page.layout}`,
+    originalPath,
+    getData: async () => {    
+      return {
+        permalink: path,
+        data: page.data,
+        models: page.modelsNeeded.reduce((list,k) => {
+          const instances = models[k];
+          list[k] = {}
+          for(let id in instances) {
+            list[k][id] = instances[id].data;
+          }
+          return list;
+        }, {}),
+        regions: page.regions,
+        content: page.content,
+        filePath: page.filePath,
+        currentLocale: locale
+      }
+    }
+  })
 }
 
