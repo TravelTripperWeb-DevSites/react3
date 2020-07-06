@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouteData, Head, useSiteData } from 'react-static'
 
-import { useSiteTranslator, parsePage } from 'pegs-web';
+import { useSiteTranslator, parsePage } from '../../plugins/pegsrs';
 
 import i18next from 'i18next'
 

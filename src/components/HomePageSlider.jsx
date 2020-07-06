@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSiteData } from 'react-static'
-import { parseHtml, useModel } from '../pegs-web';
+import { parseHtml, useModel } from '../../plugins/pegsrs';
 
 
 const SingleSlide = (slilderimages, idx, page) => {

@@ -5,7 +5,7 @@ import YAML from 'yaml'
 import nodePath from 'path'
 import LocalizableData from './LocalizableData';
 
-import {parseHtml} from '../../src/pegs-web/pageParser.js';
+import {parseHtml} from './pageParser.js';
 
 class FrontMatterPage {
   static async load(path, location, locale, defaultLocale) {

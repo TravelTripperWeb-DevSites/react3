@@ -1,7 +1,7 @@
 import React from 'react'
 import nodePath from 'path'
 import { Head, useSiteData } from 'react-static'
-import { parseHtml, getLayoutContents, useModelInstance, RegionBlock, Link } from 'pegs-web';
+import { parseHtml, getLayoutContents, useModelInstance, RegionBlock, Link } from '../../plugins/pegsrs';
 
 
 import {BlogExcerpt, BlogAside, SocialShare, FacebookComments} from 'components';

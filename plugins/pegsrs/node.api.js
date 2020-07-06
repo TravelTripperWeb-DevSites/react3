@@ -52,8 +52,8 @@ export default ({
     let paginationRoutes = [];
     console.log("PegsRS getRoutes")
     for(let key in state.modelsToGenerate) {
-      const {modelsConfig, items} = state.modelsToGenerate[key];
-      const paginate = modelsConfig.paginate
+      const {config, items} = state.modelsToGenerate[key];
+      const paginate = config.paginate
       let itemGroup = [];
       let currentPage = 1;
       let totalPages = paginate ? Math.ceil(items.length / paginate.perPage) : null
@@ -70,10 +70,10 @@ export default ({
         for (let currentLocale in localizedItems) {
           const item = localizedItems[currentLocale]
           
-          const data = (modelsConfig.getData ? modelsConfig.getData({state, item, currentLocale, items}) : item)
+          const data = (config.getData ? config.getData({state, item, currentLocale, items}) : item)
           singleModelRoutes.push(createRoute({
             path: nodePath.join('/', item.permalink),
-            template: modelsConfig.template,
+            template: config.template,
             getData: () => data,
           }))
           if (generatePage) {
@@ -101,7 +101,7 @@ export default ({
     }
     
     
-    const pageRoutes = generatePageRoutes(state)
+    const pageRoutes = await generatePageRoutes({state, createRoute})
     
     if (state.stage == "dev") {
       //
@@ -128,8 +128,6 @@ export default ({
         rebuildRoutes(latestState);
       })
     }
-    
-    
     
     return [...routes, ...paginationRoutes, ...singleModelRoutes, ...pageRoutes]
   }
@@ -325,7 +323,7 @@ const loadLocale = async (localeFile, locale, resources) => {
   resources[locale] = {'translation': localeData}
 }
 
-const generatePageRoutes = async(state) => {
+const generatePageRoutes = async ({state, createRoute}) => {
   const { config, stage, debug, models } = state;
   const location = nodePath.resolve('./_pages');
   const pagesGlob = nodePath.join(location, '*.html')
@@ -344,7 +342,8 @@ const generatePageRoutes = async(state) => {
     return Promise.all(promises)
   }
   
-  return await handle(state.pages)  
+  const pageRoutes = await handle(state.pages)  
+  return [...pageRoutes]
 }
 
 const handlePage = async (page, createRoute, models, locale) => {

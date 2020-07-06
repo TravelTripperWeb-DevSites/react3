@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeTBDComponent } from '../pegs-web/components/TBDComponent';
+import { makeTBDComponent } from '../../plugins/pegsrs/components/TBDComponent';
 import HomePageSlider from './HomePageSlider';
 import BlogExcerpt from './BlogExcerpt';
 

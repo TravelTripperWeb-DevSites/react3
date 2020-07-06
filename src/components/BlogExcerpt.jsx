@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSiteData } from 'react-static'
-import { parseHtml, Link, useModelInstance } from '../pegs-web';
+import { parseHtml, Link, useModelInstance } from '../../plugins/pegsrs';
 
 import Category from '../modelClasses/category'
 

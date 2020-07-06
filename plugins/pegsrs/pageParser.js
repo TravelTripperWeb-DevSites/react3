@@ -8,7 +8,7 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 
 import { useSiteTranslator } from './siteTranslator';
 
-import * as customComponents from '../components/';
+import * as customComponents from '../../src/components/';
 
 
 const customComponentNames = Object.keys(customComponents).reduce((map, key) => {

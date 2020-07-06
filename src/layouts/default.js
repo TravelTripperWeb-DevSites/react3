@@ -1,7 +1,7 @@
 import React from 'react'
 import { Head } from 'react-static'
 import { Header, TopBanner, Footer } from 'components'
-import { MenuNav, getLayoutContents } from 'pegs-web';
+import { MenuNav, getLayoutContents } from '../../plugins/pegsrs';
 
 // very similar to Post.js component
 export default function DefaultLayout({children}) {
