@@ -1,8 +1,12 @@
 import React from 'react'
 import { useSiteData } from 'react-static'
-import { parseHtml, Link, useModelInstance } from 'pegsrs/node';
+import {  htmlParserWithComponents, Link, useModelInstance } from 'pegsrs/browser';
 
 import Category from '../modelClasses/category'
+
+import * as customComponents from 'components';
+const parseHtml = htmlParserWithComponents(customComponents);
+
 
 const BlogExcerpt = (props) => {
   const post = props.blog;

@@ -1,7 +1,13 @@
 import React from 'react'
 import nodePath from 'path'
 import { Head, useSiteData } from 'react-static'
-import { parseHtml, getLayoutContents, useModelInstance, RegionBlock, Link } from 'pegsrs/node';
+import { htmlParserWithComponents, getLayoutContentsWithCustomComponents, useModelInstance, RegionBlock, Link } from 'pegsrs/browser';
+
+import * as customComponents from 'components';
+const parseHtml = htmlParserWithComponents(customComponents);
+const getLayoutContents = getLayoutContentsWithCustomComponents(customComponents);
+
+
 
 
 import {BlogExcerpt, BlogAside, SocialShare, FacebookComments} from 'components';

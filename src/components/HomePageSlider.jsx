@@ -1,9 +1,12 @@
 import React from 'react';
 import { useSiteData } from 'react-static'
-import { parseHtml, useModel } from 'pegsrs/node';
+import { htmlParserWithComponents, useModel } from 'pegsrs/browser';
+
+import * as customComponents from 'components';
+const parseHtml = htmlParserWithComponents(customComponents);
 
 
-const SingleSlide = (slilderimages, idx, page) => {
+const SingleSlide = ({sliderImage, idx, page}) => {
   const first = idx == 0;
   let rootClass = 'item';
   if (first) {
@@ -11,15 +14,15 @@ const SingleSlide = (slilderimages, idx, page) => {
   }
   
   const rootStyle = {
-    backgroundImage: `url(${ slilderimages.slider_image ? slilderimages.slider_image.url : '' })`,
+    backgroundImage: `url(${ sliderImage.slider_image ? sliderImage.slider_image.url : '' })`,
     backgroundSize: 'cover',
     backgroundPosition: "center" 
   }
   
-  return  <div key={`slide-${idx+1}`}className={rootClass} style={rootStyle} title={`${ slilderimages.alt_text }`}>
+  return  <div className={rootClass} style={rootStyle} title={`${ sliderImage.alt_text }`}>
   <div className="carousel-caption transparent-bg">
     <div className="caption-inner">
-       { parseHtml(slilderimages.carousel_caption, page) }
+       { parseHtml(sliderImage.carousel_caption, page) }
     </div>
   </div>
 
@@ -62,7 +65,7 @@ const HomePageSlider = ({page}) => {
 
   for (let sliderImageId in sliderImages) {
     const sliderImage = sliderImages[sliderImageId]
-    slides.push(SingleSlide(sliderImage, idx, page))
+    slides.push(<SingleSlide sliderImage={sliderImage} idx={idx} page={page}  key={`slide-${idx+1}`}/>)
     idx += 1;
   }
   

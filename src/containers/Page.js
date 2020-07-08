@@ -1,12 +1,12 @@
 import React from 'react'
 import { useRouteData, Head, useSiteData } from 'react-static'
 
-import { useSiteTranslator, parsePage } from 'pegsrs/node';
+import { useSiteTranslator, pageParserWithComponents } from 'pegsrs/browser';
 
 import i18next from 'i18next'
 
-
-
+import * as customComponents from 'components';
+const parsePage = pageParserWithComponents(customComponents);
 
 
 // very similar to Post.js component
