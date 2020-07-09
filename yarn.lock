@@ -6892,9 +6892,9 @@ peek-stream@^1.1.0:
     duplexify "^3.5.0"
     through2 "^2.0.3"
 
-"pegsrs@git+https://github.com/TravelTripperWeb/pegsrs.git":
+"pegsrs@git+https://3d25abbd47cd479c392477f82c0fbb8eaa597a04:x-oauth-basic@github.com/TravelTripperWeb/pegsrs.git":
   version "0.0.5"
-  resolved "git+https://github.com/TravelTripperWeb/pegsrs.git#c7c20d22aae76d0f378cf2a7d4cc6ca91e29f61b"
+  resolved "git+https://3d25abbd47cd479c392477f82c0fbb8eaa597a04:x-oauth-basic@github.com/TravelTripperWeb/pegsrs.git#ac671bc3d6b93bf0d13f272e7029480f365d2024"
   dependencies:
     axios "^0.19.0"
     front-matter "^4.0.2"
@@ -6903,7 +6903,7 @@ peek-stream@^1.1.0:
     i18next "^19.4.5"
     react "^16.9.0"
     react-html-parser "^2.0.2"
-    react-static "git+https://github.com/TravelTripperWeb/react-static-pegs.git"
+    react-static "git+https://3d25abbd47cd479c392477f82c0fbb8eaa597a04:x-oauth-basic@github.com/TravelTripperWeb/react-static-pegs.git"
     react-static-plugin-reach-router "^7.2.0"
     yaml "^1.10.0"
 
@@ -7673,9 +7673,9 @@ react-static-plugin-sitemap@^7.2.0:
     chalk "^2.4.2"
     fs-extra "^8.1.0"
 
-"react-static@git+https://github.com/TravelTripperWeb/react-static-pegs.git":
+"react-static@git+https://3d25abbd47cd479c392477f82c0fbb8eaa597a04:x-oauth-basic@github.com/TravelTripperWeb/react-static-pegs.git":
   version "7.4.0"
-  resolved "git+https://github.com/TravelTripperWeb/react-static-pegs.git#6a7dba61e234da16cdd65c3da636f15b8314ddc3"
+  resolved "git+https://3d25abbd47cd479c392477f82c0fbb8eaa597a04:x-oauth-basic@github.com/TravelTripperWeb/react-static-pegs.git#6a7dba61e234da16cdd65c3da636f15b8314ddc3"
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
