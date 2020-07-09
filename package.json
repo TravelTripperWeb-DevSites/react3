@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "pegsrs": "git+https://github.com/TravelTripperWeb/pegsrs.git",
+    "pegsrs": "git+https://3d25abbd47cd479c392477f82c0fbb8eaa597a04:x-oauth-basic@github.com/TravelTripperWeb/pegsrs.git",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-i18next": "^11.5.0",
-    "react-static": "git+https://github.com/TravelTripperWeb/react-static-pegs.git",
+    "react-static": "git+https://3d25abbd47cd479c392477f82c0fbb8eaa597a04:x-oauth-basic@github.com/TravelTripperWeb/react-static-pegs.git",
     "react-static-plugin-reach-router": "^7.2.0",
     "react-static-plugin-sass": "^7.3.0",
     "react-static-plugin-sitemap": "^7.2.0",
