@@ -14,6 +14,8 @@ import fs from 'fs-extra';
 import Category from './src/modelClasses/category'
 import { LocalizableData } from 'pegsrs/browser';
 
+console.log(process.env.CONTAINER_DOMAIN);
+
 export default {
   locales: ['en', 'es'],
   defaultLocale: 'en',
