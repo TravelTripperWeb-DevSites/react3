@@ -128,7 +128,11 @@ export default {
   maxThreads: 1, // Remove this when you start doing any static generation
   devServer: {
      host: process.env.CONTAINER_IP || "http://localhost:3000/",
-     port: 3000
+     port: 3000,
+     allowedHosts: [
+       '.pegs.localhost',
+       process.env.CONTAINER_DOMAIN || '.web.pegs.com'
+     ]
   },
   getSiteData: async (state) => {
     console.log("Reloading site data!")
