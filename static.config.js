@@ -127,9 +127,9 @@ export default {
   
   maxThreads: 1, // Remove this when you start doing any static generation
   devServer: {
-     transportMode: 'ws',
-     public: `${process.env.CONTAINER_IP}:3000` || "http://localhost:3000/",
-     host: process.env.CONTAINER_IP || "http://localhost:3000/",
+     public: `${process.env.CONTAINER_IP}` || "http://localhost:3000/",
+     //host: process.env.CONTAINER_IP || "http://localhost:3000/",
+     host: '0.0.0.0',
      sockHost: process.env.CONTAINER_IP,
      port: 3000,
      allowedHosts: [
