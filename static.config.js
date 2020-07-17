@@ -127,7 +127,7 @@ export default {
   
   maxThreads: 1, // Remove this when you start doing any static generation
   devServer: {
-     host: process.env.CONTAINER_IP || "http://localhost:3000/",
+     host: process.env.CONTAINER_DOMAIN || "http://localhost:3000/",
      port: 3000
   },
   getSiteData: async (state) => {
