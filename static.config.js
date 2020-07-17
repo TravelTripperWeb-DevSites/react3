@@ -132,6 +132,7 @@ export default {
      port: 3000,
      allowedHosts: [
        '.pegs.localhost',
+       process.env.CONTAINER_IP || "localhost",
        process.env.CONTAINER_DOMAIN || '.web.pegs.com'
      ]
   },
