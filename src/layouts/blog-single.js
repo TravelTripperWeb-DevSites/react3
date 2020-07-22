@@ -20,7 +20,6 @@ import DefaultLayout from './default';
 export default function BlogSingleLayout({children}) {
   const {page, contents, t, T} = getLayoutContents(children);
   const siteData = useSiteData();
-  console.log(siteData);
   const blog = page.data;
   
   const [category, setCategory] = useModelInstance(page, 'category', blog.category)
