@@ -19,7 +19,7 @@ class App extends Component {
     return (      
       <Root className="App">
           HI
-          <Suspense fallback={()=>{console.log("FALLBACK"); return '...LOADING...';}}> 
+          <Suspense fallback='...LOADING...'> 
             <Router>
               <Routes default/>
             </Router>
