@@ -15,8 +15,10 @@ import DataHandler from './DataHandler.js';
 class App extends Component {
   render() {
     //console.log(output)
+    console.log("APP ROOT")
     return (      
       <Root className="App">
+          HI
           <Suspense fallback={()=>{console.log("FALLBACK"); return '...LOADING...';}}> 
             <Router>
               <Routes default/>
