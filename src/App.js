@@ -14,16 +14,13 @@ import DataHandler from './DataHandler.js';
 
 class App extends Component {
   render() {
-    //console.log(output)
-    console.log("APP ROOT")
     return (      
       <Root className="App">
-          HI
-          <Suspense fallback='...LOADING...'> 
-            <Router>
-              <Routes default/>
-            </Router>
-          </Suspense>
+         <Suspense fallback='...LOADING...'> 
+           <Router>
+             <Routes default/>
+           </Router>
+         </Suspense>
       </Root>
     )
   }
