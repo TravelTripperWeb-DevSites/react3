@@ -17,7 +17,7 @@ class App extends Component {
     //console.log(output)
     return (      
       <Root className="App">
-          <Suspense fallback={()=>{console.log("FALLBACK"); return '...LOADING...';}> 
+          <Suspense fallback={()=>{console.log("FALLBACK"); return '...LOADING...';}}> 
             <Router>
               <Routes default/>
             </Router>
