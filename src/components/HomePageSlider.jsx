@@ -58,7 +58,6 @@ const SingleSlide = ({sliderImage, idx, page}) => {
 const HomePageSlider = ({page}) => {
   const [sliderImages, setSliderImages] = useModel(page, 'homepage_slider')
   
-  console.log(sliderImages);
   
   let slides = [];
   let idx = 0;

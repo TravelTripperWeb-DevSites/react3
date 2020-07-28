@@ -10,7 +10,6 @@ const DataHandler = (pathData) => {
   useEffect(() => {
     async function fetchData() {
       const loadedData = await dl.getData();
-      console.log(loadedData, pathData.uri);
       setData(loadedData[pathData.uri] || {})      
     }
     fetchData();
