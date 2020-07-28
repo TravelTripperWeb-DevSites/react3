@@ -1,0 +1,22 @@
+{
+  "order": 0,
+  "name": "Stay More, Save More",
+  "targets": [
+    "conversion_plus_targets-2020-05-05-194513-all-users-33144-305"
+  ],
+  "enabled": true,
+  "message_localized": {
+    "en": "<h3>Stay More, Save More</h3>\n<div class='columns'><p><strong>20% Off</strong>For One Night</p>\n<p><strong>25% Off</strong>For Two Nights</p>\n<p><strong>30% Off</strong>Three+ Nights</p></div><h4>Free cancellations on all bookings</h4>"
+  },
+  "button_url": "https://24northhotel.reztrip.com/ext/promoRate?property=986&mode=b&pm=true&sr=515624&vr=3",
+  "button_target": "_blank",
+  "button_text_localized": {
+    "en": "Only when you <em>click here</em>"
+  },
+  "delay": 2,
+  "minimize_to_tab": true,
+  "tab_content_localized": {
+    "en": "<p>Stay More, Save More</p>"
+  },  
+  "custom_classes": "stay-more-save-more"
+}

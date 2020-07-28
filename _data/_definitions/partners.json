@@ -1,0 +1,35 @@
+{
+    "name":
+    {
+      "required": true,
+      "label": "Partner Name"
+    },
+    "description":
+    {
+      "required": true,
+      "type": "richtext",
+      "label": "Description"
+    },
+    "url":
+    {
+      "required": true,
+      "type": "url",
+      "label": "URL"
+    },
+    "alt_text":
+    {
+      "label": "Image Alt text"
+    },
+    "image":
+    {
+      "required": true,
+      "type": "image",
+      "label": "Upload Image"
+
+    },
+    "sort_order":
+    {
+      "type": "integer",
+      "required": true
+    }
+}

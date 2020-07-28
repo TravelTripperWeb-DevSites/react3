@@ -1,0 +1,28 @@
+{
+  "name": "Eighth Annual Key West Brewfest",
+  "category": "event_category1",
+  "url": "eighth-annual-key-west-brewfest",
+  "website_url": "http://keywestbrewfest.com/",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">More than 150 beers and micro-brews are on tap at this &ldquo;tasty&rdquo; annual event that benefits the charitable efforts of the Key West Sunrise Rotary Club of the Conch Republic. Events from beer dinners, beer brunches, happy hour parties, pool parties, late-night parties, seminars and the Signature Tasting Festival Event are some of the offered activities.</p>",
+  "short_description": "<p>More than 150 beers and micro-brews are on tap at this &ldquo;tasty&rdquo; annual event that benefits the charitable efforts of the Key West Sunrise Rotary Club of the Conch Republic.</p>",
+  "schedule": "AUGUST 31 – SEPTEMBER 4, 2017",
+  "expire_date": "Tue Sep 05 2017 00:00:00 GMT-0400 (Eastern Daylight Time)",
+  "isPublished": true,
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-075849/brewfest-3.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-075848/brewfest-2.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-075847/brewfest-1.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-075849/brewfest-3.jpg",
+    "alt": "image"
+  },
+  "publish_date": "Thu Aug 31 2017 00:00:00 GMT-0500 (CDT)"
+}

@@ -1,0 +1,204 @@
+.save-the-child-section {
+	@media (max-width:1230px) {
+		padding: 0 20px;
+	}
+
+	.save-the-child-container {
+		max-width: 1210px;
+		display: table;
+		margin: 0 auto;
+		padding: 40px 0;
+		text-align: center;
+
+		@media (max-width:1120px) {
+			display: block;
+			padding: 20px 0;
+		}
+
+		@media (max-width:767px) {
+			padding: 10px 0;
+		}
+
+		.logo-container,
+		.description-container,
+		.button-container {
+			display: table-cell;
+			vertical-align: middle;
+
+			@media (max-width:1066px) {
+				display: block;
+				text-align: center;
+				width: 100%;
+			}
+
+		}
+
+		.logo-container {
+			width: 26%;
+
+			@media (max-width:1066px) {
+				width: 100%;
+				margin: 0 auto;
+				padding-bottom: 20px;
+			}
+
+			img {
+				width: 100%;
+
+				@media (max-width:1066px) {
+					max-width: 300px;
+				}
+
+				@media (max-width:400px) {
+					max-width: 265px;
+					margin-top: 20px;
+				}
+
+			}
+
+		}
+
+		.description-container {
+			width: 56%;
+			padding: 0 40px;
+
+			@media (max-width:1130px) {
+				width: 50%;
+				padding: 0 10px;
+			}
+
+			@media (max-width:1066px) {
+				width: 100%;
+			}
+
+			.description-center {
+				h2, .h2 {
+					font-family: "brandon_grotesquebold";
+					font-size: 26px;
+					letter-spacing: .05ex;
+					text-transform: uppercase;
+
+					@media (max-width:767px) {
+						font-size: 20px;
+					}
+
+				}
+
+				p {
+					font-family: "brandon_grotesquelight";
+					font-size: 18px;
+					line-height: 27px;
+					color: #000000;
+				}
+
+			}
+
+		}
+
+		.button-container {
+			width: 18%;
+			/*text-align: right;*/
+
+			@media (max-width:1066px) {
+				width: 100%;
+				margin: 20px 0px;
+				text-align: center;
+			}
+
+			.button-common {
+				min-width: 210px;
+				color: #000;
+				border: solid 3px #1f4552;
+				padding: 10px 10px;
+				text-transform: uppercase;
+				font-family: "brandon_grotesquemedium";
+				letter-spacing: .2em;
+				text-align: center;
+				font-size: 17px;
+				display: inline-block;
+				text-shadow: none;
+				transition: all 0.1s;
+
+				&:hover {
+					background-color: #1f4552;
+					color: #fff;
+				}
+
+			}
+
+		}
+
+		.clear-both{
+
+		}
+
+	}
+
+}
+
+.save-the-child-section-inner {
+
+	.save-the-child-container{
+		.logo-container{
+			img{
+				width:90%;
+				@media (max-width:767px) {
+					width: 70%;
+					margin-bottom:50px;
+				}
+				@media (max-width:480px) {
+					width: 90%;
+					margin-bottom:50px;
+				}
+			}
+		}
+		.description-container{
+			.description-center{
+				h2, .h2{
+					font-size: 32px;
+				    text-transform: uppercase;
+				    color: #076286;
+				    padding: 0px 0 40px 0;
+				    line-height: normal;
+				    letter-spacing: 5px;
+				    margin: 0;
+				}
+				p{
+					padding: 0 0 30px 0;
+				    margin: 0;
+				    letter-spacing: 1px;
+				    line-height: 30px;
+				    font-size: 18px;
+				}
+			}
+		}
+		.button-container{
+			width: 18%;
+    		text-align: right;
+			.button-common2{
+				    min-width: 210px;
+				    color: #000;
+				    border: solid 3px #1f4552;
+				    padding: 10px 10px 10px 10px;
+				    text-transform: uppercase;
+				    font-family: "brandon_grotesquemedium";
+				    letter-spacing: .2em;
+				    text-align: center;
+				    font-size: 17px;
+				    display: inline-block;
+				    text-shadow: none;
+				    transition: all 0.1s;
+				    margin:0 0 100px 0;
+				    &:hover {
+						background-color: #1f4552;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	.children-banner {
+		background: url('/images/save-the-children-banner.jpg');
+		background-size: cover;
+	}

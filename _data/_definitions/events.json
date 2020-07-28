@@ -1,0 +1,93 @@
+{
+  "name": {
+    "required": true,
+    "label": "Name"
+  },
+  "category": {
+    "label": "Choose Category",
+    "type": "model",
+    "display_field": "title",
+    "model_name": "event_category"
+  },
+  "schedule": {
+    "required": true,
+    "label": "Schedule",
+    "instructions": "This is a text display of the date. (e.g. 'May 3 - 5 2026' or 'Every Saturday, Poolside 1 - 4 PM')"
+  },
+  "publish_date": {
+    "label": "Publish Date",
+    "type": "date",
+    "instructions": "This is the sort order date. Weekly events should be left blank and will output at the top of the list."
+  },
+  "expire_date": {
+    "label": "Expiration Date",
+    "type": "date"
+  },
+  "short_description": {
+    "required": true,
+    "type": "richtext",
+    "label": "Events List Page Description"
+  },
+  "long_description": {
+    "required": true,
+    "type": "richtext",
+    "label": "Events Detail Page Description"
+  },
+  "url": {
+    "required": true,
+    "type": "text",
+    "label": "Events List Page URL"
+  },
+  "website_url": {
+    "required": true,
+    "type": "url",
+    "label": "Events Website URL"
+  },
+  "alt_text": {
+    "label": "Image Alt text"
+  },
+  "thumb_image": {
+    "required": true,
+    "type": "image",
+    "label": "Events List Page Thumb Image"
+  },
+  "large_image": {
+    "required": true,
+    "type": "image",
+    "label": "Events Detail Page Large Image"
+  },
+  "short_image": {
+    "required": true,
+    "type": "image",
+    "label": "Events Detail Page Short Image"
+  },
+  "g_image1": {
+    "required": true,
+    "type": "image",
+    "label": "Gallery Image 1"
+  },
+  "g_image2": {
+    "type": "image",
+    "label": "Gallery Image 2"
+  },
+  "g_image3": {
+    "type": "image",
+    "label": "Gallery Image 3"
+  },
+  "g_image4": {
+    "type": "image",
+    "label": "Gallery Image 4"
+  },
+  "g_image5": {
+    "type": "image",
+    "label": "Gallery Image 5"
+  },
+  "g_image6": {
+    "type": "image",
+    "label": "Gallery Image 6"
+  },
+  "isPublished": {
+    "label": "Publish Event?",
+    "type": "boolean"
+  }
+}

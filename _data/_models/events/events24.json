@@ -1,0 +1,24 @@
+{
+	"name": "Trivia",
+	"schedule": "Every Monday from 7-9pm at the Toasted Coconut",
+	"short_description": "<p>Hosted by Get Lucky Trivia every Monday from 7-9pm at the Toasted Coconut. Prizes for the top 3 teams!</p>",
+	"long_description": "<p>Hosted by Get Lucky Trivia every Monday from 7-9pm at the Toasted Coconut. Prizes for the top 3 teams!</p>",
+	"url": "trivia",
+	"website_url": "https://www.24northhotel.com/",
+	"alt_text":"Trivia",
+	"thumb_image": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-070524/trivia.JPG"
+	},
+	"large_image": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-070525/trivia2.JPG"
+	},
+	"short_image": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-070524/trivia.JPG"
+	},
+	"g_image1": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-070524/trivia.JPG"
+	},
+  "expire_date": null,
+  "isPublished": true,
+	"category": "event_category1"
+}

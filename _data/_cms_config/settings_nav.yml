@@ -1,0 +1,10 @@
+items:
+  - id: __environment_settings__
+  - id: __redirects__
+  - id: cp
+    label: Conversion Plus
+    items:
+      - id: booking_widget
+      - id: conversion_plus_banner
+        label: Conversion Plus Banner
+  

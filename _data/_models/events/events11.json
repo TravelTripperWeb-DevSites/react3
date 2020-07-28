@@ -1,0 +1,28 @@
+{
+  "name": "WineDine Key West",
+  "category": "event_category1",
+  "url": "winedine-key-west",
+  "website_url": "http://www.winedinekeywest.com/",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-080734/winedine2.JPG",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-080733/winedine1.JPG",
+    "alt": "image"
+  },
+  "expire_date": "Mon Oct 16 2017 00:00:00 GMT-0500 (CDT)",
+  "isPublished": true,
+  "long_description": "<p style=\"margin-bottom: 0cm;\">Dine, Shop and Relax during this month-long moveable feast. Cuisine connoisseurs can enjoy multi-course prix fixe meals at several Key West restaurants during WineDine KeyWest. Restaurants include casual waterfront spots, trendy bistros, eateries specializing in fresh Florida Keys seafood and award-winning gourmet emporiums. Local spas and chic boutiques are also participating in the celebration. Register free online.</p>",
+  "short_description": "<p>Dine, Shop and Relax during this month-long moveable feast. Cuisine connoisseurs can enjoy multi-course prix fixe meals at several Key West restaurants during WineDine KeyWest.</p>",
+  "schedule": "SEPTEMBER 15 – OCTOBER 15, 2017",
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-080733/winedine-3.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-080733/winedine1.JPG",
+    "alt": "image"
+  },
+  "publish_date": "Fri Sep 15 2017 00:00:00 GMT-0500 (CDT)"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Key West Triathlon and Expo",
+  "category": "event_category1",
+  "url": "key-west-triathlon-and-expo",
+  "website_url": "http://www.trikw.com/",
+  "schedule": "DECEMBER 9, 2017",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">The Key West Triathlon and Expo expects to host a maximum of 1,000 participants and some of the sport&rsquo;s best known triathletes; TRIKW allows you to bask in the warm weather and the waters of the Atlantic Ocean while the rest of the country is experiencing winter. Olympic and Sprint distances.</p>",
+  "short_description": "<p>The Key West Triathlon and Expo expects to host a maximum of 1,000 participants and some of the sport&rsquo;s best known triathletes;</p>",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-030250/triatholon-1.png",
+    "alt": "image",
+    "caption": "",
+    "description": ""
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-030249/triathalon-3.jpg",
+    "alt": "image",
+    "caption": "",
+    "description": ""
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-030248/triathalon-2.jpg",
+    "alt": "image",
+    "caption": "",
+    "description": ""
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-07-030250/triatholon-1.png",
+    "alt": "image",
+    "caption": "",
+    "description": ""
+  },
+  "expire_date": "2017-12-09T05:00:00.000Z",
+  "isPublished": true,
+  "publish_date": "Sat Dec 09 2017 00:00:00 GMT-0600 (CST)"
+}

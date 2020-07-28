@@ -1,0 +1,8 @@
+{
+	"carousel_caption": "<p><img src=\"/images/starbucks-logo.svg\" alt=\"Starbucks\" /></p>\n<p>Starbucks</p>\n<h1>Now open at 24 north hotel</h1>\n<h3 style=\"color: #000;\">Monday | 6:30am - 7pm<br />Tuesday | 6:30am - 7pm<br />Wednesday | 6:30am - 7pm<br />Thursday | 6:30am - 8pm<br />Friday | 6:30am - 8pm<br />Saturday | 7am - 8pm<br />Sunday | 7am - 7pm</h3>",
+	"alt_text":"starbucks",
+	"slider_image": {
+		"url": "//cdn.traveltripper.io/site-assets/359_384_818/media/starbucks-carousel.jpg"
+	},
+	"sort_order": 1
+}

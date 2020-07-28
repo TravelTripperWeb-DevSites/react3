@@ -1,0 +1,27 @@
+{
+  "order": "7",
+  "title": "24 North News & Events",
+  "description": "Find out what’s new at 24 North Hotel! We regularly host concerts, movie screenings, and activities for our guests. Check out news, upcoming events and more to make the most of your stay at 24 North Hotel.",
+  "url_friendly_name": "24-north-key-west-news/",
+  "categoryimage": {
+    "name": "24-north-hotel",
+    "file_name": "24-north-hotel.jpg",
+    "url": "//cdn.traveltripper.io/site-assets/192_384_16769/media/2018-06-15-150400/24-north-hotel.jpg",
+    "tags": "",
+    "description": "",
+    "date_added": "2018-06-15-150400",
+    "file_type": "image/jpeg",
+    "width": 1920,
+    "height": 1080,
+    "file_size": 573475,
+    "url_large": "//cdn.traveltripper.io/site-assets/192_384_16769/media/2018-06-15-150400/large_24-north-hotel.jpg",
+    "url_medium": "//cdn.traveltripper.io/site-assets/192_384_16769/media/2018-06-15-150400/medium_24-north-hotel.jpg",
+    "url_small": "//cdn.traveltripper.io/site-assets/192_384_16769/media/2018-06-15-150400/small_24-north-hotel.jpg",
+    "url_xsmall": "//cdn.traveltripper.io/site-assets/192_384_16769/media/2018-06-15-150400/xsmall_24-north-hotel.jpg",
+    "url_thumb": "//cdn.traveltripper.io/site-assets/192_384_16769/media/2018-06-15-150400/thumb_24-north-hotel.jpg",
+    "git_file_name": "_assets/image_data/24-north-hotel.json",
+    "path": "//cdn.traveltripper.io/site-assets/192_384_16769/media/2018-06-15-150400/24-north-hotel.jpg",
+    "alt": "24-north-hotel",
+    "caption": ""
+  }
+}

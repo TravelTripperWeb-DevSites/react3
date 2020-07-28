@@ -1,0 +1,28 @@
+{
+  "name": "SoMo Marathon & Half Marathon",
+  "category": "event_category1",
+  "url": "somo-marathon-half-marathon",
+  "schedule": "OCTOBER 6 – 8, 2017",
+  "website_url": "http://www.somokeywestmarathon.com/",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">This event is one of a kind! Imagine running through the southernmost island in the United States while enjoying a break from the ordinary. The Southernmost Marathon &amp; Half promises just that- 26.2 or 13.1 miles of ocean and gulf views, as well as iconic Key West landmarks. A full weekend of events include the race and a Sunday Paddle Board race for the Special Olympics of Monroe County.</p>",
+  "short_description": "<p>This event is one of a kind! Imagine running through the southernmost island in the United States while enjoying a break from the ordinary.</p>",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-082347/somo-marathon-1.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-082348/somo-marathon-2.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-082347/somo-marathon-1.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-082348/somo-marathon-2.jpg",
+    "alt": "image"
+  },
+  "expire_date": "Sun Oct 08 2017 00:00:00 GMT-0500 (CDT)",
+  "isPublished": true,
+  "publish_date": "Fri Oct 06 2017 00:00:00 GMT-0500 (CDT)"
+}

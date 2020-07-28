@@ -1,0 +1,54 @@
+{
+    "title":
+    {
+      "required": true,
+      "label": "Offer Title"
+    },
+    "seo_title":
+    {
+      "label": "Seo Title"
+    },
+    "seo_description":
+    {
+      "label": "Seo Description"
+    },
+    "url_friendly_name":
+    {
+      "required": true,
+      "label": "Standalone page URL"
+    },
+
+    "short_description":
+    {
+      "required": true
+    },
+    "long_description":
+    {
+      "required": true,
+      "type": "richtext",
+      "label": "Description"
+    },
+    "image":
+    {
+      "required": true,
+      "type": "image",
+      "multiple": true
+    },
+    "offer_promo_url":
+    {
+      "required": true,
+      "label": "Offer Promo URL"
+    },
+
+"terms_conditions":
+{
+  "required": true,
+  "type": "richtext",
+  "label": "Terms & Conditions"
+},
+    "publish": {
+    "label": "Publish Offer",
+    "type": "select",
+    "options": ["Yes","No"]
+    }
+}

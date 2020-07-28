@@ -1,0 +1,13 @@
+{
+  "name": "Rodriguez Cigar",
+  "description": "<p>Founded in 1984, it is the oldest operating cigar manufacturer in the Florida Keys. Rodriguez Cigars are exclusively constructed with vintage leaves that have been cured, aged and constructed through the traditional Cuban manufacturing process.</p>",
+  "image": {
+    "url": "//cdn.traveltripper.io/site-assets/359_384_783/media/rodriguez-cigar.jpg",
+    "alt": "Rodriguez",
+    "caption": "",
+    "description": ""
+  },
+  "alt_text": "Rodriguez-Cigar",
+  "sort_order": 4,
+  "url": "http://www.rodriguezcigarskeywest.com/"
+}

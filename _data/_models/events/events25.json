@@ -1,0 +1,29 @@
+{
+  "name": "Conch Shell Blowing Contest",
+  "category": "event_category2",
+  "schedule": "March 4, 2018",
+  "short_description": "<p>An island tradition for over 50 years, this unique contest celebrates the historic importance of conch in the Keys and features contestants in several age categories attempting to make &ldquo;music&rdquo; with fluted conch shells.</p>",
+  "long_description": "<p>An island tradition for over 50 years, this unique contest celebrates the historic importance of conch in the Keys and features contestants in several age categories attempting to make &ldquo;music&rdquo; with fluted conch shells. Contest located in the garden of the Oldest House, 322 Duval Street, free and open to all ages. Registration begins at 10 a.m., contest starts at noon.</p>",
+  "url": "conch-shell-blowing-contest",
+  "website_url": "http://oirf.org/",
+  "alt_text": "Conch-Shell-Blowing-Contest",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070102/conchshellblowingcontest.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070101/conchshell.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070102/conchshellblowingcontest.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-21-070101/conchshell.jpg",
+    "alt": "image"
+  },
+  "expire_date": null,
+  "isPublished": true,
+  "publish_date": "Sun Mar 04 2018 00:00:00 GMT-0600 (CST)"
+}

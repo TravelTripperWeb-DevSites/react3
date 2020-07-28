@@ -1,0 +1,225 @@
+{
+  "mainnav": [{
+      "title": "Rooms",
+      "name": "rooms",
+      "url": "/rooms/",
+      "submenu": "true",
+      "subitems": [{
+          "title": "Amenities",
+          "name": "Amenities",
+          "url": "/amenities/"
+        }
+      ]
+    },
+    {
+      "title": "Specials",
+      "name": "specials",
+      "url": "/specials/",
+      "submenu": "false"
+    },
+    {
+      "title": "Dine & Drink",
+      "name": "dine-drink",
+      "url": "/dine-drink/",
+      "submenu": "flase"
+    },
+    {
+      "title": "Gallery",
+      "name": "gallery",
+      "url": "/gallery/",
+      "submenu": "true",
+      "subitems": [{
+        "title": "Webcams",
+        "name": "webcams",
+        "url": "/location/webcams/"
+      }]
+    },
+    {
+      "title": "Meet",
+      "name": "meet",
+      "url": "/meet/",
+      "submenu": "true",
+      "subitems": [{
+          "title": "Groups",
+          "name": "meetings-and-events-key-west",
+          "url": "/meetings-and-events-key-west/"
+        },
+        {
+          "title": "Request for Proposal",
+          "name": "events",
+          "url": "/meetings-and-events-key-west/request-for-proposal/"
+        }
+      ]
+    },
+    {
+      "title": "Weddings",
+      "name": "weddings-and-events",
+      "url": "/weddings-and-events/",
+      "submenu": "false"
+    },
+    {
+      "title": "Events",
+      "name": "events",
+      "url": "/events/",
+      "submenu": "true",
+      "subitems": [{
+          "title": "Concerts",
+          "name": "concerts",
+          "url": "/concerts/"
+        }
+      ]
+    },
+    {
+      "title": "Location",
+      "name": "location",
+      "url": "/location/",
+      "submenu": "true",
+      "subitems": [{
+          "title": "Shuttle",
+          "name": "location",
+          "url": "/location/shuttle/"
+        },
+        {
+          "title": "Attractions",
+          "name": "attractions",
+          "url": "/location/attractions/"
+        },
+        {
+          "title": "Partners",
+          "name": "partners",
+          "url": "/location/partners/"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "name": "blog",
+      "url": "/blog/",
+      "submenu": "false"
+    },
+    {
+     "title": "COVID-19",
+      "name": "covid-19",
+      "url": "/covid-19/",
+      "submenu": "false"
+    }
+  ],
+  "footernav": [{
+      "title": "Rooms",
+      "name": "rooms",
+      "url": "/rooms/",
+      "submenu": "false"
+    },
+    {
+      "title": "Specials",
+      "name": "specials",
+      "url": "/specials/",
+      "submenu": "false"
+    },
+    {
+      "title": "Attractions",
+      "name": "attractions",
+      "url": "/location/attractions/",
+      "submenu": "false"
+
+    },
+    {
+      "title": "Groups",
+      "name": "meetings-and-events-key-west",
+      "url": "/meetings-and-events-key-west/",
+      "submenu": "true",
+      "subitems": [{
+        "title": "Request for Proposal",
+        "name": "events",
+        "url": "/meetings-and-events-key-west/request-for-proposal/"
+      }]
+    },
+    {
+      "title": "Gallery",
+      "name": "gallery",
+      "url": "/gallery/",
+      "submenu": "false"
+    },
+    {
+      "title": "Blog",
+      "name": "blog",
+      "url": "/blog/",
+      "submenu": "false"
+    },
+    {
+      "title": "Partners",
+      "name": "partners",
+      "url": "/location/partners/",
+      "submenu": "false"
+    },
+    {
+      "title": "Location",
+      "name": "location",
+      "url": "/location/",
+      "submenu": "true",
+      "subitems": [{
+          "title": "Events",
+          "name": "events",
+          "url": "/location/events/"
+        },
+        {
+          "title": "Shuttle",
+          "name": "location",
+          "url": "/location/shuttle/"
+        },
+        {
+          "title": "Starbucks",
+          "name": "location",
+          "url": "/location/starbucks/"
+        }
+      ]
+    },
+    {
+      "title": "Charities",
+      "name": "charities",
+      "url": "http://highgate.com/hcf",
+      "newtab": "true",
+      "submenu": "false"
+    },
+    {
+      "title": "Reviews",
+      "name": "reviews",
+      "url": "/reviews/",
+      "submenu": "false"
+    },
+    {
+      "title": "Global Privacy Policy",
+      "name": "privacy-policy",
+      "url": "/privacy-policy/",
+      "submenu": "false"
+    },
+    {
+      "title": "Terms of use",
+      "name": "terms-of-use",
+      "url": "/terms-of-use/",
+      "submenu": "false"
+    },
+    {
+      "title": "Accessibility Statement",
+      "name": "accessibility",
+      "url": "/accessibility/",
+      "submenu": "false"
+    }
+  ],
+  "social": [{
+      "title": "Linkedin",
+      "url": "https://www.linkedin.com/company/travel-trippe",
+      "class": "fa-linkedin"
+    },
+    {
+      "title": "Facebook",
+      "url": "https://www.facebook.com/traveltripper",
+      "class": "fa-facebook-square"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/Travel_Tripper",
+      "class": "fa-twitter"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+---
+show_ota: true
+allow_equal_ota_rates: true
+show_scarcity: true
+find_lowest_rate_range: 7
+recent_booking_min: ''
+min_rate: ''
+fallback_content: "<p>DON&rsquo;T MISS OUT! &ndash; SAVINGS UP TO 30% - AVAILABLE
+  ONLY ON OUR WEBSITE.</p>"
+on_fallback_button_click: open:https://24northhotel.reztrip.com/ext/promoRate?property=986&mode=b&pm=true&sr=515624&vr=3
+on_button_click: open-booking-widget
+max_rooms_available: ''
+show_activity: true
+primary_message: Best Rate Available

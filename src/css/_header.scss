@@ -1,0 +1,394 @@
+/* Header CSS */
+body {
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+	font-family: $main-font-regular;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,p,ul {
+	margin: 0;
+	padding: 0;
+	line-height: normal;
+}
+
+a:focus,
+a:hover {
+	text-decoration: none;
+}
+
+.container {
+	width: 1210px;
+	padding: 0;
+	@media (max-width: 1240px) {
+		padding: 0 15px;
+		width: auto;
+	}
+}
+/* Scrollable header */
+.header-wrapper {
+	background-color: $bg-white;
+	font-family: $main-font-bold;
+	padding: 26px 0;
+	text-transform: uppercase;
+	@media (max-width: 1240px) {
+		padding: 11px 0;
+	}
+	@media (max-width: 767px) {
+		padding: 7px 0;
+	}
+
+	.booknow {
+		float: right;
+		padding: 18px 0 0;
+		@media (max-width: 1240px) {
+			padding: 8px 0 0;
+			position: absolute;
+			right: 0;
+			top: -8px;
+		}
+
+		a {
+			background-color: $bg-blue-1;
+			display: inline-block;
+			font-size: 13px;
+			letter-spacing: 4px;
+			color: $tc-white;
+			padding: 13px 22px;
+			text-align: center;
+			-webkit-transition: all 0.2s;
+			transition: all 0.2s;
+			@media (max-width: 1240px) {
+				padding: 29px 20px;
+			}
+			@media (max-width: 767px) {
+				font-size: 10px;
+				letter-spacing: 1px;
+				padding: 19px 10px;
+			}
+
+			&:hover {
+				background-color: $bg-blue-2;
+			}
+		}
+	}
+
+	.logo1 {
+		display: none;
+		@media (max-width: 480px) {
+			display: inline-block;
+			width: 40px;
+		}
+
+		img {
+			width: 100%;
+			vertical-align: bottom;
+		}
+	}
+
+	.logo {
+		float: left;
+		width: 204px;
+		@media (max-width: 1240px) {
+			/*width: 160px;*/
+			width: 120px;
+		}
+		@media (max-width: 480px) {
+			width: 110px;
+			display: none;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.main-menu {
+		float: left;
+		/*padding: 29px 0 0 30px;*/
+		padding: 22px 0 0 24px;
+		background-color: $bg-white;
+		@media (max-width: 1240px) {
+			padding: 10px 0 0 24px;
+		}
+		@media (max-width: 1023px) {
+			display: none;
+			height: 400px;
+			overflow-y: auto;
+		}
+		@media (min-width: 1024px) {
+			display: block !important;
+		}
+		@media (max-width: 1023px) {
+			position: absolute;
+			top: 77px;
+			left: 0;
+			right: 0;
+			padding: 0;
+		}
+		@media (max-width: 767px) {
+			top: 52px;
+		}
+
+		ul {
+			&.nav {
+				li {
+					list-style-type: none;
+					display: inline-block;
+					@media (max-width: 1023px) {
+						display: block;
+						border-bottom: solid 1px #d3d3d3;
+					}
+
+					a {
+						color: $tc-black;
+						font-size: 12.5px;
+						letter-spacing: 1px;
+						padding: 10px 9px;
+						@media (max-width: 1200px) {
+							font-size: 9.5px;
+						}
+
+						&:hover {
+							color: $bg-blue-1;
+							background: none;
+						}
+
+						&:focus {
+							background: none;
+						}
+
+						&.active {
+							color: $tc-dark-blue;
+						}
+						@media (max-width: 1240px) {
+							padding: 10px 4px;
+							letter-spacing: 1px;
+							display: block;
+						}
+						@media (max-width: 1023px) {
+							padding: 20px 12px;
+
+							&:focus {
+								background-color: $bg-blue-3;
+								color: $tc-white;
+							}
+						}
+						@media (max-width: 767px) {
+							padding: 16px 15px;
+						}
+						@media (max-height: 479px) and (max-width: 599px) {
+							padding: 8px 15px;
+						}
+					}
+
+					ul {
+						&.dropdown-menu {
+							li {
+								display: block;
+							}
+							@media (max-width: 768px) {
+								width: 100%;
+								margin-bottom: 14px;
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-menu ul > li a.active {
+	color: $tc-dark-blue;
+}
+/* Scrollable header ends */
+/* fixed header */
+.fixed-header-wrapper {
+	position: fixed;
+	left: 0;
+	right: 0;
+	padding: 11px 0;
+	z-index: 20;
+	top: 0;
+	animation-name: example;
+	animation-duration: 0.8s;
+
+	.logo {
+		width: 160px;
+	}
+
+	.booknow {
+		position: absolute;
+		right: 0;
+		top: -18px;
+
+		a {
+			padding: 29px 20px;
+		}
+		@media (max-width: 1240px) {
+			padding: 26px 20px;
+			top: -8px;
+		}
+	}
+
+	.main-menu {
+		padding: 20px 0 0 20px;
+	}
+
+	.nav-reserve {
+		margin-right: 100px;
+		margin-top: 10px;
+		@media (max-width: 480px) {
+			margin-right: 0;
+		}
+	}
+}
+@keyframes example {
+	from {
+		top: -200px;
+	}
+
+	to {
+		top: 0;
+	}
+}
+/* fixed header css ends */
+.no-padding {
+	padding: 0;
+}
+
+.nav-reserve {
+	font-family: $main-font-regular;
+	font-weight: bold;
+	display: block;
+	float: right;
+	margin-right: 30px;
+	margin-top: -36px;
+
+	h2, .h2 {
+		font-size: 13px;
+		font-weight: bold;
+	}
+	@media (max-width: 1240px) {
+		margin-right: 100px;
+	}
+	@media (max-width: 1023px) {
+		display: inline-block;
+		float: left;
+		margin-top: 10px;
+		margin-left: 15px;
+	}
+	@media (max-width: 480px) {
+		margin-top: 0;
+		margin-left: 5px;
+
+		h2, .h2 {
+			font-size: 12px;
+		}
+
+		a {
+			font-size: 12px;
+		}
+	}
+}
+
+.nav-reserve2 {
+	display: block;
+	float: right;
+	margin-right: 30px;
+	margin-top: -36px;
+
+	h2, .h2 {
+		font-size: 13px;
+	}
+	@media (max-width: 1023px) {
+		display: none;
+		margin-top: 10px;
+		margin-left: 15px;
+	}
+	@media (max-width: 480px) {
+		margin-top: 0;
+		margin-left: 5px;
+
+		h2, .h2 {
+			font-size: 12px;
+		}
+
+		a {
+			font-size: 12px;
+		}
+	}
+}
+
+.menu-btn {
+	display: none;
+	position: relative;
+	cursor: pointer;
+	position: absolute;
+	right: 180px;
+	width: 40px;
+	height: 22px;
+	top: 28px;
+	@media (max-width: 1023px) {
+		display: block;
+	}
+	@media (max-width: 767px) {
+		top: 16px;
+		right: 114px;
+	}
+}
+
+.menu-btn:after {
+	content: "";
+	position: absolute;
+	border-bottom: solid 2px #000;
+	border-top: solid 2px #000;
+	width: 40px;
+	left: 0;
+	height: 12px;
+}
+
+.menu-btn:before {
+	content: "";
+	position: absolute;
+	border-bottom: solid 2px #000;
+	width: 40px;
+	left: 0;
+	height: 22px;
+}
+
+.fixed-header-device {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+
+	.nav-reserve {
+		margin-right: 139px;
+		margin-top: 10px;
+		@media (max-width: 480px) {
+			margin-right: 10px;
+			margin-left: 0;
+		}
+	}
+}
+
+.main-content-wrapper {}
+
+.carousel-inner .item img {
+	width: 100%;
+}
+
+.body-padd-sticky {
+	padding-top: 123px;
+	@media (max-width:1239px) {
+		padding-top: 77px;
+	}
+	@media (max-width:767px) {
+		padding-top: 52px;
+	}
+}

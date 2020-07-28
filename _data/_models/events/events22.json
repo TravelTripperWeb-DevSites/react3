@@ -1,0 +1,24 @@
+{
+	"name": "DJ Kyd",
+	"schedule": "Every Saturday, poolside from 1-4pm",
+	"short_description": "<p>Every Saturday, poolside from 1-4pm</p>",
+	"long_description": "<p>Every Saturday, poolside from 1-4pm</p>",
+	"url": "dj-kyd",
+	"website_url": "https://www.24northhotel.com/",
+	"alt_text":"DJ-Kyd",
+	"thumb_image": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-230556/kyd.jpg"
+	},
+	"large_image": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-230556/kyd.jpg"
+	},
+  "expire_date": null,
+  "isPublished": true,
+	"category": "event_category1",
+	"g_image1": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-230556/kyd.jpg"
+	},
+	"short_image": {
+		"url": "https://cdn.traveltripper.io/site-assets/359_384_1766/media/2017-02-28-230556/kyd.jpg"
+	}
+}

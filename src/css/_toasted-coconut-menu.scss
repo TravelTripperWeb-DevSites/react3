@@ -1,0 +1,11 @@
+.tc-menu-icon {
+    margin: 40px 10px 23px 10px !important;
+
+    @media (max-width: $screen-sm-min) {
+        display: none;
+    }
+}
+
+.tc-logo {
+    width: 50% !important;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "38th Annual Key West Fantasy Fest",
+  "category": "event_category1",
+  "url": "38th-annual-key-west-fantasy-fest",
+  "schedule": "OCTOBER 20 – 29, 2017",
+  "short_description": "<p>This outrageous 10-day costuming and masking celebration features flamboyant masquerade competitions including one for pets, a headdress ball,</p>",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">This outrageous 10-day costuming and masking celebration features flamboyant masquerade competitions including one for pets, a headdress ball, exuberant promenades, street fairs and a grand parade that stars marching groups, island-style bands and lavish floats. The 2017 festival theme is &ldquo;Time Travel Unravels.&rdquo;</p>",
+  "website_url": "http://www.fantasyfest.com/",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-083257/fantasyfest-2.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-083257/fantasyfest-1.JPG",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-083258/fantasyfest-3.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-083257/fantasyfest-2.jpg",
+    "alt": "image"
+  },
+  "expire_date": "Mon Oct 30 2017 00:00:00 GMT-0500 (CDT)",
+  "isPublished": true,
+  "publish_date": "Fri Oct 20 2017 00:00:00 GMT-0500 (CDT)"
+}

@@ -1,0 +1,413 @@
+.loc-main {
+  padding-top: 57px;
+  @media(max-width: $screen-xs-max) {
+    padding-top: 30px;
+  }
+}
+
+.loc-con-inner {
+  padding-left: 80px;
+  @media (max-width: 1240px) {
+    padding-left: 0;
+  }
+}
+
+.loc-content {
+  font-family: $main-font-light;
+  color: $tc-ash-4;
+  padding: 50px 80px 0 0;
+  background-color: #f8f7f7;
+  @media (max-width: 1240px) {
+    padding: 25px 0 0;
+  }
+
+  h2, .h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: $tc-light-blue-1;
+    padding: 0 0 40px;
+    line-height: normal;
+    letter-spacing: 5px;
+    margin: 0;
+    @media (max-width: $screen-sm-max) {
+      padding: 0 0 25px;
+      font-size: 24px;
+    }
+    @media (max-width: $screen-xs-max) {
+      padding: 0 0 15px;
+      font-size: 20px;
+      letter-spacing: 3px;
+    }
+  }
+
+  p {
+    padding: 0 0 100px;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 30px;
+    font-size: 18px;
+    /*&:last-child {
+			padding: 0;
+		}*/
+    @media (max-width: $screen-sm-max) {
+      padding: 0 0 30px;
+    }
+    @media (max-width: $screen-xs-max) {
+      padding: 0 0 20px;
+      line-height: 24px;
+      font-size: 16px;
+    }
+  }
+
+  h5, .h5 {
+    padding: 2px 0;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  h4, .h4 {
+    img {
+      margin-bottom: 16px;
+    }
+  }
+
+  .loc-no-padding {
+    padding: 0;
+  }
+
+  h3, .h3 {
+    font-family: $main-font-bold;
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    position: relative;
+    @media (max-width: $screen-xs-max) {
+      letter-spacing: 3px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      background-color: #000;
+      height: 1px;
+      bottom: -18px;
+      left: 0;
+    }
+  }
+
+  .left-column {
+    /*	@media (max-width: $screen-sm-max){
+			width: 90%;
+		}*/
+    @media (max-width: $screen-xs-max) {
+      width: auto;
+    }
+  }
+
+  .right-column {
+    padding: 0 0 0 20%;
+    @media (max-width: $screen-sm-max) {
+      padding: 0 0 0 10%;
+    }
+    @media (max-width: $screen-xs-max) {
+      padding: 0;
+    }
+
+    span {
+      display: block;
+    }
+
+    p {
+      padding: 35px 0 0;
+    }
+  }
+}
+
+.address-wrap {
+  padding: 0 0 55px;
+
+  a {
+    color: $tc-ash-4;
+
+    &:hover {
+      color: $tc-light-blue-1;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    padding: 20px 0 0;
+  }
+}
+
+.btn-wrap {
+  padding: 55px 0 0;
+  @media (max-width: $screen-xs-max) {
+    padding: 20px 0 0;
+  }
+}
+
+.no-top-padding {
+  padding-top: 0;
+}
+
+.extra-padding {
+  padding: 30px 0 0;
+  @media (max-width: $screen-xs-max) {
+    padding: 15px 0 0;
+  }
+}
+
+.btn-wrapper {
+  padding: 0 0 30px;
+  @media (max-width: $screen-xs-max) {
+    padding-bottom: 15px;
+  }
+}
+
+.common-btn {
+  border: solid 1px #c19b76;
+  padding: 13px 18px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .fa-long-arrow-right {
+    color: #000;
+    text-indent: 14px;
+  }
+}
+
+.cta-theme-location {
+  background-image: url("../images/cta-theme-location.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  h2, .h2 {
+    padding: 86px 0 60px;
+    @media (max-width: 1023px) {
+      padding: 30px 0;
+    }
+  }
+}
+
+.empty-container {
+  img {
+    width: 100%;
+  }
+}
+
+.car-blue-bg {
+  background-color: $bg-blue-3;
+
+  .heading-large {
+    color: $tc-white;
+  }
+}
+
+.location-banner {
+  background: url("/images/location-banner.jpg") no-repeat center center;
+}
+
+.shuttle-graphic {
+  margin-left: -15px;
+  max-width: 721px;
+  padding: 40px 0 0;
+  @media(min-width: $screen-sm-min) {
+    padding: 80px 0 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &.sg-mobile {
+    display: block;
+    @media(min-width: $screen-sm-min) {
+      display: none;
+    }
+  }
+
+  &.sg-desktop {
+    display: none;
+    @media(min-width: $screen-sm-min) {
+      display: block;
+    }
+  }
+}
+
+.loc-cuba {
+  img {
+    width: 100%;
+  }
+}
+
+.hdct {
+  position: relative;
+
+  .graphic {
+    position: absolute;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 18px;
+    top: -9px;
+    right: 0;
+    left: 0;
+    background-image: url("../images/floating/line-diagonal.png");
+    background-repeat: repeat-x;
+    background-position: center center;
+  }
+}
+
+.loc-map {
+  img {
+    width: 100%;
+  }
+}
+
+.sb-img {
+  display: inline-block;
+  width: 80%;
+}
+//404
+
+.loc-main {
+  .loc-main-inner {
+    .more-spls {
+      position: relative;
+      margin-bottom: 40px;
+
+      .graphics {
+        position: absolute;
+        top: -9px;
+        right: 0;
+        left: 0;
+        max-width: 1200px;
+        height: 18px;
+        margin: 0 auto;
+        background-image: url('../images/floating/line-diagonal.png');
+        background-repeat: repeat-x;
+        background-position: center center;
+      }
+
+      .stamp {
+        position: absolute;
+        bottom: 88px;
+        left: -8px;
+        width: 150px;
+        height: 150px;
+        @media (max-width: $screen-md-max) {
+          bottom: 53px;
+          left: 0;
+          width: 80px;
+          height: 80px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .errorpage {
+      padding-top: 30px;
+      max-width: 450px;
+      margin: 25px auto;
+
+      .listdata {
+        margin-bottom: 20px;
+
+        .loc-con-inner {
+          h2, .h2 {
+            padding-bottom: 10px;
+          }
+
+          ul {
+            list-style: url("/images/line-dott.png") !important;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            margin-left: 10px;
+
+            li {
+              margin: 10px auto;
+
+              a {
+                color: #444;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+
+            ul {
+              padding: 0 0 0 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+a {
+  &.link-heading {
+    color: $bg-white;
+    display: block;
+
+    &:hover {
+      color: $bg-white;
+    }
+  }
+}
+
+.p-10 {
+  padding: 25px 0;
+  background: #ededed !important;
+}
+
+.bg {
+  .row {
+    background-color: transparent !important;
+  }
+}
+
+.flowplayer-wrap {
+  width: 70%;
+  height: 500px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+// Exclusive Highlight Section on Webcams page
+.exclusive-higlights {
+  max-width: 600px;
+  margin: 50px auto auto;
+  @media(max-width: $screen-sm-min) {
+    margin-top: 30px;
+  }
+
+  a {
+    display: block;
+    padding: 20px;
+    font-size: 22px;
+    color: $white;
+    text-align: center;
+    background-color: #ff9300;
+    &:hover {
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}

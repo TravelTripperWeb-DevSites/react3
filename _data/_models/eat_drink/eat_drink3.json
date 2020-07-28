@@ -1,0 +1,103 @@
+{
+  "sort_order": 3,
+  "name": "Toasted Coconut",
+  "description": "<p><strong>8am to 9pm daily<br /> Happy Hour - 12pm to 4pm daily</strong></p>\n<p>Toasted Coconut is a laid-back, family&ndash;friendly outdoor restaurant, located right next to the pool at 24 North Hotel. Whether you&rsquo;re looking for good food or fun in the sun, Toasted Coconut&rsquo;s vibrant menu and relaxed atmosphere has a little something for everyone. Sip on a Toasted Punch, our namesake tropical cocktail, or munch on some Conch Fritters, the caviar of Key West. It&rsquo;s delicious food at the perfect latitude.</p>",
+  "menu": [
+    {
+      "menu_name": "Breakfast",
+      "menu_url": "//res.cloudinary.com/traveltripperweb/raw/upload/v1569920847/icknbevk7vtooerw5uj0.pdf"
+    },
+    {
+      "menu_name": "Lunch/Dinner",
+      "menu_url": "//res.cloudinary.com/traveltripperweb/raw/upload/v1569920846/vb5a3ezdqrenbns3nrzk.pdf"
+    },
+    {
+      "menu_name": "Drinks",
+      "menu_url": "https://www.24northhotel.com/images/toasted-coconut-cocktail-menu.pdf"
+    }
+  ],
+  "venue_image1": {
+    "name": "large_1_2x",
+    "file_name": "large_1_2x.jpg",
+    "url": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071705/large_1_2x.jpg",
+    "tags": "",
+    "description": "",
+    "date_added": "2018-09-27-071705",
+    "file_type": "image/jpeg",
+    "width": 1200,
+    "height": 443,
+    "file_size": 174023,
+    "url_large": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071705/large_large_1_2x.jpg",
+    "url_medium": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071705/medium_large_1_2x.jpg",
+    "url_small": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071705/small_large_1_2x.jpg",
+    "url_xsmall": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071705/xsmall_large_1_2x.jpg",
+    "url_thumb": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071705/thumb_large_1_2x.jpg",
+    "git_file_name": "_assets/image_data/large-1-2x.json",
+    "path": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071705/large_1_2x.jpg",
+    "alt": "Toasted Coconut",
+    "caption": ""
+  },
+  "venue_image2": {
+    "name": "large_2_2x",
+    "file_name": "large_2_2x.jpg",
+    "url": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071706/large_2_2x.jpg",
+    "tags": "",
+    "description": "",
+    "date_added": "2018-09-27-071706",
+    "file_type": "image/jpeg",
+    "width": 1200,
+    "height": 1182,
+    "file_size": 238755,
+    "url_large": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071706/large_large_2_2x.jpg",
+    "url_medium": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071706/medium_large_2_2x.jpg",
+    "url_small": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071706/small_large_2_2x.jpg",
+    "url_xsmall": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071706/xsmall_large_2_2x.jpg",
+    "url_thumb": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071706/thumb_large_2_2x.jpg",
+    "git_file_name": "_assets/image_data/large-2-2x.json",
+    "path": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071706/large_2_2x.jpg",
+    "alt": "Toasted Coconut",
+    "caption": ""
+  },
+  "venue_image3": {
+    "name": "large_3_2x",
+    "file_name": "large_3_2x.jpg",
+    "url": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071707/large_3_2x.jpg",
+    "tags": "",
+    "description": "",
+    "date_added": "2018-09-27-071707",
+    "file_type": "image/jpeg",
+    "width": 1200,
+    "height": 1182,
+    "file_size": 133711,
+    "url_large": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071707/large_large_3_2x.jpg",
+    "url_medium": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071707/medium_large_3_2x.jpg",
+    "url_small": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071707/small_large_3_2x.jpg",
+    "url_xsmall": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071707/xsmall_large_3_2x.jpg",
+    "url_thumb": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071707/thumb_large_3_2x.jpg",
+    "git_file_name": "_assets/image_data/large-3-2x.json",
+    "path": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071707/large_3_2x.jpg",
+    "alt": "Toasted Coconut",
+    "caption": ""
+  },
+  "venue_image4": {
+    "name": "large_4_2x",
+    "file_name": "large_4_2x.jpg",
+    "url": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071708/large_4_2x.jpg",
+    "tags": "",
+    "description": "",
+    "date_added": "2018-09-27-071708",
+    "file_type": "image/jpeg",
+    "width": 1200,
+    "height": 1182,
+    "file_size": 243166,
+    "url_large": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071708/large_large_4_2x.jpg",
+    "url_medium": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071708/medium_large_4_2x.jpg",
+    "url_small": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071708/small_large_4_2x.jpg",
+    "url_xsmall": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071708/xsmall_large_4_2x.jpg",
+    "url_thumb": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071708/thumb_large_4_2x.jpg",
+    "git_file_name": "_assets/image_data/large-4-2x.json",
+    "path": "//cdn.traveltripper.io/site-assets/192_384_19421/media/2018-09-27-071708/large_4_2x.jpg",
+    "alt": "Toasted Coconut",
+    "caption": ""
+  }
+}

@@ -1,0 +1,33 @@
+items:
+  - id: __pages__
+  - id: attractions
+  - id: Blog
+    items:
+      - id: blog
+        label: Blog Posts
+      - id: category
+        label: Blog Categories
+  - id: eat_drink
+  - id: Events
+    items:
+      - id: events
+      - id: event_category
+  - id: Gallery
+    items:
+      - id: gallery_foodndrink_images
+        label: Gallery Food & Drink Images
+      - id: gallery_hotel_images
+      - id: gallery_keywest_images
+      - id: gallery_pool_images
+      - id: gallery_rooms_images
+  - id: Sliders
+    items:
+      - id: groups_slider_images
+      - id: homepage_slider
+      - id: shuttle_carousel
+      - id: starbucks_carousel
+      - id: tc_carousel      
+  - id: partners
+  - id: reviews
+  - id: standalone
+  

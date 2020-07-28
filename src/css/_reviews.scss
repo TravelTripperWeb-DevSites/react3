@@ -1,0 +1,147 @@
+.reviews-page-intro {
+  padding: 45px 15px;
+  text-align: center;
+  @media (min-width: $screen-sm-min) {
+    padding: 55px 15px;
+  }
+  h2, .h2 {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: $main-font-bold;
+    font-size: 14px;
+    line-height: 28px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  p {
+    max-width: 690px;
+    margin: auto;
+    padding-top: 24px;
+    font-family: $main-font-regular;
+    font-size: 20px;
+    line-height: 30px;
+    color: $grey-color;
+    letter-spacing: 1px;
+  }
+}
+.reviews-list {
+  max-width: 1140px;
+  .row {
+    margin: 0;
+    @media (min-width: $screen-sm-min) {
+      column-count: 2;
+    }
+  }
+  .review-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0 5px;
+    @media (min-width: $screen-sm-min) {
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+    .review-item-inner {
+      padding: 20px 26px 20px 30px;
+      background-color: $bg-ash-3;
+      h6, .h6 {
+        margin-bottom: 10px;
+        font-family: $main-font-medium;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 21px;
+        color: $text-color;
+        letter-spacing: 1.39px;
+      }
+      p {
+        font-family: $main-font-regular;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 1.38px;
+        span {
+          font-family: $main-font-bold;
+        }
+      }
+      .review-text {
+        margin-bottom: 10px;
+        color: $grey-color;
+      }
+      .reviewer-name, .reviewer-address {
+        color: $grey-color;
+      }
+    }
+    &.hide-item {
+      display: none;
+    }
+  }
+}
+
+.load-more {
+  display: block;
+  margin: 0 5px 50px;
+  padding: 18px 15px;
+  text-align: center;
+  border: solid 1px $tc-dark-blue;
+  @media (min-width: $screen-sm-min) {
+    margin: 0 15px 80px;
+  }
+}
+
+.reasons-to-book {
+  padding: 70px 0 76px;
+  text-align: center;
+  background-color: $tc-dark-blue;
+  h2, .h2 {
+    margin-bottom: 55px;
+    font-family: $main-font-light;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 40px;
+    color: $tc-white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .reasons-list {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 15px;
+    .block {
+      display: block;
+      margin-bottom: 30px;
+      padding: 0 15px;
+      @media (min-width: $screen-sm-min) {
+        display: inline-block;
+        max-width: 32%;
+        margin-bottom: 60px;
+        padding: 0 35px;
+      }
+      img {
+        margin-bottom: 12px;
+      }
+      p {
+        font-family: $main-font-regular;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        color: $tc-white;
+        letter-spacing: 1.38px;
+      }
+    }
+  }
+}
+.reviews-page-offers {
+  padding: 0;
+  .container {
+    padding: 0;
+    .carousel-inner {
+      .item {
+        margin-bottom: 30px;
+        @media (min-width: $screen-lg-min) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

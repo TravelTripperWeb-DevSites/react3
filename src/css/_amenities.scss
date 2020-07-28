@@ -1,0 +1,38 @@
+.amenities {
+  padding: 0  15px;
+  .intro {
+    margin: 0 0 50px;
+  }
+  .row {
+    display: block;
+    align-items: center;
+    margin-bottom: 30px;
+    @media (min-width: $screen-md-min) {
+      display: flex;
+    }
+  }
+  .info {
+    padding: 20px 0;
+    h3, .h3 {
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 20px;
+      padding: 0 15px;
+      font-size: 18px;
+    }
+
+}
+  .object-fit {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

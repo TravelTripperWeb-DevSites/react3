@@ -1,0 +1,29 @@
+{
+    "carousel_caption":
+    {
+      "required": true,
+      "type": "richtext",
+      "label": "Carousel Caption"
+    },
+    "slider_image":
+    {
+      "required": true,
+      "type": "image",
+      "label": "Upload Image"
+    },
+    "thumb_image":
+    {
+      "required": true,
+      "type": "image",
+      "label": "Upload Thumb Image"
+    },
+    "alt_text":
+    {
+      "label": "Image Alt text"
+    },
+    "sort_order":
+    {
+      "type": "integer",
+      "required": true
+    }
+}

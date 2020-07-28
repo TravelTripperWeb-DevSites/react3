@@ -1,0 +1,28 @@
+{
+  "name": "Key West Lobster Festival",
+  "url": "key-west-lobster-festival",
+  "category": "event_category1",
+  "schedule": "AUGUST 10 – 13, 2017",
+  "short_description": "<p style=\"margin-bottom: 0cm;\">Celebrate the opening of Lobster Season at the biggest party of the summer.</p>",
+  "long_description": "<p style=\"margin-bottom: 0cm;\">Celebrate the opening of Lobster Season at the biggest party of the summer. Thousands of lobster lovers descend on Key West for four glorious days and nights.</p>",
+  "website_url": "http://www.keywestlobsterfest.com/",
+  "thumb_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-074959/lobsterfest-2.jpg",
+    "alt": "image"
+  },
+  "large_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-075000/lobsterfest-3.jpg",
+    "alt": "image"
+  },
+  "short_image": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-074958/lobsterfest-1.jpg",
+    "alt": "image"
+  },
+  "g_image1": {
+    "url": "https://cdn.traveltripper.io/site-assets/359_384_3611/media/2017-06-06-074959/lobsterfest-2.jpg",
+    "alt": "image"
+  },
+  "expire_date": "Mon Aug 14 2017 00:00:00 GMT-0500 (CDT)",
+  "isPublished": true,
+  "publish_date": "Thu Aug 10 2017 00:00:00 GMT-0500 (CDT)"
+}

@@ -1,0 +1,110 @@
+@charset 'utf-8';
+
+
+// Our variables
+$base-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * .875;
+$base-line-height: 1.5;
+
+$main-font-bold: 'brandon_grotesquebold';
+$main-font-black: 'brandon_grotesqueblack';
+$main-font-light: 'brandon_grotesquelight';
+$main-font-medium: 'brandon_grotesquemedium';
+$main-font-regular: 'brandon_grotesqueregular';
+$main-font-thin: 'brandon_grotesquethin';
+
+$secondoray-font: 'FuturaStd-Light';
+
+$spacing-unit:     30px;
+
+$black:         #000;
+$white:         #fff;
+$bg-white: 			#fff;
+$bg-blue-1: 		#13556f;
+$bg-blue-2: 		#1086b4;
+$bg-blue-3: 		#1f4552;
+$bg-blue-4: 		#0f86b4;
+$bg-ash-1: 			#f5f5f5;
+$bg-ash-2: 			#6d4d4d;
+$bg-ash-3: 			#fbf8ef;
+$bg-ash-4: 			#333;
+$bg-blue-5: 		#115e7c;
+
+
+$tc-white: 		#fff;
+$tc-black: 		#000;
+$tc-light-blue: #1086b4;
+$tc-dark-blue: 	#1f4552;
+$tc-light-blue-1: #135c78;
+$tc-ash-1: 		#333;
+$tc-ash-2: 		#434343;
+$tc-ash-3: 		#606060;
+$tc-ash-4: 		#444;
+$links:       #dbdbdb;
+
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #333333;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+$phone-max: 479px;
+$white: #FFFFFF;
+
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+	'bootstrap',
+	'fonts',
+  'conversion-plus',
+	'jquery-ui',
+	'datepicker',
+	'layout',
+	'header',
+	'footer',
+	'specials',
+  'top-banner.scss',
+	'location',
+	'gallery',
+	'blog',
+	'starbucks',
+	'meetings',
+	'room-details',
+	'date-picker',
+	'rfp',
+	'save-the-child-section',
+	'toasted-coconut-menu',
+	'utilities',
+	'offer-popup',
+  'reviews',
+	'base',
+  'native-ads',
+	'exit-modal',
+  'rt-widget',
+  'offer-promo-tile',
+  'privacy-policy',
+  'amenities';
