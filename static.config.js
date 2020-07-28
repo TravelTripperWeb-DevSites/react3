@@ -117,7 +117,7 @@ export default {
      public: `${process.env.CONTAINER_IP}` || "http://localhost:3000/",
      host: process.env.CONTAINER_IP || "localhost",
      sockHost: process.env.CONTAINER_IP || "localhost",
-     port: 3000,
+     //port: 3000,
      allowedHosts: [
        '.pegs.localhost',
        process.env.CONTAINER_IP || "localhost",
