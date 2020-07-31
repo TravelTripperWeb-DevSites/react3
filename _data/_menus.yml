@@ -3,6 +3,8 @@ main:
   depth: 2
   name: Top Menu
   items:
+  - label: Blog
+    url: /blog
   - page_id: _pages/index.html
   - page_id: _pages/covid-19/index.html
     label_localized:
