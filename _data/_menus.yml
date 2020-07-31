@@ -6,7 +6,7 @@ main:
   - page_id: _pages/index.html
   - page_id: _pages/covid-19/index.html
     label_localized:
-      en: About
+      en: Covid
     items:
   - folder: true
     label_localized:
